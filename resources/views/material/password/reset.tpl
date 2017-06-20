@@ -1,4 +1,4 @@
-{include file='header.tpl'}
+{include file='top.tpl'}
 
 
 <main class="content">
@@ -62,7 +62,7 @@
 		</div>
 	</main>
 	
-{include file='footer.tpl'}
+{include file='bottom.tpl'}
 
 
 <script>

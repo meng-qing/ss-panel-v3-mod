@@ -1695,4 +1695,5 @@ class UserController extends BaseController
         $newResponse = $response->withStatus(302)->withHeader('Location', '/user/edit');
         return $newResponse;
     }
+
 }

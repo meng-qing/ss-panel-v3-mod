@@ -1,6 +1,4 @@
-
-
-{include file='header.tpl'}
+{include file='top.tpl'}
 
 
 <main class="content">
@@ -8,13 +6,10 @@
 			<div class="row">
 				<div class="col-lg-4 col-lg-push-4 col-sm-6 col-sm-push-3">
 					<section class="content-inner">
+					<a class="card-heading" href="/" title="Fast云加速">Fast云加速</a>
 						<div class="card">
 							<div class="card-main">
-								<div class="card-header">
-									<div class="card-inner">
-										<h1 class="card-heading">和我签订契约，成为魔法少女吧。</h1>
-									</div>
-								</div>
+								
 								<div class="card-inner">
 									<p class="text-center">
 										<span class="avatar avatar-inline avatar-lg">
@@ -44,7 +39,7 @@
 										<div class="form-group form-group-label">
 											<div class="row">
 												<div class="col-md-10 col-md-push-1">
-													<label class="floating-label" for="email_code">邮箱验证码</label>
+													<label class="floating-label" for="email_code">邮箱验证码 没收到请检查垃圾箱和自己邮箱是否填错</label>
 													<input class="form-control" id="email_code" type="text">
 													<button id="email_verify" class="btn btn-block btn-brand-accent waves-attach waves-light">获取验证码</button>
 												</div>
@@ -171,7 +166,7 @@
 		</div>
 	</main>
 	
-{include file='footer.tpl'}
+{include file='bottom.tpl'}
 
 
 

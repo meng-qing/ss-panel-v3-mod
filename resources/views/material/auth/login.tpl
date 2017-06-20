@@ -1,4 +1,4 @@
-{include file='header.tpl'}
+{include file="top.tpl"}
 
 
 <main class="content">
@@ -6,7 +6,7 @@
 			<div class="row">
 				<div class="col-lg-4 col-lg-push-4 col-sm-6 col-sm-push-3">
 					<section class="content-inner">
-
+						<a class="card-heading" href="/" title="Fast云加速">Fast云加速</a>
 						<nav class="tab-nav margin-top-no">
 							<ul class="nav nav-justified">
 								<li class="active">
@@ -165,7 +165,7 @@
 		</div>
 	</main>
 
-{include file='footer.tpl'}
+{include file="bottom.tpl"}
 
 <script>
     $(document).ready(function(){
