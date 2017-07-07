@@ -225,16 +225,18 @@
 				url: "code/f2fpay",
 				dataType: "json",
 				data: {
-						amount: $("#type").find("option:selected").val()
+						//amount: $("#type").find("option:selected").val()
+						amount: $("#type").val()
 					},
 				success: function (data) {
 					$("#readytopay").modal('hide');
-					if (data.ret) {
+					if (data.ret && data.amount >= 6) {
 						$("#qrcode").html(data.qrcode);
 						$("#info").html("您的订单金额为："+data.amount+"元。");
 						$("#alipay").modal();
 					} else {
 						$("#result").modal();
+						data.msg = "二维码生成失败，充值金额至少为6元！";
 						$("#msg").html(data.msg);
 					}
 				},

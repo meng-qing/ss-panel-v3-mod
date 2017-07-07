@@ -52,18 +52,11 @@ class Pay
     {
         return '
                         <p class="card-heading">使用支付宝充值</p>
-                        <label for="number">请选择充值金额：</label>
-                        <select id="type" class="form-control" name="amount">
-                            <option value="45">45元</option>
-                            <option value="60">60元</option>
-                            <option value="90">90元</option>
-                            <option value="30">30元</option>
-                            <option value="16">16元</option>
-                            <option value="15">15元</option>
-                            <option value="11">11元</option>
-                            <option value="6">6元</option>
-                        </select>
-                        <p></p>
+                        <div class="form-group form-group-label">
+                            <label class="floating-label" for="code">充值金额</label>
+                            <input class="form-control" id="type" type="text" name="amount">
+                        </div>
+			 <p></p>
                         <a class="btn btn-flat waves-attach" id="urlChange" ><span class="icon">check</span>&nbsp;充值</a>
 ';
     }
