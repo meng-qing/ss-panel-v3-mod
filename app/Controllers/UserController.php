@@ -512,7 +512,7 @@ class UserController extends BaseController
                     $query->Where("node_group", "=", $this->user->node_group)
                         ->orWhere("node_group", "=", 0);
                 }
-            )->where('type', 1)->where("node_class", "<=", $this->user->class)->orderBy('name')->get();
+            )->where('type', 1)->orderBy('name')->get();
         }
 
         $relay_rules = Relay::where('user_id', $this->user->id)->orwhere('user_id', 0)->orderBy('id', 'asc')->get();
@@ -545,7 +545,7 @@ class UserController extends BaseController
         $ports_count += 1;
 
         foreach ($nodes as $node) {
-            if ((($user->class>=$node->node_class&&($user->node_group==$node->node_group||$node->node_group==0))||$user->is_admin)&&(!$node->isNodeTrafficOut())) {
+            if (((($user->node_group==$node->node_group||$node->node_group==0))||$user->is_admin)&&(!$node->isNodeTrafficOut())) {
                 if ($node->sort==9) {
                     $mu_user=User::where('port', '=', $node->server)->first();
                     $mu_user->obfs_param=$this->user->getMuMd5();
