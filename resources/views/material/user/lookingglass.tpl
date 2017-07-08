@@ -28,6 +28,9 @@
 									<div class="card-inner margin-bottom-no">
 										<p class="card-heading">注意!</p>
 										<p>此处只展示最近{$hour}小时的记录.</p><b>测试节点来自 <a href="http://speedtest.net">Speedtest</a>，数据仅供参考~</b>
+										<p>此功能是用以方便用户粗略查看服务器相关信息的
+										但是实际上和用户真实体验是有差距的。
+										本测试实质为随机选择测速节点进行测速</p>
 									</div>
 									
 								</div>

@@ -62,6 +62,94 @@ class HomeController extends BaseController
         }
     }
     
+    //fast-ssr
+    public function about()
+    {
+        return $this->view()->display('about.tpl');
+    }
+
+    public function sla()
+    {
+        return $this->view()->display('sla.tpl');
+    }
+
+    public function contact()
+    {
+        return $this->view()->display('contact.tpl');
+    }
+
+    public function features()
+    {
+        return $this->view()->display('features.tpl');
+    }
+
+    public function datacenter()
+    {
+        return $this->view()->display('datacenter.tpl');
+    }
+
+    public function panel()
+    {
+        return $this->view()->display('panel.tpl');
+    }
+
+    public function client()
+    {
+        return $this->view()->display('client.tpl');
+    }
+
+    public function faq()
+    {
+        return $this->view()->display('faq.tpl');
+    }
+
+    public function aff()
+    {
+        return $this->view()->display('aff.tpl');
+    }
+
+    public function help()
+    {
+        return $this->view()->display('help.tpl');
+    }
+
+    public function android_shadowsocksr_tutorial()
+    {
+        return $this->view()->display('help/android_shadowsocksr_tutorial.tpl');
+    }
+
+    public function win_shadowsocksr_tutorial()
+    {
+        return $this->view()->display('help/win_shadowsocksr_tutorial.tpl');
+    }
+    
+    public function macos_shadowsocksr_tutorial()
+    {
+        return $this->view()->display('help/macos_shadowsocksr_tutorial.tpl');
+    }
+    
+    public function wingy_shadowsocksr_tutorial()
+    {
+        return $this->view()->display('help/wingy_shadowsocksr_tutorial.tpl');
+    }
+
+    public function rocket_shadowsocksr_tutorial()
+    {
+        return $this->view()->display('help/rocket_shadowsocksr_tutorial.tpl');
+    }
+
+    public function privacy()
+    {
+        return $this->view()->display('privacy.tpl');
+    }
+    
+    public function use_policy()
+    {
+        return $this->view()->display('use_policy.tpl');
+    }
+
+    //error
+
     public function page404($request, $response, $args)
     {
         $pics=scandir(BASE_PATH."/public/theme/".(Auth::getUser()->isLogin==false?Config::get("theme"):Auth::getUser()->theme)."/images/error/404/");

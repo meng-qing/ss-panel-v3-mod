@@ -29,8 +29,8 @@
 							<div class="card-main">
 								<div class="card-inner">
 									<div class="card-inner">
-										<p class="card-heading">使用充值码</p>
-										<p>（请联系管理员索要充值码，并注明所需金额）</p>
+										<p class="card-heading">充值码</p>
+										<p>充值请联系站长 qq：2695043718 telegram：<a href="https://t.me/mengqing">站长tg</a></br></p>
 										<p>当前余额：{$user->money} 元</p>
 										<div class="form-group form-group-label">
 											<label class="floating-label" for="code">充值码</label>

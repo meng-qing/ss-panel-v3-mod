@@ -3,7 +3,7 @@
 
 
 
-{include file='header.tpl'}
+{include file='top.tpl'}
 
 
 	<main class="content">
@@ -22,12 +22,12 @@
 							<div class="card">
 								<div class="card-main">
 									<div class="card-inner">
-										<p>您试图访问的页面不存在。如果您认为这个错误不该发生，<a href="https://github.com/glzjin/ss-panel-v3-mod/issues">请到 Github 提交 issue</a>。</p>
+										<p>您试图访问的页面不存在。如果您认为这个错误不该发生，<a href="/user/ticket">请到联系网站管理员</a>。</p>
 									</div>
 									
 									<div class="card-action">
 										<div class="card-action-btn pull-left">
-											<a class="btn btn-flat waves-attach" href="javascript:history.back()"><span class="icon">backspace</span>&nbsp;返回</a>
+											<a class="btn btn-flat waves-attach" href="javascript:history.back()"><span class="icon">backspace</span>&nbsp;点击返回</a>
 										</div>
 									</div>
 									
@@ -56,4 +56,7 @@
 	</main>
 
 
-{include file='footer.tpl'}
+{include file='bottom.tpl'}
+
+
+

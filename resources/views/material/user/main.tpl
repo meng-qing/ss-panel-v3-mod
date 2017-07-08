@@ -17,6 +17,7 @@
 
 	
 	<!-- favicon -->
+	<link rel="shortcut icon" href="/img/favicon.ico">
 	<!-- ... -->
 	<style>
 		.pagination {

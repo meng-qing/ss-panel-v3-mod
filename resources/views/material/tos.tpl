@@ -6,93 +6,219 @@
 {include file='header.tpl'}
 
 
-	<main class="content">
-		<div class="content-header ui-content-header">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12 col-lg-push-0 col-sm-12 col-sm-push-0">
-						<h1 class="content-heading">TOS</h1>
-					</div>
+	
+	
+	
+	<div class="page-banner page-banner-subpage p-b-0">
+		<div class="container">
+			<div class="banner-slogan banner-slogan-hero">
+                <h1 class="slogan-title text-center">Fast云加速用户使用服务条款</h1>
+                <h2 class="slogan-desc text-center">该服务条款是约束由Fast云加速™提供(以下简称“Fast”) 的所有产品和服务，以下是条款和条件</h2>
+			</div>
+			
+
+            <div class="banner-tabs tabs-responsive">
+                <div class="tabs-container">
+                    <ul class="nav nav-tabs text-center">
+                                <li><a href="about">关于我们</a></li>
+                                <li><a href="sla">服务保证</a></li>
+                                <li><a href="contact">联系我们</a></li>
+                                <li class="active"><a href="tos">使用条款</a></li>
+                    </ul>
+                    <button class="btn btn-icon btn-link btn-prev" type="button" data-click="prev-tab"><i class="zmdi zmdi-chevron-left"></i></button>
+                    <button class="btn btn-icon btn-link btn-next" type="button" data-click="next-tab"><i class="zmdi zmdi-chevron-right"></i></button>
+                </div>
+            </div>      
+
+
+
+        </div>
+		<!-- /.banner-tabs -->
+	</div>
+	<!-- /.page-banner -->
+
+	<div class="page-section">
+		<div class="container">
+
+			<p>最后更新：2016年12月1日</p>
+
+			<div class="section-row row">
+<p>
+    <strong>
+        <span style="font-size: large;">
+            声明：
+        </span>
+    </strong>
+    <br>
+    本站只提供加速上网服务，只处理节点问题，而您本身的任何平台设置问题，与本站无关，本站概不提供您的各平台软件设置。
+    <br>
+    <br>
+    <span>
+        <strong>
+            <span style="font-size: large;">
+                购买/退款
+            </span>
+        </strong>
+        <br>
+        <span>
+            本站支持支付宝支付及微信扫码支付；由于本站商品为虚拟商品，无任何退款服务。
+            <br>
+            <br>
+            <br>
+            <span style="font-size: x-large;">
+                <strong>
+                    服务条款
+                </strong>
+            </span>
+        </span>
+    </span>
+</p>
+<p>
+    <span style="font-size: medium;">
+        一、【
+        <span style="color: #ff0000;">
+            用户违法行为
+        </span>
+        】
+    </span>
+    <br>
+    　　1.1您在使用本服务时须遵守法律法规，不得利用本服务从事违法违规行为，包括但不限于：
+    <br>
+    　　（1）发布、传送、传播、储存危害国家安全统一、破坏社会稳定、违反公序良俗、侮辱、诽谤、淫秽、暴力以及任何违反国家法律法规的内容；
+    <br>
+    　　（2）发布、传送、传播、储存侵害他人知识产权、商业秘密等合法权利的内容；
+    <br>
+    　　（3）恶意虚构事实、隐瞒真相以误导、欺骗他人；
+    <br>
+    　　（4）发布、传送、传播广告信息及垃圾信息；
+    <br>
+    　　（5）其他法律法规禁止的行为。
+    <br>
+    　　1.2如果您违反了本条约定，相关国家机关或机构可能会对您提起诉讼、罚款或采取其他制裁措施，并要求本站给予协助。造成损害的，您应依法予以赔偿，本站不承担任何责任。
+    <br>
+    　　1.3如果本站发现或收到他人举报您发布的信息违反本条约定，本站有权进行独立判断并采取技术手段予以删除、屏蔽或断开链接。同时，本站有权视用户的行为性质，采取包括但不限于暂停或终止服务，限制、冻结或终止商品使用，追究法律责任等措施。
+    <br>
+    　　1.4您违反本条约定，导致任何第三方损害的，您应当独立承担责任；本站因此遭受损失的，您也应当一并赔偿。
+    <br>
+    <br>
+    <span style="font-size: medium;">
+        二、【
+        <span style="color: #ff0000;">
+            遵守当地法律监管
+        </span>
+        】
+    </span>
+</p>
+<p>
+    　　2.1您在使用本服务过程中应当遵守当地相关的法律法规，并尊重当地的道德和风俗习惯。如果您的行为违反了当地法律法规或道德风俗，您应当为此独立承担责任。
+    <br>
+    　　2.2您应避免因使用本服务而使本站卷入政治和公共事件，否则本站有权暂停或终止对您的服务。
+</p>
+<p>
+    <span style="font-size: medium;">
+        三、【
+        <span style="color: #ff0000;">
+            用户发送、传播的内容与第三方投诉处理
+        </span>
+        】
+    </span>
+    <br>
+    　　3.1您通过本服务发送或传播的内容（包括但不限于网页、文字、图片、音频、视频、图表等）均由您自行承担责任。
+    <br>
+    　　3.2您发送或传播的内容应有合法来源，相关内容为您所有或您已获得权利人的授权。
+    <br>
+    　　3.3您同意本站可为履行本协议或提供本服务的目的而使用您发送或传播的内容。
+    <br>
+    　　3.4如果本站收到权利人通知，主张您发送或传播的内容侵犯其相关权利的，您同意本站有权进行独立判断并采取删除、屏蔽或断开链接等措施。&nbsp;
+    <br>
+    　　3.5您使用本服务时不得违反国家法律法规、侵害他人合法权益。您理解并同意，如您被他人投诉侵权或您投诉他人侵权，本站有权将争议中相关方的主体、联系方式、投诉相关内容等必要信息提供给其他争议方或相关部门，以便及时解决投诉纠纷，保护他人合法权益。
+</p>
+<p>
+    <span style="font-size: medium;">
+        四、【
+        <span style="color: #ff0000;">
+            不可抗力及其他免责事由
+        </span>
+        】
+    </span>
+    <br>
+    　　4.1您理解并同意，在使用本服务的过程中，可能会遇到不可抗力等风险因素，使本服务发生中断。不可抗力是指不能预见、不能克服并不能避免且对一方或双方造成重大影响的客观事件，包括但不限于自然灾害如洪水、地震、瘟疫流行和风暴等以及社会事件如战争、动乱、政府行为等。出现上述情况时，本站将努力在第一时间与相关单位配合，及时进行修复，但是由此给您造成的损失本站在法律允许的范围内免责。
+    <br>
+    　　4.2在法律允许的范围内，本站对以下情形导致的服务中断或受阻不承担责任：
+    <br>
+    　　（1）受到计算机病毒、木马或其他恶意程序、黑客攻击的破坏；
+    <br>
+    　　（2）用户或本站的电脑软件、系统、硬件和通信线路出现故障；
+    <br>
+    　　（3）用户操作不当；
+    <br>
+    　　（4）用户通过非本站授权的方式使用本服务；
+    <br>
+    　　（5）其他本站无法控制或合理预见的情形。
+    <br>
+    　　4.3您理解并同意，在使用本服务的过程中，可能会遇到网络信息或其他用户行为带来的风险，本站不对任何信息的真实性、适用性、合法性承担责任，也不对因侵权行为给您造成的损害负责。这些风险包括但不限于：
+    <br>
+    　　（1）来自他人匿名或冒名的含有威胁、诽谤、令人反感或非法内容的信息；
+    <br>
+    　　（2）因使用本协议项下的服务，遭受他人误导、欺骗或其他导致或可能导致的任何心理、生理上的伤害以及经济上的损失；
+    <br>
+    　　（3）其他因网络信息或用户行为引起的风险。
+    <br>
+    　　5.4您理解并同意，本服务并非为某些特定目的而设计，包括但不限于核设施、军事用途、医疗设施、交通通讯等重要领域。如果因为软件或服务的原因导致上述操作失败而带来的人员伤亡、财产损失和环境破坏等，本站不承担法律责任。
+    <br>
+    　　4.5本站依据本协议约定获得处理违法违规内容的权利，该权利不构成本站的义务或承诺，本站不能保证及时发现违法行为或进行相应处理。
+    <br>
+    　　4.6在任何情况下，您不应轻信借款、索要密码或其他涉及财产的网络信息。涉及财产操作的，请一定先核实对方身份，并请经常留意本站有关防范诈骗犯罪的提示。
+</p>
+<p>
+    <span style="font-size: medium;">
+        五、【
+        <span style="color: #ff0000;">
+            协议的生效与变更
+        </span>
+        】
+    </span>
+    <br>
+    　　5.1您使用本站的服务即视为您已阅读本协议并接受本协议的约束。
+    <br>
+    　　5.2本站有权在必要时修改本协议条款。您可以在相关服务页面查阅最新版本的协议条款。
+    <br>
+    　　5.3本协议条款变更后，如果您继续使用本站提供的软件或服务，即视为您已接受修改后的协议。如果您不接受修改后的协议，应当停止使用本站提供的软件或服务。
+</p>
+<p>
+    <span style="font-size: medium;">
+        六、【
+        <span style="color: #ff0000;">
+            服务的变更、中断、终止
+        </span>
+        】
+    </span>
+    <br>
+    　　6.1本站可能会对服务内容进行变更，也可能会中断、中止或终止服务。
+    <br>
+    　　6.2您理解并同意，本站有权自主决定经营策略。在本站发生合并、分立、收购、资产转让时，本站可向第三方转让本服务下相关资产；本站也可在单方通知您后，将本协议下部分或全部服务转交由第三方运营或履行。具体受让主体以本站通知的为准。
+    <br>
+    　　6.3如发生下列任何一种情形，本站有权不经通知而中断或终止向您提供的服务：
+    <br>
+    　　（1）根据法律规定您应提交真实信息，而您提供的个人资料不真实、或与注册时信息不一致又未能提供合理证明；
+    <br>
+    　　（2）您违反相关法律法规或本协议的约定；
+    <br>
+    　　（3）按照法律规定或主管部门的要求；
+    <br>
+    　　（4）出于安全的原因或其他必要的情形。
+    <br>
+    　　6.4本站有权按本协议的约定进行收费。若您未按时足额付费，本站有权中断、中止或终止提供服务。
+    <br>
+    　　6.5如果您的服务被终止，本站可以从服务器上永久地删除您的数据,但法律法规另有规定的除外。服务终止后，本站没有义务向您返还数据。
+</p>
+
 				</div>
 			</div>
-		</div>
-		<div class="container">
-						<section class="content-inner margin-top-no">
-
-
-
-							<div class="card">
-								<div class="card-main">
-									<div class="card-inner">
-										<p>用户协议 Terms of Service</p>
-										    <p>{$config["appName"]}，以下简称本站。</p>
-									</div>
-								</div>
-							</div>
-							
-							<h2 class="content-sub-heading">隐私</h2>
-								
-							<div class="card">
-								<div class="card-main">
-									<div class="card-inner">
-										
-											<p>
-												<ul>
-													<li>用户注册时候需要提供邮箱以及密码，并自行保管。邮箱为用户的唯一凭证。</li>
-													<li>本站会加密存储用户密码，尽量保证数据安全，但并不保证这些信息的绝对安全。</li>
-												</ul>
-											</p>
-									</div>
-								</div>
-							</div>
-							
-							
-							<h2 class="content-sub-heading">使用条款</h2>
-								
-							<div class="card">
-								<div class="card-main">
-									<div class="card-inner">
-										
-											<p>
-												<ul>
-													<li>禁止使用本站服务进行任何违法恶意活动。</li>
-													<li>使用任何节点，需遵循节点所属国家的相关法律以及中国法律。</li>
-													<li>禁止滥用本站提供的服务。</li>
-													<li>对于免费用户，我们有权在不通知的情况下删除账户。</li>
-													<li>任何违法使用条款的用户，我们将会删除违规账户并没收使用本站服务的权利。</li>
-											   </ul>
-											</p>
-									</div>
-								</div>
-							</div>
-							
-							
-							
-							<h2 class="content-sub-heading">其它</h2>
-								
-							<div class="card">
-								<div class="card-main">
-									<div class="card-inner">
-										
-											<p>
-												<ul>
-													<li>本站仅限人类及猫注册使用。</li>
-													<li>TOS更新时用户需要遵守最新TOS。</li>
-											   </ul>
-											</p>
-									</div>
-								</div>
-							</div>
-
-
-		
-							
-						</section>
 			
-			
-			
-		</div>
-	</main>
+
+
+	</div>
 
 
 {include file='footer.tpl'}

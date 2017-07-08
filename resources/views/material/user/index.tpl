@@ -28,6 +28,8 @@
 								<div class="card-main">
 									<div class="card-inner margin-bottom-no">
 										<p class="card-heading">系统中最新公告</p>
+										<p>体验本服务后，如果想要充值，可以通过以下联系方式进行充值：</p>
+										<p>站长 qq：2695043718 telegram：<a href="https://t.me/mengqing">站长tg</a></br></p>
 										<p>其他公告请到<a href="/user/announcement"/>公告面板</a>查看。</p>
 										{if $ann != null}
 										<p>{$ann->content}</p>
