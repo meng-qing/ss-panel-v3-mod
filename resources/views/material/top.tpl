@@ -71,7 +71,7 @@
 						<a  href="/tos"><i class="icon icon-lg">text_format</i>&nbsp;TOS</a>
 					</li>
 					<li>
-						<a  href="/code"><i class="icon icon-lg">code</i>&nbsp;邀请码</a>
+						<a  href="/code"><i class="icon icon-lg">code</i>&nbsp;获取邀请码</a>
 					</li>
 					{if $user->isLogin}
 					<li>

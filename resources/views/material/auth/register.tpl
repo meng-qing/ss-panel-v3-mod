@@ -97,7 +97,7 @@
 											<div class="form-group form-group-label">
 												<div class="row">
 													<div class="col-md-10 col-md-push-1">
-														<label class="floating-label" for="code">邀请码</label>
+														<label class="floating-label" for="code">填入邀请码,手机用户请点击浏览器顶部的三条杠</label>
 														<input class="form-control" id="code" type="text" value="{$code}">
 													</div>
 												</div>
