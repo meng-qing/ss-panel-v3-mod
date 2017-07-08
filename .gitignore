@@ -3,6 +3,5 @@ vendor/*
 composer.phar
 .user.ini
 public/.user.ini
-public/ssr-download
 storage/*
 config/.config.php
