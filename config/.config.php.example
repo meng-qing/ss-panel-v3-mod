@@ -296,7 +296,7 @@ $System_Config['sendgrid_sender'] = '';
 
 #支付系统
 
-#取值 paymentwall,zfbjk,spay,none
+#取值 paymentwall,zfbjk,spay,f2fpay,none
 $System_Config['payment_system']='none';
 
 #PaymentWall
