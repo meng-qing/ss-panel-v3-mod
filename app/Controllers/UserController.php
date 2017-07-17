@@ -295,7 +295,8 @@ class UserController extends BaseController
                 $res['msg'] = "二维码生成成功";
                 $res['amount'] = $amount;
                 $res['qrcode'] = $qrPay->create_erweima64($aliresponse->qr_code);
-                
+		$res['mobile'] = $aliresponse->qr_code;               
+ 
                 break;
             case "FAILED":
                 $res['ret'] = 0;

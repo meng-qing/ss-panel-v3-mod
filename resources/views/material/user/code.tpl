@@ -153,6 +153,7 @@
 								</div>
 								
 								<div class="modal-footer">
+									<a id="mobile" href="">手机用户请点击这里</a>
 									<p class="text-right"><button class="btn btn-flat btn-brand waves-attach" data-dismiss="modal" id="alipay_cancel" type="button">取消</button></p>
 								</div>
 							</div>
@@ -233,6 +234,7 @@
 					if (data.ret && data.amount >= 6) {
 						$("#qrcode").html(data.qrcode);
 						$("#info").html("您的订单金额为："+data.amount+"元。");
+						$("#mobile").attr("href", data.mobile);
 						$("#alipay").modal();
 					} else {
 						$("#result").modal();
