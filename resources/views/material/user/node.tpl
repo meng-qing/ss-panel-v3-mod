@@ -62,7 +62,7 @@
 																<br>
 
 																{foreach $nodes as $node}
-
+																	{if $user->is_admin || $user->class>=$node->node_class}
 																	{$relay_rule = null}
 																	{if $node->sort == 10}
 																		{$relay_rule = $tools->pick_out_relay_rule($node->id, $user->port, $relay_rules)}
@@ -191,6 +191,9 @@
 																				</div>
 																			</div>
 																		{/foreach}
+																	{/if}
+																	{else}
+																		<p><code>你的等级太低无法使用此节点，请购买更高等级套餐。</code></p>
 																	{/if}
 																{/foreach}
 

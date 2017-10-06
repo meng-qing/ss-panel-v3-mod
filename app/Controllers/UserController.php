@@ -145,6 +145,53 @@ class UserController extends BaseController
         }
     }
 
+    public function f2fpayget($request, $response, $args)
+    {
+        $time = $request->getQueryParams()["time"];
+        $res['ret'] = 1;
+        return $response->getBody()->write(json_encode($res));
+    }
+    
+    public function f2fpay($request, $response, $args)
+    {
+        $amount = $request->getParam('amount');
+        if ($amount == "") {
+            $res['ret'] = 0;
+            $res['msg'] = "订单金额错误：".$amount;
+            return $response->getBody()->write(json_encode($res));
+        }
+        $user = $this->user;
+        
+        //生成二维码
+        $qrPayResult = Pay::alipay_get_qrcode($user, $amount, $qrPay);
+        //  根据状态值进行业务处理
+        switch ($qrPayResult->getTradeStatus()){
+            case "SUCCESS":
+                $aliresponse = $qrPayResult->getResponse();
+                $res['ret'] = 1;
+                $res['msg'] = "二维码生成成功";
+                $res['amount'] = $amount;
+                $res['qrcode'] = $qrPay->create_erweima64($aliresponse->qr_code);
+                
+                break;
+            case "FAILED":
+                $res['ret'] = 0;
+                $res['msg'] = "支付宝创建订单二维码失败!!! 请使用其他方式付款。";
+                break;
+            case "UNKNOWN":
+                $res['ret'] = 0;
+                $res['msg'] = "系统异常，状态未知!!!!!! 请使用其他方式付款。";
+                
+                break;
+            default:
+                $res['ret'] = 0;
+                $res['msg'] = "创建订单二维码返回异常!!!!!! 请使用其他方式付款。";
+                
+                break;
+        }
+        
+        return $response->getBody()->write(json_encode($res));
+    }
 
     public function alipay($request, $response, $args)
     {
@@ -342,7 +389,7 @@ class UserController extends BaseController
                     $query->Where("node_group", "=", $this->user->node_group)
                         ->orWhere("node_group", "=", 0);
                 }
-            )->where('type', 1)->where("node_class", "<=", $this->user->class)->orderBy('name')->get();
+            )->where('type', 1)->orderBy('name')->get();
         }
 
         $relay_rules = Relay::where('user_id', $this->user->id)->orwhere('user_id', 0)->orderBy('id', 'asc')->get();
@@ -375,7 +422,7 @@ class UserController extends BaseController
         $ports_count += 1;
 
         foreach ($nodes as $node) {
-            if ((($user->class>=$node->node_class&&($user->node_group==$node->node_group||$node->node_group==0))||$user->is_admin)&&(!$node->isNodeTrafficOut())) {
+            if (((($user->node_group==$node->node_group||$node->node_group==0))||$user->is_admin)&&(!$node->isNodeTrafficOut())) {
                 if ($node->sort==9) {
                     $mu_user=User::where('port', '=', $node->server)->first();
                     $mu_user->obfs_param=$this->user->getMuMd5();

@@ -314,5 +314,15 @@ $System_Config['zfbjk_pid']='';
 $System_Config['zfbjk_key']='';
 $System_Config['zfbjk_qrcodeurl']='https://www.zhaojin97.cn/wp-content/uploads/2016/01/630c50ab52bc139b2a33af8cc64e47ad2016010111570425541.jpg';
 
+#alipay,f2fpay
+#支付宝商家平台里的APPID, https://openhome.alipay.com/platform/keyManage.htm
+$System_Config['f2fpay_app_id']=''; 
+#收款的支付宝账号， https://openhome.alipay.com/platform/keyManage.htm?keyType=partner
+$System_Config['f2fpay_p_id']='';
+#支付宝公钥,密钥生成工具请使用支付宝官方工具
+$System_Config['alipay_public_key']='MIIB';
+#自己的私钥
+$System_Config['merchant_private_key']='MIIE';
+
 #不安全中转模式，这个开启之后使用除了 auth_aes128_md5 或者 auth_aes128_sha1 以外的协议地用户也可以设置和使用中转，但是，强烈推荐不开启。
 $System_Config['relay_insecure_mode']='true';

@@ -1,8 +1,9 @@
 .env
-vendor/
+vendor/*
 composer.phar
 .user.ini
 public/.user.ini
+public/ssr-download
 storage/*
 config/.config.php
 resources/views/material/analytics.tpl
