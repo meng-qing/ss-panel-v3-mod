@@ -17,6 +17,7 @@ use App\Models\TrafficLog;
 use App\Models\DetectLog;
 use App\Models\BlockIp;
 use App\Models\TelegramSession;
+use App\Models\EmailVerify;
 use App\Services\Config;
 use App\Utils\Radius;
 use App\Utils\Wecenter;
@@ -50,10 +51,10 @@ class Job
 
         $db_address_array = explode(':', Config::get('db_host'));
 
-        system('mysqldump --user='.Config::get('db_username').' --password='.Config::get('db_password').' --host='.$db_address_array[0].' '.(isset($db_address_array[1])?'-P '.$db_address_array[1]:'').' '.Config::get('db_database').' announcement auto blockip bought code coupon disconnect_ip link login_ip payback radius_ban shop speedtest ss_invite_code ss_node ss_password_reset ticket unblockip user user_token email_verify detect_list relay> /tmp/ssmodbackup/mod.sql', $ret);
+        system('mysqldump --user='.Config::get('db_username').' --password='.Config::get('db_password').' --host='.$db_address_array[0].' '.(isset($db_address_array[1])?'-P '.$db_address_array[1]:'').' '.Config::get('db_database').' announcement auto blockip bought code coupon disconnect_ip link login_ip payback radius_ban shop speedtest ss_invite_code ss_node ss_password_reset ticket unblockip user user_token email_verify detect_list relay paylist> /tmp/ssmodbackup/mod.sql', $ret);
 
 
-        system('mysqldump --opt --user='.Config::get('db_username').' --password='.Config::get('db_password').' --host='.$db_address_array[0].' '.(isset($db_address_array[1])?'-P '.$db_address_array[1]:'').' -d '.Config::get('db_database').' alive_ip ss_node_info ss_node_online_log user_traffic_log detect_log >> /tmp/ssmodbackup/mod.sql', $ret);
+        system('mysqldump --opt --user='.Config::get('db_username').' --password='.Config::get('db_password').' --host='.$db_address_array[0].' '.(isset($db_address_array[1])?'-P '.$db_address_array[1]:'').' -d '.Config::get('db_database').' alive_ip ss_node_info ss_node_online_log user_traffic_log detect_log telegram_session >> /tmp/ssmodbackup/mod.sql', $ret);
 
         if (Config::get('enable_radius')=='true') {
             $db_address_array = explode(':', Config::get('radius_db_host'));
@@ -139,7 +140,53 @@ class Job
         NodeOnlineLog::where("log_time", "<", time()-86400*3)->delete();
         TrafficLog::where("log_time", "<", time()-86400*3)->delete();
         DetectLog::where("datetime", "<", time()-86400*3)->delete();
+        Speedtest::where("datetime", "<", time()-86400*3)->delete();
+        EmailVerify::where("expire_in", "<", time()-86400*3)->delete();
         Telegram::Send("姐姐姐姐，数据库被清理了，感觉身体被掏空了呢~");
+
+        //auto reset
+        $boughts=Bought::all();
+        foreach ($boughts as $bought) {
+            $user=User::where("id", $bought->userid)->first();
+
+            if ($user == null) {
+                $bought->delete();
+                continue;
+            }
+
+            $shop=Shop::where("id", $bought->shopid)->first();
+
+            if ($shop == null) {
+                $bought->delete();
+                continue;
+            }
+
+            if($shop->reset() != 0 && $shop->reset_value() != 0 && $shop->reset_exp() != 0) {
+              if(time() - $shop->reset_exp() * 86400 < $bought->datetime) {
+                if(intval((time() - $bought->datetime) / 86400) % $shop->reset() == 0 && intval((time() - $bought->datetime) / 86400) != 0) {
+                  echo("流量重置-".$user->id."\n");
+                  $user->transfer_enable = Tools::toGB($shop->reset_value());
+                  $user->u = 0;
+                  $user->d = 0;
+                  $user->last_day_t = 0;
+                  $user->save();
+
+                  $subject = Config::get('appName')."-您的流量被重置了";
+                  $to = $user->email;
+                  $text = "您好，根据您所订购的订单 ID:".$bought->id."，流量已经被重置为".$shop->reset_value().'GB' ;
+                  try {
+                      Mail::send($to, $subject, 'news/warn.tpl', [
+                          "user" => $user,"text" => $text
+                      ], [
+                      ]);
+                  } catch (Exception $e) {
+                      echo $e->getMessage();
+                  }
+                }
+              }
+            }
+
+        }
 
 
         $users = User::all();
@@ -154,6 +201,18 @@ class Job
                 $user->last_day_t = 0;
                 $user->transfer_enable = $user->auto_reset_bandwidth*1024*1024*1024;
                 $user->save();
+
+                $subject = Config::get('appName')."-您的流量被重置了";
+                $to = $user->email;
+                $text = "您好，根据管理员的设置，流量已经被重置为".$user->auto_reset_bandwidth.'GB' ;
+                try {
+                    Mail::send($to, $subject, 'news/warn.tpl', [
+                        "user" => $user,"text" => $text
+                    ], [
+                    ]);
+                } catch (Exception $e) {
+                    echo $e->getMessage();
+                }
             }
         }
 
@@ -217,11 +276,17 @@ class Job
         //在线人数检测
         $users = User::where('node_connector', '>', 0)->get();
 
-        $full_alive_ips = Ip::where("datetime", ">=", time()-60)->get();
+        $full_alive_ips = Ip::where("datetime", ">=", time()-60)->orderBy("ip")->get();
 
         $alive_ipset = array();
 
         foreach ($full_alive_ips as $full_alive_ip) {
+            $full_alive_ip->ip = Tools::getRealIp($full_alive_ip->ip);
+            $is_node = Node::where("node_ip", $full_alive_ip->ip)->first();
+            if($is_node) {
+                continue;
+            }
+
             if (!isset($alive_ipset[$full_alive_ip->userid])) {
                 $alive_ipset[$full_alive_ip->userid] = new \ArrayObject();
             }

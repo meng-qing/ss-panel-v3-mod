@@ -6,3 +6,4 @@ public/.user.ini
 public/php_errors.log
 storage/*
 config/.config.php
+resources/views/material/analytics.tpl
