@@ -14,7 +14,7 @@
 			<li><a href="/help">帮助文档</a></li>
             <li class="active"><a href="/client">软件下载</a></li>
             <li><a href="/faq">常见问题</a></li>
-            <li><a href="http://s.Fastssr.com/">线路状态</a></li>
+            <li><a href="/user/node">线路状态</a></li>
 		</ul>
 		<button class="btn btn-icon btn-link btn-prev" type="button" data-click="prev-tab"><i class="zmdi zmdi-chevron-left"></i></button>
 		<button class="btn btn-icon btn-link btn-next" type="button" data-click="next-tab"><i class="zmdi zmdi-chevron-right"></i></button>
