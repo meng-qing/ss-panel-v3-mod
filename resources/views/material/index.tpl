@@ -12,14 +12,15 @@
 				<h2 class="slogan-desc">
 						<br>现在注册成为会员享受高达1Gbps数据传输加速。<br>
          				<br>Fast云加速（简称FastSSR），全新一代的轻型代理服务。<br>比Shadowsocks（简称SS）抗干扰性更强，数据传输速度更快更稳定。<br>
-				    <br>节点覆盖：香港、日本、美国、新加坡等，全球7+数据中心、7+动态加速节点，助您网络加速。<br>
+
+				    <br>节点覆盖：香港、日本、美国、新加坡节点等，全球7+数据中心、7+动态加速节点，助您网络加速。<br>
 			</div>
 		</div>
 		<!-- /.banner-slogan -->
     </div>
 	<div class="page-section section-center" style="padding-top: 80px;">
 		<div class="container">
-		            <h3>全节点使用aes-256-cfb高强度流加密算法，采用最新auth_sha1_v4协议，同时支持http_simple以及http_post流量混淆。</h3>
+		            <h3>全节点使用aes-256-cfb高强度流加密算法，采用最新auth_chain_a协议，同时支持http_simple以及http_post流量混淆。</h3>
 			<div class="services">
 				<div class="row">
 					<div class="col-sm-4">
