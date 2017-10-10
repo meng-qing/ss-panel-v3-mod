@@ -46,12 +46,6 @@
                     </div>
                     <div class="col-sm-3 col-sm-offset-1">
                         <h2 class="h3">联系我们</h2>
-                        <address>
-                            <a href="#">站长QQ：2695043718</a></br>
-                       		<a href="https://t.me/mengqing">站长telegram</a></br>
-                            <!-- <a href="https://t.me/joinchat/AAAAAEGwXe8s8Ro5-oahng">加入telegram频道</a></br>
-                            <a href="mailto:admin@fast-ssr.com">邮箱联系</a> -->
-                        </address>
                                             </div>
                 </div>
 

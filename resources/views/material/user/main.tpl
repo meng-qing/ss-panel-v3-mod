@@ -304,12 +304,6 @@
 									<i class="icon icon-lg">traffic</i>&nbsp;流量记录
 								</a>
 							</li>
-							
-							<li>
-								<a href="/user/lookingglass">
-									<i class="icon icon-lg">youtube_searched_for</i>&nbsp;观察窗
-								</a>
-							</li>
 						</ul>
 
 						<a class="waves-attach" data-toggle="collapse" href="#ui_menu_detect">审计</a>
