@@ -8,9 +8,7 @@
                 <div class="card">
 						<div class="card-main">
 							<div class="card-inner" align="center">
-								<p style="font-size: 24px">{$config["appName"]} 的邀请码，不定期发放。没有邀请码请联系站长</p>
-								<p style="font-size:24px;"><a href="https://t.me/mengqing" style="color:pink;" title="联系站长">站长telegram</a><!-- <a href="https://t.me/joinchat/AAAAAEGwXe8s8Ro5-oahng" style="color:pink;" title="加入Telegram群组">&nbsp;&nbsp;加入Telegram群组</a> --><a href="#" style="color:pink;" title="站长qq">&nbsp;&nbsp;站长qq: 2695043718</a></p>
-								<p style="font-size:150%;line-height:100%;color: pink;">使用虚假信息或者重复注册的一律做删除账号处理！7天内无使用记录或7天内未签到的账号一律删除</p>
+								<p style="font-size: 24px">{$config["appName"]} 的邀请码，不定期发放。</p>
 							</div>
 						</div>
 					</div>

@@ -41,6 +41,7 @@
 												<div class="col-md-10 col-md-push-1">
 													<label class="floating-label" for="email_code">邮箱验证码 没收到请检查垃圾箱和自己邮箱是否填错</label>
 													<input class="form-control" id="email_code" type="text">
+													<br/>
 													<button id="email_verify" class="btn btn-block btn-brand-accent waves-attach waves-light">获取验证码</button>
 												</div>
 											</div>
