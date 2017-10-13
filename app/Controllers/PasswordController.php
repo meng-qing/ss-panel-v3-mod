@@ -34,7 +34,7 @@ class PasswordController extends BaseController
         }
         Password::sendResetEmail($email);
         $rs['ret'] = 1;
-        $rs['msg'] = '重置邮件已经发送,请检查邮箱.';
+        $rs['msg'] = 'リセットのためのEメールを送信したので、ご確認下さい。';
         return $response->getBody()->write(json_encode($rs));
     }
 

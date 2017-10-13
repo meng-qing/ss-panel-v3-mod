@@ -15,7 +15,7 @@
 	<main class="content">
 		<div class="content-header ui-content-header">
 			<div class="container">
-				<h1 class="content-heading">用户中心</h1>
+				<h1 class="content-heading">ユーザーページ</h1>
 			</div>
 		</div>
 		<div class="container">
@@ -27,8 +27,8 @@
 							<div class="card">
 								<div class="card-main">
 									<div class="card-inner margin-bottom-no">
-										<p class="card-heading">系统中最新公告</p>
-										<p>其他公告请到<a href="/user/announcement"/>公告面板</a>查看。</p>
+										<p class="card-heading">最新のお知らせ</p>
+										<p>その他お知らせは<a href="/user/announcement"/>こちら</a></p>
 										{if $ann != null}
 										<p>{$ann->content}</p>
 										{/if}
@@ -111,23 +111,14 @@
 							<div class="card">
 								<div class="card-main">
 									<div class="card-inner margin-bottom-no">
-										<p class="card-heading">帐号使用情况</p>
+										<p class="card-heading">アカウント状況</p>
 										<dl class="dl-horizontal">
-											<p><dt>帐号等级</dt>
+											<p><dt>プラン名</dt>
 											<dd>{$user->class}</dd></p>
 
-											<p><dt>等级过期时间</dt>
+											<p><dt>プラン有効期限</dt>
 											<dd>{$user->class_expire}</dd></p>
 
-											<p><dt>帐号过期时间</dt>
-											<dd>{$user->expire_in}</dd>
-
-											<p><dt>速度限制</dt>
-											{if $user->node_speedlimit!=0}
-											<dd>{$user->node_speedlimit}Mbps</dd>
-											{else}
-											<dd>不限速</dd>
-											{/if}</p>
 										</dl>
 									</div>
 
@@ -154,7 +145,7 @@
 											var chart = new CanvasJS.Chart("traffic_chart",
 											{
 												title:{
-													text: "流量使用情况",
+													text: "データ使用状況",
 													fontFamily: "Impact",
 													fontWeight: "normal"
 												},
@@ -182,7 +173,7 @@
 															y: {($user->u+$user->d-$user->last_day_t)/$user->transfer_enable*100}, legendText:"今日 {number_format(($user->u+$user->d-$user->last_day_t)/$user->transfer_enable*100,2)}% {$user->TodayusedTraffic()}", indexLabel: "今日 {number_format(($user->u+$user->d-$user->last_day_t)/$user->transfer_enable*100,2)}% {$user->TodayusedTraffic()}"
 														},
 														{
-															y: {($user->transfer_enable-($user->u+$user->d))/$user->transfer_enable*100}, legendText:"剩余 {number_format(($user->transfer_enable-($user->u+$user->d))/$user->transfer_enable*100,2)}% {$user->unusedTraffic()}", indexLabel: "剩余 {number_format(($user->transfer_enable-($user->u+$user->d))/$user->transfer_enable*100,2)}% {$user->unusedTraffic()}"
+															y: {($user->transfer_enable-($user->u+$user->d))/$user->transfer_enable*100}, legendText:"残り {number_format(($user->transfer_enable-($user->u+$user->d))/$user->transfer_enable*100,2)}% {$user->unusedTraffic()}", indexLabel: "残り {number_format(($user->transfer_enable-($user->u+$user->d))/$user->transfer_enable*100,2)}% {$user->unusedTraffic()}"
 														}
 														{/if}
 													]
@@ -198,63 +189,27 @@
 								</div>
 							</div>
 
-
-
 							<div class="card">
 								<div class="card-main">
 									<div class="card-inner margin-bottom-no">
-										<p class="card-heading">续命获取流量</p>
-											<p>流量不会重置，可以通过续命获取流量。</p>
-
-											<p>每次续命可以获取{$config['checkinMin']}~{$config['checkinMax']}MB流量。</p>
-
-											<p>每天可以续命一次。您可以点击按钮或者摇动手机来续命。</p>
-
-											<p>上次续命时间：<code>{$user->lastCheckInTime()}</code></p>
-
-											<p id="checkin-msg"></p>
-
-											{if $geetest_html != null}
-												<div id="popup-captcha"></div>
-											{/if}
-									</div>
-
-									<div class="card-action">
-										<div class="card-action-btn pull-left">
-											{if $user->isAbleToCheckin() }
-												<p id="checkin-btn">
-													<button id="checkin" class="btn btn-brand btn-flat waves-attach"><span class="icon">check</span>&nbsp;续命</button>
-												</p>
-											{else}
-												<p><a class="btn btn-brand disabled btn-flat waves-attach" href="#"><span class="icon">check</span>&nbsp;不能续命</a></p>
-											{/if}
-										</div>
-									</div>
-
-								</div>
-							</div>
-
-							<div class="card">
-								<div class="card-main">
-									<div class="card-inner margin-bottom-no">
-										<p class="card-heading">连接信息</p>
+										<p class="card-heading">接続情報</p>
 											<dl class="dl-horizontal">
-												<p><dt>端口</dt>
+												<p><dt>ポート</dt>
 												<dd>{$user->port}</dd></p>
 
-												<p><dt>密码</dt>
+												<p><dt>パスワード</dt>
 												<dd>{$user->passwd}</dd></p>
 
-												<p><dt>自定义加密</dt>
+												<p><dt>暗号化</dt>
 												<dd>{$user->method}</dd></p>
 
-												<p><dt>自定义协议</dt>
+												<p><dt>プロトコル</dt>
 												<dd>{$user->protocol}</dd></p>
 
-												<p><dt>自定义混淆</dt>
+												<p><dt>Obfuscation</dt>
 												<dd>{$user->obfs}</dd></p>
 
-												<p><dt>上次使用</dt>
+												<p><dt>前回使用</dt>
 												<dd>{$user->lastSsTime()}</dd></p>
 											</dl>
 									</div>

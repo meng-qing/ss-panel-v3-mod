@@ -6,12 +6,9 @@
 			<div class="row">
 				<div class="col-lg-4 col-lg-push-4 col-sm-6 col-sm-push-3">
 					<section class="content-inner">
-						<a class="card-heading" href="/" title="Fast云加速">Fast云加速</a>
+						<a class="card-heading" href="/" title="UCSS">UCSS</a>
 						<nav class="tab-nav margin-top-no">
 							<ul class="nav nav-justified">
-								<li class="active">
-									<a class="waves-attach" data-toggle="tab" href="#passwd_login">密码登录</a>
-								</li>
 								{if $config['enable_telegram'] == 'true'}
 								<li>
 									<a class="waves-attach" data-toggle="tab" href="#qrcode_login">扫码登录</a>
@@ -30,7 +27,7 @@
 										<div class="card-main">
 											<div class="card-header">
 												<div class="card-inner">
-													<h1 class="card-heading">登录到用户中心</h1>
+													<h1 class="card-heading">ユーザーログイン</h1>
 												</div>
 											</div>
 											<div class="card-inner">
@@ -44,7 +41,7 @@
 													<div class="form-group form-group-label">
 														<div class="row">
 															<div class="col-md-10 col-md-push-1">
-																<label class="floating-label" for="email">邮箱</label>
+																<label class="floating-label" for="email">Email</label>
 																<input class="form-control" id="email" type="text" name="Email">
 															</div>
 														</div>
@@ -52,7 +49,7 @@
 													<div class="form-group form-group-label">
 														<div class="row">
 															<div class="col-md-10 col-md-push-1">
-																<label class="floating-label" for="passwd">密码</label>
+																<label class="floating-label" for="passwd">パスワード</label>
 																<input class="form-control" id="passwd" type="password" name="Password">
 															</div>
 														</div>
@@ -61,8 +58,6 @@
 													<div class="form-group form-group-label">
 														<div class="row">
 															<div class="col-md-10 col-md-push-1">
-																<label class="floating-label" for="code">两步验证码(没有就别填)</label>
-																<input class="form-control" id="code" type="text" placeholder="没有就别填">
 															</div>
 														</div>
 													</div>
@@ -80,7 +75,7 @@
 													<div class="form-group">
 														<div class="row">
 															<div class="col-md-10 col-md-push-1">
-																<button id="login" type="submit" class="btn btn-block btn-brand waves-attach waves-light">登录</button>
+																<button id="login" type="submit" class="btn btn-block btn-brand waves-attach waves-light">ログイン</button>
 															</div>
 														</div>
 													</div>
@@ -88,12 +83,6 @@
 													<div class="form-group">
 														<div class="row">
 															<div class="col-md-10 col-md-push-1">
-																<div class="checkbox checkbox-adv">
-																	<label for="remember_me">
-																		<input class="access-hide" value="week" id="remember_me" name="remember_me" type="checkbox">记住我
-																		<span class="checkbox-circle"></span><span class="checkbox-circle-check"></span><span class="checkbox-circle-icon icon">done</span>
-																	</label>
-																</div>
 															</div>
 														</div>
 													</div>
@@ -148,8 +137,8 @@
 
 
 						<div class="clearfix">
-							<p class="margin-no-top pull-left"><a class="btn btn-flat btn-brand waves-attach" href="/password/reset">忘记密码</a></p>
-							<p class="margin-no-top pull-right"><a class="btn btn-flat btn-brand waves-attach" href="/auth/register">注册个帐号</a></p>
+							<p class="margin-no-top pull-left"><a class="btn btn-flat btn-brand waves-attach" href="/password/reset">パスワードを紛失？</a></p>
+							<p class="margin-no-top pull-right"><a class="btn btn-flat btn-brand waves-attach" href="/auth/register">初めての方</a></p>
 						</div>
 
 

@@ -6,7 +6,7 @@
 			<div class="row">
 				<div class="col-lg-4 col-lg-push-4 col-sm-6 col-sm-push-3">
 					<section class="content-inner">
-					<a class="card-heading" href="/" title="Fast云加速">Fast云加速</a>
+					<a class="card-heading" href="/" title="UCSS">UCSS</a>
 						<div class="card">
 							<div class="card-main">
 								
@@ -20,7 +20,7 @@
 										<div class="form-group form-group-label">
 											<div class="row">
 												<div class="col-md-10 col-md-push-1">
-													<label class="floating-label" for="name">昵称</label>
+													<label class="floating-label" for="name">ユーザーネーム</label>
 													<input class="form-control" id="name" type="text">
 												</div>
 											</div>
@@ -29,7 +29,7 @@
 										<div class="form-group form-group-label">
 											<div class="row">
 												<div class="col-md-10 col-md-push-1">
-													<label class="floating-label" for="email">邮箱</label>
+													<label class="floating-label" for="email">Email</label>
 													<input class="form-control" id="email" type="text">
 												</div>
 											</div>
@@ -39,10 +39,10 @@
 										<div class="form-group form-group-label">
 											<div class="row">
 												<div class="col-md-10 col-md-push-1">
-													<label class="floating-label" for="email_code">邮箱验证码 没收到请检查垃圾箱和自己邮箱是否填错</label>
+													<label class="floating-label" for="email_code">認証番号（Emailを確認して下さい）</label>
 													<input class="form-control" id="email_code" type="text">
 													<br/>
-													<button id="email_verify" class="btn btn-block btn-brand-accent waves-attach waves-light">获取验证码</button>
+													<button id="email_verify" class="btn btn-block btn-brand-accent waves-attach waves-light">認証番号を取得</button>
 												</div>
 											</div>
 										</div>
@@ -51,7 +51,7 @@
 										<div class="form-group form-group-label">
 											<div class="row">
 												<div class="col-md-10 col-md-push-1">
-													<label class="floating-label" for="passwd">密码</label>
+													<label class="floating-label" for="passwd">パスワード</label>
 													<input class="form-control" id="passwd" type="password">
 												</div>
 											</div>
@@ -60,13 +60,13 @@
 										<div class="form-group form-group-label">
 											<div class="row">
 												<div class="col-md-10 col-md-push-1">
-													<label class="floating-label" for="repasswd">重复密码</label>
+													<label class="floating-label" for="repasswd">パスワードを再入力</label>
 													<input class="form-control" id="repasswd" type="password">
 												</div>
 											</div>
 										</div>
 										
-										
+										<div style="display:none;">
 										<div class="form-group form-group-label">
 											<div class="row">
 												<div class="col-md-10 col-md-push-1">
@@ -74,31 +74,32 @@
 													<select class="form-control" id="imtype">
 														<option></option>
 														<option value="1">微信</option>
-														<option value="2">QQ</option>
+														<option value="2"selected = "selected" >QQ</option>
 														<option value="3">Google+</option>
 														<option value="4">Telegram</option>
 													</select>
 												</div>
 											</div>
 										</div>
+										</div>
 										
-										
+										<div style="display:none;">
 										<div class="form-group form-group-label">
 											<div class="row">
 												<div class="col-md-10 col-md-push-1">
 													<label class="floating-label" for="wechat">在这输入联络方式账号</label>
-													<input class="form-control" id="wechat" type="text">
+													<input class="form-control" id="wechat" type="text" value="34567" >
 												</div>
 											</div>
 										</div>
-										
+										</div>
 										
 										
 										{if $enable_invite_code == 'true'}
 											<div class="form-group form-group-label">
 												<div class="row">
 													<div class="col-md-10 col-md-push-1">
-														<label class="floating-label" for="code">填入邀请码,手机用户请点击浏览器顶部的三条杠</label>
+														<label class="floating-label" for="code">填入邀请码</label>
 														<input class="form-control" id="code" type="text" value="{$code}">
 													</div>
 												</div>
@@ -118,7 +119,7 @@
 										<div class="form-group">
 											<div class="row">
 												<div class="col-md-10 col-md-push-1">
-													<button id="tos" type="submit" class="btn btn-block btn-brand waves-attach waves-light">注册</button>
+													<button id="reg" type="submit" class="btn btn-block btn-brand waves-attach waves-light">新規登録する</button>
 												</div>
 											</div>
 										</div>
@@ -126,7 +127,7 @@
 										<div class="form-group">
 											<div class="row">
 												<div class="col-md-10 col-md-push-1">
-													<p>注册即代表同意<a href="/tos">服务条款</a>，以及保证所录入信息的真实性，如有不实信息会导致账号被删除。</p>
+													<p>「登録」ボタンを押した場合は、<a href="https://undercurrentss.com/jp/tos/">利用規約</a>をご確認のうえ同意したものとみなします。</p>
 												</div>
 											</div>
 										</div>
@@ -135,7 +136,7 @@
 							</div>
 						</div>
 						<div class="clearfix">
-							<p class="margin-no-top pull-left"><a class="btn btn-flat btn-brand waves-attach" href="/auth/login">已经注册？请登录</a></p>
+							<p class="margin-no-top pull-left"><a class="btn btn-flat btn-brand waves-attach" href="/auth/login">既にユーザーの方はこちらからログイン</a></p>
 						</div>
 						
 						
@@ -148,13 +149,13 @@
 							<div class="modal-dialog">
 								<div class="modal-content">
 									<div class="modal-heading">
-										<h2 class="modal-title">注册 TOS</h2>
+										<h2 class="modal-title"></h2>
 									</div>
 									<div class="modal-inner">
 										{include file='reg_tos.tpl'}
 									</div>
 									<div class="modal-footer">
-										<p class="text-right"><button class="btn btn-flat btn-brand-accent waves-attach waves-effect" data-dismiss="modal" type="button" id="cancel">我不服</button><button class="btn btn-flat btn-brand-accent waves-attach waves-effect" data-dismiss="modal" id="reg" type="button">资慈</button></p>
+										<p class="text-right"><button class="btn btn-flat btn-brand-accent waves-attach waves-effect" data-dismiss="modal" type="button" id="cancel">同意しない</button><button class="btn btn-flat btn-brand-accent waves-attach waves-effect" data-dismiss="modal" id="tos" type="button">同意する</button></p>
 										
 									</div>
 								</div>

@@ -10,7 +10,8 @@
 							<div class="card-main">
 								<div class="card-header">
 									<div class="card-inner">
-										<h1 class="card-heading">重置密码</h1>
+										<h1 class="card-heading">パスワードをリセットする
+</h1>
 									</div>
 								</div>
 								<div class="card-inner">
@@ -25,7 +26,7 @@
 										<div class="form-group form-group-label">
 											<div class="row">
 												<div class="col-md-10 col-md-push-1">
-													<label class="floating-label" for="email">邮箱</label>
+													<label class="floating-label" for="email">Email</label>
 													<input class="form-control" id="email" type="text">
 												</div>
 											</div>
@@ -34,7 +35,8 @@
 										<div class="form-group">
 											<div class="row">
 												<div class="col-md-10 col-md-push-1">
-													<button id="reset" type="submit" class="btn btn-block btn-brand waves-attach waves-light">重置密码</button>
+													<button id="reset" type="submit" class="btn btn-block btn-brand waves-attach waves-light">パスワードをリセットする
+</button>
 												</div>
 											</div>
 										</div>
@@ -45,8 +47,8 @@
 							</div>
 						</div>
 						<div class="clearfix">
-							<p class="margin-no-top pull-left"><a class="btn btn-flat btn-brand waves-attach" href="/auth/login">登录</a></p>
-							<p class="margin-no-top pull-right"><a class="btn btn-flat btn-brand waves-attach" href="/auth/register">注册个帐号</a></p>
+							<p class="margin-no-top pull-left"><a class="btn btn-flat btn-brand waves-attach" href="/auth/login">ログイン</a></p>
+							<p class="margin-no-top pull-right"><a class="btn btn-flat btn-brand waves-attach" href="/auth/register">初めての方</a></p>
 						</div>
 						
 						
@@ -69,7 +71,7 @@
     $(document).ready(function(){
         function reset(){
 			$("#result").modal();
-            $("#msg").html("正在发送，请稍候。。。");
+            $("#msg").html("現在送信中です,しばらくお待ちください...");
             $.ajax({
                 type:"POST",
                 url:"/password/reset",
