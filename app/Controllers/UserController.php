@@ -136,7 +136,7 @@ class UserController extends BaseController
     {
         $time = $request->getQueryParams()["time"];
         $codes = Code::where('userid', '=', $this->user->id)->where('usedatetime', '>', date('Y-m-d H:i:s', $time))->first();
-        if ($codes!=null && strpos($codes->code, "充值") !== false) {
+        if ($codes!=null && strpos($codes->code, "チャージ") !== false) {
             $res['ret'] = 1;
             return $response->getBody()->write(json_encode($res));
         } else {
@@ -463,7 +463,7 @@ class UserController extends BaseController
                     }
 
                     if ($node->node_bandwidth_limit==0) {
-                        $node_bandwidth[$temp[0]]=(int)($node->node_bandwidth/1024/1024/1024)." GB / 不限";
+                        $node_bandwidth[$temp[0]]=(int)($node->node_bandwidth/1024/1024/1024)." GB / No limit";
                     } else {
                         $node_bandwidth[$temp[0]]=(int)($node->node_bandwidth/1024/1024/1024)." GB / ".(int)($node->node_bandwidth_limit/1024/1024/1024)." GB - ".$node->bandwidthlimit_resetday." 日重置";
                     }
@@ -813,18 +813,18 @@ class UserController extends BaseController
         $user = $this->user;
         if (!Hash::checkPassword($user->pass, $oldpwd)) {
             $res['ret'] = 0;
-            $res['msg'] = "旧密码错误";
+            $res['msg'] = "古いパスワードが間違っています";
             return $response->getBody()->write(json_encode($res));
         }
         if ($pwd != $repwd) {
             $res['ret'] = 0;
-            $res['msg'] = "两次输入不符合";
+            $res['msg'] = "入力を2度間違えています";
             return $response->getBody()->write(json_encode($res));
         }
 
         if (strlen($pwd) < 8) {
             $res['ret'] = 0;
-            $res['msg'] = "密码太短啦";
+            $res['msg'] = "パスワードが短すぎます";
             return $response->getBody()->write(json_encode($res));
         }
         $hashPwd = Hash::passwordHash($pwd);
@@ -834,7 +834,7 @@ class UserController extends BaseController
         $user->clean_link();
 
         $res['ret'] = 1;
-        $res['msg'] = "修改成功";
+        $res['msg'] = "変更しました";
         return $this->echoJson($response, $res);
     }
 
@@ -846,7 +846,7 @@ class UserController extends BaseController
         $user->save();
 
         $res['ret'] = 1;
-        $res['msg'] = "修改成功";
+        $res['msg'] = "変更しました";
         return $this->echoJson($response, $res);
     }
 
@@ -1027,7 +1027,7 @@ class UserController extends BaseController
 
         if ($shop==null) {
             $rs['ret'] = 0;
-            $rs['msg'] = "退订失败，订单不存在。";
+            $rs['msg'] = "キャンセルに失敗しました。注文が存在しません";
             return $response->getBody()->write(json_encode($rs));
         }
 
@@ -1037,11 +1037,11 @@ class UserController extends BaseController
 
         if (!$shop->save()) {
             $rs['ret'] = 0;
-            $rs['msg'] = "退订失败";
+            $rs['msg'] = "キャンセルに失敗しました";
             return $response->getBody()->write(json_encode($rs));
         }
         $rs['ret'] = 1;
-        $rs['msg'] = "退订成功";
+        $rs['msg'] = "キャンセルされました";
         return $response->getBody()->write(json_encode($rs));
     }
 
@@ -1071,13 +1071,13 @@ class UserController extends BaseController
 
         if ($title==""||$content=="") {
             $res['ret'] = 0;
-            $res['msg'] = "请填全";
+            $res['msg'] = "空白に入力して下さい";
             return $this->echoJson($response, $res);
         }
 
         if (strpos($content, "admin")!=false||strpos($content, "user")!=false) {
             $res['ret'] = 0;
-            $res['msg'] = "请求中有不正当的词语。";
+            $res['msg'] = "誤った文字が含まれています";
             return $this->echoJson($response, $res);
         }
 
@@ -1109,7 +1109,7 @@ class UserController extends BaseController
         }
 
         $res['ret'] = 1;
-        $res['msg'] = "提交成功";
+        $res['msg'] = "送信しました";
         return $this->echoJson($response, $res);
     }
 
@@ -1121,13 +1121,13 @@ class UserController extends BaseController
 
         if ($content==""||$status=="") {
             $res['ret'] = 0;
-            $res['msg'] = "请填全";
+            $res['msg'] = "空白に入力して下さい";
             return $this->echoJson($response, $res);
         }
 
         if (strpos($content, "admin")!=false||strpos($content, "user")!=false) {
             $res['ret'] = 0;
-            $res['msg'] = "请求中有不正当的词语。";
+            $res['msg'] = "誤った文字が含まれています";
             return $this->echoJson($response, $res);
         }
 
@@ -1187,7 +1187,7 @@ class UserController extends BaseController
 
 
         $res['ret'] = 1;
-        $res['msg'] = "提交成功";
+        $res['msg'] = "送信しました";
         return $this->echoJson($response, $res);
     }
 

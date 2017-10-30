@@ -207,7 +207,7 @@
                 error:function(jqXHR){
 			$("#msg-error").hide(10);
 			$("#msg-error").show(100);
-			$("#msg-error-p").html("发生错误："+jqXHR.status);
+			$("#msg-error-p").html("err："+jqXHR.status);
 					document.getElementById("login").disabled = false;
 			{if $geetest_html != null}
 			captcha.refresh();

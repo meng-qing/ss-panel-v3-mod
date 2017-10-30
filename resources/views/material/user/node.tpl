@@ -15,7 +15,7 @@
 	<main class="content">
 		<div class="content-header ui-content-header">
 			<div class="container">
-				<h1 class="content-heading">节点列表</h1>
+				<h1 class="content-heading">サーバー一覧</h1>
 			</div>
 		</div>
 		<div class="container">
@@ -25,10 +25,8 @@
 						<div class="card margin-bottom-no">
 							<div class="card-main">
 								<div class="card-inner">
-									<h4>注意!</h4>
-									<p>请勿在任何地方公开节点地址！</p>
-									<p>流量比例为0.5即使用1000MB按照500MB流量记录记录结算.</p>
-									<a href="javascript:void(0);" onClick="urlChange('guide',0,0,0)">如果您不知道如何查看节点的详细信息和二维码，请点我。</a>
+									<h4>注意！</h4>
+									<p>SNS等あらゆる場所でサーバー情報を公開しないでください！</p>
 								</div>
 							</div>
 						</div>
@@ -82,8 +80,7 @@
 																				<p>地址：<span class="label" >
 																				<a href="javascript:void(0);" onClick="urlChange('{$node->id}',0,0)">请点这里进入查看详细信息</a>
 																			{else}
-																				<p>地址：<span class="label label-brand-accent">
-																				{$node->server}
+																				
 																			{/if}
 
 																				</span></p>
@@ -91,9 +88,9 @@
 																			{if $node->sort == 0||$node->sort==7||$node->sort==8||$node->sort==10}
 
 
-																				<p>流量比例：<span class="label label-red">
+																				<!-- <p>流量比例：<span class="label label-red">
 																					{$node->traffic_rate}
-																				</span></p>
+																				</span></p> -->
 
 
 
@@ -152,15 +149,15 @@
 
 																					</span></p>
 
-																					<p>端口：<span class="label label-brand-red">
+																					<p>ポート：<span class="label label-brand-red">
 																						{$single_muport['user']['port']}
 																					</span></p>
 
-																					<p>加密方式：<span class="label label-brand">
+																					<p>暗号化：<span class="label label-brand">
 																						{$single_muport['user']['method']}
 																					</span></p>
 
-																					<p>协议：<span class="label label-brand-accent">
+																					<p>プロトコル：<span class="label label-brand-accent">
 																						{$single_muport['user']['protocol']}
 																					</span></p>
 
@@ -193,7 +190,7 @@
 																		{/foreach}
 																	{/if}
 																	{else}
-																		<p><code>你的等级太低无法使用此节点，请购买更高等级套餐。</code></p>
+																		<p><code>プラン購入後にサーバー情報詳細が表示されます。</code></p>
 																	{/if}
 																{/foreach}
 

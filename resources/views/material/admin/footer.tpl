@@ -1,6 +1,5 @@
 	<footer class="ui-footer" style="position:relative">
 		<div class="container">
-			Powered By shadowsocks &  <a style="color: #000000;text-decoration: none;" href="/staff">SS-panel-V3-mod</a> & Fast云加速.
 			{if $config["enable_analytics_code"] == 'true'}{include file='analytics.tpl'}{/if}
 		</div>
 	</footer>

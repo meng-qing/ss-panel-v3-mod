@@ -10,16 +10,16 @@
 
 
 	<main class="content">
-		<div class="content-header ui-content-header">
+		<!-- <div class="content-header ui-content-header">
 			<div class="container">
 				<h1 class="content-heading">节点信息</h1>
 			</div>
-		</div>
+		</div> -->
 		<div class="container">
 			<section class="content-inner margin-top-no">
 				<div class="ui-card-wrap">
 					<div class="row">
-						<div class="col-lg-12 col-sm-12">
+						<!-- <div class="col-lg-12 col-sm-12">
 							<div class="card">
 								<div class="card-main">
 									<div class="card-inner margin-bottom-no">
@@ -29,10 +29,10 @@
 
 								</div>
 							</div>
-						</div>
+						</div> -->
 
 
-						<div class="col-lg-12 col-sm-12">
+<!-- 						<div class="col-lg-12 col-sm-12">
 							<div class="card">
 								<div class="card-main">
 									<div class="card-inner margin-bottom-no">
@@ -82,11 +82,11 @@
 									</div>
 								</div>
 							</div>
-						</div>
+						</div> -->
 
 
 
-						<div class="col-lg-12 col-sm-12">
+<!-- 						<div class="col-lg-12 col-sm-12">
 							<div class="card">
 								<div class="card-main">
 									<div class="card-inner margin-bottom-no">
@@ -131,9 +131,9 @@
 
 								</div>
 							</div>
-						</div>
+						</div> -->
 
-						<div class="col-lg-12 col-sm-12">
+<!-- 						<div class="col-lg-12 col-sm-12">
 							<div class="card">
 								<div class="card-main">
 									<div class="card-inner margin-bottom-no">
@@ -195,9 +195,9 @@
 
 								</div>
 							</div>
-						</div>
+						</div> -->
 
-						<div class="col-lg-12 col-sm-12">
+<!-- 						<div class="col-lg-12 col-sm-12">
 							<div class="card">
 								<div class="card-main">
 									<div class="card-inner margin-bottom-no">
@@ -233,7 +233,7 @@
 
 								</div>
 							</div>
-						</div>
+						</div> -->
 
 						<div class="col-lg-12 col-sm-12">
 							<div class="card">
@@ -258,7 +258,7 @@
 													<div id="ss-qr-n"></div>
 												</div>
 											{else}
-												<p>您好，您目前的 加密方式，混淆，或者协议设置在 ShadowsocksR 客户端下无法连接。请您选用 Shadowsocks 客户端来连接，或者到 资料编辑 页面修改后再来查看此处。</p>
+												<!-- <p>您好，您目前的 加密方式，混淆，或者协议设置在 ShadowsocksR 客户端下无法连接。请您选用 Shadowsocks 客户端来连接，或者到 资料编辑 页面修改后再来查看此处。</p> -->
 											{/if}
 										</div>
 										<div class="tab-pane fade {if !$ssr_prefer}active in{/if}" id="ss_qrcode">
@@ -284,7 +284,7 @@
 													</div>
 												</div>
 											{else}
-												<p>您好，您目前的 加密方式，混淆，或者协议设置在 Shadowsocks 客户端下无法连接。请您选用 ShadowsocksR 客户端来连接，或者到 资料编辑 页面修改后再来查看此处。</p>
+												<!-- <p>您好，您目前的 加密方式，混淆，或者协议设置在 Shadowsocks 客户端下无法连接。请您选用 ShadowsocksR 客户端来连接，或者到 资料编辑 页面修改后再来查看此处。</p> -->
 											{/if}
 										</div>
 									</div>

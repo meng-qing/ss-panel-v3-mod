@@ -12,7 +12,7 @@
 	<main class="content">
 		<div class="content-header ui-content-header">
 			<div class="container">
-				<h1 class="content-heading">创建工单</h1>
+				<h1 class="content-heading">サポートチケットの発行</h1>
 			</div>
 		</div>
 		<div class="container">
@@ -23,7 +23,7 @@
 						<div class="card-main">
 							<div class="card-inner">
 								<div class="form-group form-group-label">
-									<label class="floating-label" for="title">标题</label>
+									<label class="floating-label" for="title">件名</label>
 									<input class="form-control" id="title" type="text" >
 								</div>
 								
@@ -59,7 +59,7 @@
 								<div class="form-group">
 									<div class="row">
 										<div class="col-md-10 col-md-push-1">
-											<button id="submit" type="submit" class="btn btn-block btn-brand waves-attach waves-light">添加</button>
+											<button id="submit" type="submit" class="btn btn-block btn-brand waves-attach waves-light">チケットを発行する</button>
 										</div>
 									</div>
 								</div>

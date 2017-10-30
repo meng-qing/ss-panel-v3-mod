@@ -248,11 +248,6 @@
 								</a>
 							</li>
 							
-							<li>
-								<a href="/user/profile">
-									<i class="icon icon-lg">info</i>&nbsp;アカウント情報
-								</a>
-							</li>
 							
 							<li>
 								<a href="/user/edit">

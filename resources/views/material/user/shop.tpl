@@ -15,7 +15,7 @@
 	<main class="content">
 		<div class="content-header ui-content-header">
 			<div class="container">
-				<h1 class="content-heading">商品列表</h1>
+				<h1 class="content-heading">プラン一覧</h1>
 			</div>
 		</div>
 		<div class="container">
@@ -25,7 +25,7 @@
 					<div class="card">
 						<div class="card-main">
 							<div class="card-inner">
-								<p>系统中所有商品的列表。您购买等级类的商品时有效期会从当前时间开始计算。</p>
+								<p>現在お申し込み可能なプランの一覧になりま</p>
 								<p>当前余额：{$user->money} 元</p>
 							</div>
 						</div>
@@ -38,9 +38,9 @@
 								<th>操作</th>
                                 <th>ID</th>
                                 <th>名称</th>
-								<th>价格</th>
+								<th>価格</th>
 								<th>内容</th>
-                                <th>自动续费天数</th>
+                                <th>自動更新日数</th>
 								<th>续费时重置流量</th>
                                 
                             </tr>

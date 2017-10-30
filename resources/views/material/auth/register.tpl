@@ -214,7 +214,7 @@
                 error:function(jqXHR){
 			$("#msg-error").hide(10);
 			$("#msg-error").show(100);
-			$("#msg-error-p").html("发生错误："+jqXHR.status);
+			$("#msg-error-p").html("err："+jqXHR.status);
 			document.getElementById("tos").disabled = false; 
 			{if $geetest_html != null}
 			captcha.refresh();
@@ -273,11 +273,11 @@ var wait=60;
 function time(o) {
 		if (wait == 0) {
 			o.removeAttr("disabled");			
-			o.text("获取验证码");
+			o.text("認証コードを送信する");
 			wait = 60;
 		} else {
 			o.attr("disabled","disabled");
-			o.text("重新发送(" + wait + ")");
+			o.text("もう一度送信する(" + wait + ")");
 			wait--;
 			setTimeout(function() {
 				time(o)
@@ -311,7 +311,7 @@ function time(o) {
                 },
                 error: function (jqXHR) {
                     $("#result").modal();
-			$("#msg").html(data.msg+"     出现了一些错误。");
+			$("#msg").html(data.msg+"error");
                 }
             })
         })

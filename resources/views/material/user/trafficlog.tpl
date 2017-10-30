@@ -15,7 +15,7 @@
 	<main class="content">
 		<div class="content-header ui-content-header">
 			<div class="container">
-				<h1 class="content-heading">流量记录</h1>
+				<h1 class="content-heading">使用状況</h1>
 			</div>
 		</div>
 		<div class="container">
@@ -26,9 +26,9 @@
 							<div class="card">
 								<div class="card-main">
 									<div class="card-inner margin-bottom-no">
-										<p class="card-heading">注意!</p>
-										<p>部分节点不支持流量记录.</p>
-										<p>此处只展示最近 72 小时的记录，粒度为分钟。</p>
+										<p class="card-heading">注意！</p>
+										<p>特定のサーバーは使用状況を記録出来ません。</p>
+										<p>直近72時間の使用状況を表示しています。</p>
 									</div>
 									
 								</div>
@@ -49,18 +49,18 @@
 												{
 													zoomEnabled: true,
 													title:{
-														text: "您的最近72小时流量消耗",
+														text: "直近72時間のパケット使用量",
 														fontSize: 20
 														
 													},  
 													animationEnabled: true,
 													axisX: {
-														title:"时间",
+														title:"時間",
 														labelFontSize: 14,
 														titleFontSize: 18                            
 													},
 													axisY:{
-														title: "流量/KB",
+														title: "パケット/KB",
 														lineThickness: 2,
 														labelFontSize: 14,
 														titleFontSize: 18

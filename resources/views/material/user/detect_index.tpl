@@ -12,7 +12,7 @@
 	<main class="content">
 		<div class="content-header ui-content-header">
 			<div class="container">
-				<h1 class="content-heading">审计规则公示</h1>
+				<h1 class="content-heading">公開接続ルール</h1>
 			</div>
 		</div>
 		<div class="container">
@@ -22,8 +22,8 @@
 					<div class="card">
 						<div class="card-main">
 							<div class="card-inner">
-								<p>为了爱与和平，也同时为了系统的正常运行，特制定了如下过滤规则，当您使用节点执行这些动作时，您的通信就会被截断。</p>
-								<p>关于隐私：注意，我们仅用以下规则进行实时匹配和记录匹配到的规则，您的通信方向和通信内容我们不会做任何记录，请您放心。也请您理解我们对于这些不当行为的管理，谢谢。</p>
+								<p>サーバーを安全に運営する為に、IPを無断入手したり、トラッキング行為をしてくる特定のサイトへのアクセスを規制しています。下記一覧のサイトへアクセスした場合自動的に接続が切断されます。</p>
+								<p>プライバシーについて：サーバー内部にフィルターを設置しているだけで、お客様のトラフィックやIP等のアクセス情報は一切記録・モニタリングしておりません。安心してご利用下さい。</p>
 							</div>
 						</div>
 					</div>
@@ -34,9 +34,9 @@
 						    <tr>
 						        <th>ID</th>
 						        <th>名称</th>
-						        <th>描述</th>
-							<th>正则表达式</th>
-							<th>类型</th>
+						        <th>説明</th>
+							<th>表記</th>
+							<th>タイプ</th>
 								
 						    </tr>
 						    {foreach $rules as $rule}

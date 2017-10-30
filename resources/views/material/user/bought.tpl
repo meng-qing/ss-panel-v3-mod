@@ -12,7 +12,7 @@
 	<main class="content">
 		<div class="content-header ui-content-header">
 			<div class="container">
-				<h1 class="content-heading">购买记录</h1>
+				<h1 class="content-heading">購入履歴</h1>
 			</div>
 		</div>
 		<div class="container">
@@ -22,7 +22,7 @@
 					<div class="card">
 						<div class="card-main">
 							<div class="card-inner">
-								<p>系统中您的购买记录。</p>
+								<p>過去にお申込み頂いたプランの履歴です。</p>
 							</div>
 						</div>
 					</div>
@@ -33,10 +33,10 @@
                             <tr>
 								<th>操作</th>
                                 <th>ID</th>
-                                <th>商品名称</th>
+                                <th>プラン名</th>
 								<th>内容</th>
-								<th>价格</th>
-                                <th>续费时间</th>
+								<th>価格</th>
+                                <th>継続支払い期間</th>
 								<th>续费时重置流量</th>
                                 
                             </tr>

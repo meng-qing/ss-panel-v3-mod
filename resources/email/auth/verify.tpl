@@ -121,7 +121,7 @@
                                         valign="top">
                                         <h2 class="aligncenter"
                                             style="font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif; box-sizing: border-box; font-size: 24px; color: #000; line-height: 1.2em; font-weight: 400; text-align: center; margin: 40px 0 0;"
-                                            align="center">注册验证码</h2>
+                                            align="center">登録用認証コード</h2>
                                     </td>
                                 </tr>
                                 <tr style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;">
@@ -132,7 +132,7 @@
                                                style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; text-align: left; width: 80%; margin: 40px auto;">
                                             <tr style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;">
                                                 <td style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; vertical-align: top; margin: 0; padding: 5px 0;"
-                                                    valign="top">尊敬的用户：<br
+                                                    valign="top">ご登録ありがとうございます。<br
                                                             style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;"/>
                                                 </td>
                                             </tr>
@@ -140,7 +140,7 @@
 											<tr style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;">
                                                 <td style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; vertical-align: top; margin: 0; padding: 5px 0;"
                                                     valign="top">
-													  <p>您的邮箱验证代码为: <b>{$code}</b>，请在网页中填写，完成验证。<br>(本验证代码在 {$expire} 之前有效)</p><br>
+													  <p>ご登録メールの認証コードは: <b>{$code}</b>，になります。登録画面の認証番号欄へ記入して下さい。<br>(この認証コードは {$expire} まで有効です。)</p><br>
                                                 </td>
                                             </tr>
 											

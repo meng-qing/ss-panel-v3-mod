@@ -12,7 +12,7 @@
 	<main class="content">
 		<div class="content-header ui-content-header">
 			<div class="container">
-				<h1 class="content-heading">工单</h1>
+				<h1 class="content-heading">サポートチケット</h1>
 			</div>
 		</div>
 		<div class="container">
@@ -22,7 +22,7 @@
 					<div class="card">
 						<div class="card-main">
 							<div class="card-inner">
-								<p>您发出的工单</p>
+								<p>発行済みのチケット</p>
 							</div>
 						</div>
 					</div>
@@ -31,24 +31,24 @@
 						{$tickets->render()}
                         <table class="table">
                             <tr>
-								<th>操作</th>
+								<th></th>
                                 <th>ID</th>
-                                <th>日期</th>
-                                <th>标题</th>
-								<th>状态</th>
+                                <th>日付</th>
+                                <th>件名</th>
+								<th>状態</th>
                             </tr>
                             {foreach $tickets as $ticket}
                                 <tr>
 									<td>
-										<a class="btn btn-brand" href="/user/ticket/{$ticket->id}/view">查看</a>
+										<a class="btn btn-brand" href="/user/ticket/{$ticket->id}/view">表示</a>
 									</td>
                                     <td>#{$ticket->id}</td>
                                     <td>{$ticket->datetime()}</td>
                                     <td>{$ticket->title}</td>
 									{if $ticket->status==1}
-									<td>开启</td>
+									<td>オープ</td>
 									{else}
-									<td>关闭</td>
+									<td>クローズ</td>
 									{/if}
                                 </tr>
                             {/foreach}

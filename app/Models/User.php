@@ -51,7 +51,7 @@ class User extends Model
     public function lastSsTime()
     {
         if ($this->attributes['t'] == 0) {
-            return "从未使用喵";
+            return "未使用";
         }
         return Tools::toDateTime($this->attributes['t']);
     }

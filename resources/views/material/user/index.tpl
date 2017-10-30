@@ -41,7 +41,7 @@
 								<div class="card-main">
 									<div class="card-inner margin-bottom-no">
 										<p class="card-heading">All-in-One</p>
-										<p>这里为您提供了自动化地配置文件生成，包含了所有 Shadowsocks 服务器的信息，方便您在诸多的服务器中快速添加，快速切换。</p>
+										<p>端末別に全てのサーバー情報を自動的にアップデートするファイルを公開しています。</p>
 										<nav class="tab-nav margin-top-no">
 											<ul class="nav nav-list">
 												<li class="active">
@@ -64,43 +64,59 @@
 										<div class="card-inner">
 											<div class="tab-content">
 												<div class="tab-pane fade active in" id="all_windows">
-													<p><a href="/ssr-download/ssr-win.7z">下载</a>，解压，运行程序，然后您有三种方式导入所有节点<br>
-														(1)下载<a href="/user/getpcconf?without_mu=0">这个</a>或者<a  href="/user/getpcconf?without_mu=1">这个（无单端口多用户）</a>，右键小飞机 服务器 -- 从配置文件导入服务器，选择这个文件，<br>
-														(2)点击<a class="copy-text" data-clipboard-text="{$android_add}">这里</a>或者<a class="copy-text" data-clipboard-text="{$android_add_without_mu}">这个（无单端口多用户）</a>，然后右键小飞机 -- 从剪贴板复制地址<br>
-														(3)(推荐)右键小飞机--服务器--SSR服务器订阅设置，将订阅地址设置为下面的地址，其他参数留空，确定之后再更新 SSR 服务器订阅。<br>
-														然后选择一个合适的服务器，系统代理模式选”全局模式”，代理规则选“绕过局域网和大陆”，然后即可上网。</p>
+													<p>Shadowsocksクライアントは<a href="/ssr-download/ssr-win.7z">こちら。</a>インストール後に2つの方法で全てのサーバー情報を読み込みます。<br>
+														(1)下記購読<a href="/user/getpcconf?without_mu=0">URL</a>をコピー。SSアプリのメニュー欄の "Import SSR links from clipboard..."をクリック<br>
 
-													<p>SSR 订阅地址：<br>
-														普通端口地址：<code>{$baseUrl}/link/{$ssr_sub_token}?mu=0</code><br>
-														单端口多用户端口地址：<code>{$baseUrl}/link/{$ssr_sub_token}?mu=1</code>
+														(2)下記メニュー欄にあるSSアプリのアイコンを右クリック。"Servers Subscribe"→"Subscribe setting..." を選択。下記購読URLを入力して"Add"をクリック。"Mode"は "Global Mode", "Proxy rule"は "Bypass Lan&China" の設定でご利用下さい。</p>
+
+
+														
+
+
+													<p>SSR サブスクリプションアドレス：<br>
+														<code>{$baseUrl}/link/{$ssr_sub_token}?mu=0</code>
 													</p>
 												</div>
 												<div class="tab-pane fade" id="all_mac">
-													<p><a href="/ssr-download/ssr-mac.dmg">下载</a>，安装，然后下载<a href="/user/getpcconf?without_mu=0">这个</a>或者<a  href="/user/getpcconf?without_mu=1">这个（无单端口多用户）</a>，运行程序，小飞机上右键 服务器列表 子菜单 的 “导入服务器配置文件...” 导入这个文件，然后选择一个合适的服务器，更新一下PAC，然后开启系统代理即可上网。</p>
-												</div>
-												<div class="tab-pane fade" id="all_ios">
-													<p>推荐下载<a href="https://itunes.apple.com/cn/app/shadowrocket/id932747118?mt=8">Shadowrocket</a>，然后在 Safari 中点击<a id="android_add" href="{$android_add}">这个</a>或者<a id="android_add_without_mu" href="{$android_add_without_mu}">这个（无单端口多用户）</a>，然后点击确定，就可以批量添加节点。</p>
-													<STRIKE><p>iOS 下载<a href="/link/{$ios_token}">这个</a>，导入到 Surge 中，然后就可以随意切换服务器上网了。</p></STRIKE>
-												</div>
-												<div class="tab-pane fade" id="all_android">
-													<p><a href="/ssr-download/ssr-android.apk">下载</a>，安装，然后在手机上默认浏览器中点击<a id="android_add" href="{$android_add}">这个</a>或者<a id="android_add_without_mu" href="{$android_add_without_mu}">这个（无单端口多用户）</a>，然后点击确定，批量添加完节点，然后路由选择绕过大陆，右上角开启就可以上网了。同时提供一个 ACL 地址，<a href="/link/{$acl_token}">长按复制地址</a>到客户端里应用即可。</p>
-													<p>SSR 订阅地址，您可以在节点列表处添加订阅来自动更新节点：<br>
-														普通端口地址：<code>{$baseUrl}/link/{$ssr_sub_token}?mu=0</code><br>
-														单端口多用户端口地址：<code>{$baseUrl}/link/{$ssr_sub_token}?mu=1</code>
+													<p>Shadowsocksクライアントは<a href="/ssr-download/ssr-mac.dmg">こちら。</a>インストール後に2つの方法で全てのサーバー情報を読み込みます。</p>
+													<p>(1) <a href="/user/getpcconf?without_mu=0">こちら</a>からファイルをダウンロード。SSアプリのメニュー欄の "Import Bunch Json File...."をクリックして、ダウンロードしたファイルをアップロード。これで全てのサーバーが読み込まれます。</p>
+													<p>(2) メニューバーにあるSSアプリのアイコンをクリック。"Edit Subscribe Feed" をクリック。下記購読URLを入力、グループ名は任意、その他空欄で"Ok"をクリック。"Global Mode" の設定でご利用下さい。</p>
+													<p>SSR サブスクリプションアドレス：<br>
+														<code>{$baseUrl}/link/{$ssr_sub_token}?mu=0</code>
 													</p>
 												</div>
+
+
+
+												<div class="tab-pane fade" id="all_ios">
+													<p>アップルストアから<a href="https://itunes.apple.com/jp/app/shadowrocket/id932747118?mt=8">Shadowrocket（有料）</a>をダウンロード。Safariから<a id="android_add" href="{$android_add}">ここ</a>をクリック。Shadowrocketで開くとサーバーが読み込まれます。</p>
+													<p>サーバーを個別に読み込みたい場合はサーバー一覧からサーバーを選択してQRコードをスキャンして下さい。</p>
+												</div>
+
+
+
+												<div class="tab-pane fade" id="all_android">
+													<p>Shadowsocksクライアントは<a href="/ssr-download/ssr-android.apk">こちら。</a>ブラウザからこのページを立ち上げて<a id="android_add" href="{$android_add}">ここ</a>をクリック。全てのサーバー情報が読み込まれます。プロキシ方式は「LAN及び中国本土のアドレスを迂回する」を選択してご利用下さい。</p>
+
+
+													<p>SSR サブスクリプションアドレス（サーバー一覧から自動更新サーバーを講読出来ます）：<br>
+														<code>{$baseUrl}/link/{$ssr_sub_token}?mu=0</code>
+													</p>
+												</div>
+
+
+
+
 												<div class="tab-pane fade" id="all_router">
-													<p>路由器 刷入<a href="http://www.right.com.cn/forum/thread-161324-1-1.html">这个固件</a>，然后 SSH 登陆路由器，执行以下命令<br>
-													<code>wget -O- {$baseUrl}/link/{$router_token} | bash && echo -e "\n0 */3 * * * wget -O- {$baseUrl}/link/{$router_token} | bash\n">> /etc/storage/cron/crontabs/admin && killall crond && crond </code><br>
-													或者这个不含单端口多用户的<br>
+<p>ルーターに<a href="http://www.right.com.cn/forum/thread-161324-1-1.html">ファームウェア</a>をインストール。SSHでルーターにアクセスして、下記のコマンドを入力して下さい。<br>
 													<code>wget -O- {$baseUrl}/link/{$router_token_without_mu} | bash && echo -e "\n0 */3 * * * wget -O- {$baseUrl}/link/{$router_token_without_mu} | bash\n">> /etc/storage/cron/crontabs/admin && killall crond && crond </code><br>
-													执行完毕以后就可以到路由器的设置面板里随意选择 Shadowsocks 服务器进行连接了。</p>
+													コマンド終了後に、ルーターの操作画面からお好みのShadowsocksサーバーを選択して接続出来ます。</p>
 												</div>
 											</div>
 										</div>
 										<div class="card-action">
 											<div class="card-action-btn pull-left">
-												<p><a class="btn btn-brand btn-flat waves-attach" href="/user/url_reset"><span class="icon">close</span>&nbsp;重置所有链接</a></p>
+												<p><a class="btn btn-brand btn-flat waves-attach" href="/user/url_reset"><span class="icon">close</span>&nbsp;全てのリンクをリセットする</a></p>
 											</div>
 										</div>
 									</div>
@@ -167,7 +183,7 @@
 													dataPoints: [
 														{if $user->transfer_enable != 0}
 														{
-															y: {$user->last_day_t/$user->transfer_enable*100}, legendText:"已用 {number_format($user->last_day_t/$user->transfer_enable*100,2)}% {$user->LastusedTraffic()}", indexLabel: "已用 {number_format($user->last_day_t/$user->transfer_enable*100,2)}% {$user->LastusedTraffic()}"
+															y: {$user->last_day_t/$user->transfer_enable*100}, legendText:"使用済み {number_format($user->last_day_t/$user->transfer_enable*100,2)}% {$user->LastusedTraffic()}", indexLabel: "使用済み {number_format($user->last_day_t/$user->transfer_enable*100,2)}% {$user->LastusedTraffic()}"
 														},
 														{
 															y: {($user->u+$user->d-$user->last_day_t)/$user->transfer_enable*100}, legendText:"今日 {number_format(($user->u+$user->d-$user->last_day_t)/$user->transfer_enable*100,2)}% {$user->TodayusedTraffic()}", indexLabel: "今日 {number_format(($user->u+$user->d-$user->last_day_t)/$user->transfer_enable*100,2)}% {$user->TodayusedTraffic()}"
