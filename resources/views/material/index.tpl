@@ -1,217 +1,328 @@
-{include file='header.tpl'}
+{include file="top.tpl"}
 
 
-
-
-
-
-<div class="page-banner page-banner-home">
-		<div class="banner-slogan">
-			<div class="container">
-				<h1 class="slogan-title">重新定义加速<br>混淆加密传输</h1><br>
-				<h2 class="slogan-desc">
-						<br>现在注册成为会员享受高达1Gbps数据传输加速。<br>
-         				<br>Fast云加速（简称FastSSR），全新一代的轻型代理服务。<br>比Shadowsocks（简称SS）抗干扰性更强，数据传输速度更快更稳定。<br>
-
-				    <br>节点覆盖：香港、日本、美国、新加坡节点等，全球7+数据中心、7+动态加速节点，助您网络加速。<br>
-			</div>
-		</div>
-		<!-- /.banner-slogan -->
-    </div>
-	<div class="page-section section-center" style="padding-top: 80px;">
+<main class="content">
 		<div class="container">
-		            <h3>全节点使用aes-256-cfb高强度流加密算法，采用最新auth_chain_a协议，同时支持http_simple以及http_post流量混淆。</h3>
-			<div class="services">
-				<div class="row">
-					<div class="col-sm-4">
-						<a class="service" href="/user/shop">
-							<i class="service-icon service-icon-compute image-shadow-sm animate zoomIn"></i>
-							<div class="service-body">
-								<h3>包年包月</h3>
-								<p>提供单线路高达1Gbps的节点，为您快速访问网络的提供有力保障。</p>
-								<span class="btn btn-lg btn-link">包年包月，6元/60GB起</span>
-							</div>
-						</a>
-						<!--/ .service -->
-					</div>
-					<div class="col-sm-4">
-						<a class="service" href="/user/shop">
-							<i class="service-icon service-icon-storage image-shadow-sm animate zoomIn"></i>
-							<div class="service-body">
-								<h3>按量付费</h3>
-								<p>国际知名顶级数据中心接入，保证高速浏览与稳定体验。</p>
-								<span class="btn btn-lg btn-link">按量付费，0.4元/1GB起</span>
-							</div>
-						</a>
-						<!--/ .service -->
-					</div>
-					<div class="col-sm-4">
-						<a class="service" href="/user/shop">
-							<i class="service-icon service-icon-dedicated image-shadow-sm animate zoomIn"></i>
-							<div class="service-body">
-								<h3>体验套餐 </h3>
-								<p>数据传输全加密，保障您的个人隐私，防窃取账号密码，安全无忧。</p>								
-								<span class="btn btn-lg btn-link">1G流量</span>
-							</div>
-						</a>
-						<!--/ .service -->
-					</div>		
-				</div>				
-			</div>
-			<!--/ .services -->
-		</div>
-	</div>
-		<div class="page-section section-dark section-center ">
-			<div class="container">
-				<h2 class="section-title">我们的加速节点分布图</h2>
-				<div class="location-map location-map-lg">
-					<div class="location-container">
-						<div class="location location-seattle animate zoomIn">
-							<span class="location-name"><span>西雅图</span></span><span class="location-pin"></span>
-							</div>
-						<div class="location location-los-angeles animate zoomIn"><span class="location-name">
-						<span>洛杉矶</span></span><span class="location-pin"></span>
-					</div>
-					<div class="location location-dallas animate zoomIn"><span class="location-name">
-					    <span>达拉斯</span></span><span class="location-pin"></span>
-					</div>
-					<div class="location location-paris animate zoomIn">
-					<span class="location-name">
-						<span>法国</span></span><span class="location-pin"></span></div>
-					<div class="location location-kr animate zoomIn">
-					<span class="location-name">
-						<span>韩国</span></span><span class="location-pin"></span>
-					</div>
-					<div class="location location-london animate zoomIn"><span class="location-name">
-					    <span>英国</span></span><span class="location-pin"></span>
-					</div>
-					<div class="location location-shenzhen animate zoomIn"><span class="location-name">
-					    <span>深圳</span></span><span class="location-pin"></span>
-					</div>
-					<div class="location location-taiwan animate zoomIn"><span class="location-name">
-					    <span>台湾</span></span><span class="location-pin"></span>
-					</div>
-					<div class="location location-hongkong animate zoomIn"><span class="location-name">
-					    <span>香港</span></span><span class="location-pin"></span>
-                    </div>
-					<div class="location location-sgp animate zoomIn"><span class="location-name">
-						<span>新加坡</span></span><span class="location-pin"></span>
-                    </div>
-					<div class="location location-tokyo animate zoomIn"><span class="location-name">
-						<span>日本</span></span><span class="location-pin"></span>
-					</div>
-					<div class="map"></div>
-				</div>
-				<div class="actions text-center">
-					<a class="btn btn-lg btn-light btn-outline" href="datacenter.html">数据中心及线路更多信息<i class="zmdi zmdi-long-arrow-right"></i></a>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- /.page-section -->
-	
-<div class="page-section section-center  section-blue" style="color:white;">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-10 col-md-offset-1 text-center">
-				<h2 class="title-head" style="color:white;">适合哪些人群？</h2>
-				<p class="desc">Fast云加速提供分布全球的加速服务，使得您可以在任何地方开展国际贸易、收发Gmail及观看视频。</p>
-			</div>
-		</div>
-		<div class="empty_space" style="height: 30px"></div>
-		<div class="row">
-			<div class="col-sm-6">
-				<div class="main wow fadeInLeft">
-					<h4 class="title-head" style="color:white;">海外业务关系人</h4>
-					<p>越过互联网服务提供商和国家防火墙的限制，与其它国家的任何企业自由地沟通合作、在线协作和无障碍交易，而不用担心网络连接时不时地被重置。</p>
-				</div>
-			</div>
+			<div class="row">
+				<div class="col-lg-4 col-lg-push-4 col-sm-6 col-sm-push-3">
+					<section class="content-inner">
+						<a class="card-heading" href="/" title="UCSS">UCSS</a>
+						<nav class="tab-nav margin-top-no">
+							<ul class="nav nav-justified">
+								{if $config['enable_telegram'] == 'true'}
+								<li>
+									<a class="waves-attach" data-toggle="tab" href="#qrcode_login">扫码登录</a>
+								</li>
 
-			<div class="col-sm-6">
-				<div class="main wow fadeInRight">
-					<h4 class="title-head" style="color:white;">国外友人</h4>
-					<p>在Google、Youtube、Facebook、Twitter、Gmail、Instagram、Pinterest、Flickr、Netflix、Reddit、Wordpress blogs 等网站上的访问连接将被保护并提升访问速度。</p>
-				</div>
-			</div>
-			<div class="col-sm-6">
-				<div class="main wow fadeInLeft">
-					<h4 class="title-head" style="color:white;">设计师、攻城狮</h4>
-					<p>在Smashing Magazine、Flickr、DeviantArt 等网站上轻松获得设计素材。加入Github、Stack OverFlow、Reddit、Android.com 等编程社区自由交谈。</p>
-				</div>
-			</div>
-			<div class="col-sm-6">
-				<div class="main wow fadeInRight">
-					<h4 class="title-head" style="color:white;">留学党、科研党</h4>
-					<p>在谷歌学术、ScienceDirect、BASE Search、Amazon A9等网站上快速搜索学术论文资料。在手机上使用WhatsApp、LINE、Skype、脸书和推特。</p>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-    <!-- /.page-section -->
-	
-		<div class="page-section section-center">
-		<div class="container">
-			<h2 class="section-title">为什么选择我们？</h2>
-			<div class="features features-icon-top features-center">
-				<div class="row">
-					<div class="col-sm-3 col-xs-6">
-						<div class="feature"><i class="icon icon-lg icon-realtime-protection animate zoomIn"></i>
-							<h4>极致的网速，给您节省更多的时间</h4>
+								<li>
+									<a class="waves-attach" data-toggle="tab" href="#number_login">数字登录</a>
+								</li>
+								{/if}
+							</ul>
+						</nav>
+						<div class="card-inner">
+							<div class="tab-content">
+								<div class="tab-pane fade active in" id="passwd_login">
+									<div class="card">
+										<div class="card-main">
+											<div class="card-header">
+												<div class="card-inner">
+													<h1 class="card-heading">ユーザーログイン</h1>
+												</div>
+											</div>
+											<div class="card-inner">
+												<form action="javascript:void(0);"  method="POST">
+													<p class="text-center">
+														<span class="avatar avatar-inline avatar-lg">
+															<img alt="Login" src="/theme/material/images/users/avatar-001.jpg">
+														</span>
+													</p>
+
+													<div class="form-group form-group-label">
+														<div class="row">
+															<div class="col-md-10 col-md-push-1">
+																<label class="floating-label" for="email">Email</label>
+																<input class="form-control" id="email" type="text" name="Email">
+															</div>
+														</div>
+													</div>
+													<div class="form-group form-group-label">
+														<div class="row">
+															<div class="col-md-10 col-md-push-1">
+																<label class="floating-label" for="passwd">パスワード</label>
+																<input class="form-control" id="passwd" type="password" name="Password">
+															</div>
+														</div>
+													</div>
+
+													<div class="form-group form-group-label">
+														<div class="row">
+															<div class="col-md-10 col-md-push-1">
+															</div>
+														</div>
+													</div>
+
+													{if $geetest_html != null}
+														<div class="form-group form-group-label">
+															<div class="row">
+																<div class="col-md-10 col-md-push-1">
+																	<div id="embed-captcha"></div>
+																</div>
+															</div>
+														</div>
+													{/if}
+
+													<div class="form-group">
+														<div class="row">
+															<div class="col-md-10 col-md-push-1">
+																<button id="login" type="submit" class="btn btn-block btn-brand waves-attach waves-light">ログイン</button>
+															</div>
+														</div>
+													</div>
+
+													<div class="form-group">
+														<div class="row">
+															<div class="col-md-10 col-md-push-1">
+															</div>
+														</div>
+													</div>
+												</form>
+											</div>
+										</div>
+									</div>
+								</div>
+								{if $config['enable_telegram'] == 'true'}
+								<div class="tab-pane fade" id="qrcode_login">
+									<div class="card">
+										<div class="card-main">
+											<div class="card-header">
+												<div class="card-inner">
+													<h1 class="card-heading">扫码登录</h1>
+												</div>
+											</div>
+											<div class="card-inner">
+												<p>添加机器人账号 <a href="https://t.me/{$telegram_bot}">@{$telegram_bot}</a>，拍下下面这张二维码发给它。</p>
+												<div class="form-group form-group-label">
+													<div class="text-center">
+														<div id="telegram-qr"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="tab-pane fade" id="number_login">
+									<div class="card">
+										<div class="card-main">
+											<div class="card-header">
+												<div class="card-inner">
+													<h1 class="card-heading">数字登录</h1>
+												</div>
+											</div>
+											<div class="card-inner">
+												<p>添加机器人账号 <a href="https://t.me/{$telegram_bot}">@{$telegram_bot}</a>，发送下面的数字给它。</p>
+												<div class="form-group form-group-label">
+													<div class="text-center">
+														<h1><code id="code_number">{$login_number}</code></h1>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								{/if}
+							</div>
 						</div>
-					</div>
-					<!-- /.feature -->
-					<div class="col-sm-3 col-xs-6">
-						<div class="feature"><i class="icon icon-lg icon-globe animate zoomIn"></i>
-							<h4>全球数10个加速网络连接服务点</h4>
-						</div>
-					</div>
-					<!-- /.feature -->
-					<div class="clear-xs"></div>
-					<div class="col-sm-3 col-xs-6">
-						<div class="feature"><i class="icon icon-lg icon-helping-hand animate zoomIn"></i>
-							<h4>全节点SLA保证，随时畅通的高效加速</h4>
-						</div>
-					</div>
-					<!-- /.feature -->
-					<div class="col-sm-3 col-xs-6">
-						<div class="feature"><i class="icon icon-lg icon-electronics animate zoomIn"></i>
-							<h4>安全稳定的流加密算法，安全与速度兼得</h4>
-						</div>
-					</div>
-					<!-- /.feature -->
-				</div>
-				<div class="row">
-					<div class="col-sm-3 col-xs-6">
-						<div class="feature"><i class="icon icon-lg icon-broadcasting animate zoomIn"></i>
-							<h4>连接点多重负载均衡机制，智能分流加速</h4>
-						</div>
-					</div>
-					<!-- /.feature -->
-					<div class="col-sm-3 col-xs-6">
-						<div class="feature"><i class="icon icon-lg icon-multiple-devices animate zoomIn"></i>
-							<h4>全平台支持，一个帐号畅通你的所有设备</h4>
-						</div>
-					</div>
-					<!-- /.feature -->
-					<div class="clear-xs"></div>
-					<div class="col-sm-3 col-xs-6">
-						<div class="feature"><i class="icon icon-lg icon-admin-tools animate zoomIn"></i>
-							<h4>简单易用的控制面板，无需任何学习成本</h4>
-						</div>
-					</div>
-					<!-- /.feature -->
-					<div class="col-sm-3 col-xs-6">
-						<div class="feature"><i class="icon icon-lg icon-last-hour animate zoomIn"></i>
-							<h4>支付后秒级自动开通服务，无需等待</h4>
-						</div>
-					</div>
-					<!-- /.feature -->
-				</div>
-			</div>
-			<!-- /.features -->
-		</div>
-	</div>	
 
 
-{include file='footer.tpl'}
+						<div class="clearfix">
+							<p class="margin-no-top pull-left"><a class="btn btn-flat btn-brand waves-attach" href="/password/reset">パスワードを紛失？</a></p>
+							<p class="margin-no-top pull-right"><a class="btn btn-flat btn-brand waves-attach" href="/auth/register">初めての方</a></p>
+						</div>
+
+
+						{include file='dialog.tpl'}
+
+
+
+
+
+					</section>
+				</div>
+			</div>
+		</div>
+	</main>
+
+{include file="bottom.tpl"}
+
+<script>
+    $(document).ready(function(){
+        function login(){
+			{if $geetest_html != null}
+			if(typeof validate == 'undefined')
+			{
+				$("#result").modal();
+                $("#msg").html("请滑动验证码来完成验证。");
+				return;
+			}
+
+			if (!validate) {
+				$("#result").modal();
+                $("#msg").html("请滑动验证码来完成验证。");
+				return;
+			}
+
+			{/if}
+
+			document.getElementById("login").disabled = true;
+
+            $.ajax({
+                type:"POST",
+                url:"/auth/login",
+                dataType:"json",
+                data:{
+                    email: $("#email").val(),
+                    passwd: $("#passwd").val(),
+					code: $("#code").val(),
+                    remember_me: $("#remember_me:checked").val(){if $geetest_html != null},
+					geetest_challenge: validate.geetest_challenge,
+                    geetest_validate: validate.geetest_validate,
+                    geetest_seccode: validate.geetest_seccode{/if}
+                },
+                success:function(data){
+                    if(data.ret == 1){
+						$("#result").modal();
+                        $("#msg").html(data.msg);
+                        window.setTimeout("location.href='/user'", {$config['jump_delay']});
+                    }else{
+			$("#result").modal();
+                        $("#msg").html(data.msg);
+			document.getElementById("login").disabled = false;
+			{if $geetest_html != null}
+			captcha.refresh();
+			{/if}
+                    }
+                },
+                error:function(jqXHR){
+			$("#msg-error").hide(10);
+			$("#msg-error").show(100);
+			$("#msg-error-p").html("发生错误："+jqXHR.status);
+					document.getElementById("login").disabled = false;
+			{if $geetest_html != null}
+			captcha.refresh();
+			{/if}
+                }
+            });
+        }
+        $("html").keydown(function(event){
+            if(event.keyCode==13){
+                login();
+            }
+        });
+        $("#login").click(function(){
+            login();
+        });
+
+		$('div.modal').on('shown.bs.modal', function() {
+			$("div.gt_slider_knob").hide();
+		});
+
+		$('div.modal').on('hidden.bs.modal', function() {
+			$("div.gt_slider_knob").show();
+		});
+    })
+</script>
+
+{if $config['enable_telegram'] == 'true'}
+<script src=" /assets/public/js/jquery.qrcode.min.js "></script>
+<script>
+	var telegram_qrcode = 'mod://login/{$login_token}';
+	jQuery('#telegram-qr').qrcode({
+		"text": telegram_qrcode
+	});
+</script>
+
+<script>
+$(document).ready(function () {
+	function f(){
+		$.ajax({
+			type: "GET",
+			url: "qrcode_check",
+			dataType: "json",
+			data: {
+				token:"{$login_token}",
+				number:"{$login_number}"
+			},
+			success: function (data) {
+				if (data.ret > 0) {
+					clearTimeout(tid);
+
+					$.ajax({
+						type: "POST",
+						url: "/auth/qrcode_login",
+						dataType: "json",
+						data: {
+							token:"{$login_token}",
+							number:"{$login_number}"
+						},
+						success: function (data) {
+							if (data.ret) {
+								$("#result").modal();
+								$("#msg").html("登录成功！");
+								window.setTimeout("location.href=/user/", {$config['jump_delay']});
+							}
+						},
+						error: function (jqXHR) {
+							$("#result").modal();
+							$("#msg").html("发生错误：" + jqXHR.status);
+						}
+					});
+
+				} else {
+					if(data.ret == -1)
+					{
+						jQuery('#telegram-qr').replaceWith('此二维码已经过期，请刷新页面后重试。');
+						jQuery('#code_number').replaceWith('<code id="code_number">此数字已经过期，请刷新页面后重试。</code>');
+					}
+				}
+			},
+			error: function (jqXHR) {
+				if(jqXHR.status != 200 && jqXHR.status != 0) {
+					$("#result").modal();
+					$("#msg").html("发生错误：" + jqXHR.status);
+				}
+			}
+		});
+		tid = setTimeout(f, 1000); //循环调用触发setTimeout
+	}
+	setTimeout(f, 1000);
+})
+</script>
+{/if}
+
+
+{if $geetest_html != null}
+<script>
+	var handlerEmbed = function (captchaObj) {
+        // 将验证码加到id为captcha的元素里
+
+		captchaObj.onSuccess(function () {
+            		validate = captchaObj.getValidate();
+		});
+
+		captchaObj.appendTo("#embed-captcha");
+
+		captcha = captchaObj;
+		// 更多接口参考：http://www.geetest.com/install/sections/idx-client-sdk.html
+    };
+
+	initGeetest({
+		gt: "{$geetest_html->gt}",
+		challenge: "{$geetest_html->challenge}",
+		product: "embed", // 产品形式，包括：float，embed，popup。注意只对PC版验证码有效
+		offline: {if $geetest_html->success}0{else}1{/if} // 表示用户后台检测极验服务器是否宕机，与SDK配合，用户一般不需要关注
+	}, handlerEmbed);
+</script>
+
+{/if}
