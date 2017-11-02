@@ -27,7 +27,7 @@
 										<div class="card-main">
 											<div class="card-header">
 												<div class="card-inner">
-													<h1 class="card-heading">ユーザーログイン</h1>
+													<h1 style="text-align:center;" class="card-heading">ユーザーログイン</h1>
 												</div>
 											</div>
 											<div class="card-inner">

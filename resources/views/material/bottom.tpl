@@ -1,5 +1,6 @@
 	<footer class="ui-footer">
 		<div class="container">
+			Copyright © 2017 Undercurrentss.com All Rights Reserved.
 			{if $config["enable_analytics_code"] == 'true'}{include file='analytics.tpl'}{/if}
 		</div>
 	</footer>

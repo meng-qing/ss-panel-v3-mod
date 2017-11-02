@@ -20,7 +20,7 @@
 
 
 	<!-- favicon -->
-	<link rel="shortcut icon" href="/img/favicon.ico">
+	<link rel="shortcut icon" href="/img/logo.ico">
 	<!-- ... -->
 </head>
 

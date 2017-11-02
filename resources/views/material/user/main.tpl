@@ -17,7 +17,7 @@
 
 	
 	<!-- favicon -->
-	<link rel="shortcut icon" href="/img/favicon.ico">
+	<link rel="shortcut icon" href="/img/logo.ico">
 	<!-- ... -->
 	<style>
 		.pagination {
@@ -240,7 +240,7 @@
 				<a class="menu-logo" href="/" style="font-size:16px;" ><i class="icon icon-lg">person_pin_circle</i>&nbsp;ユーザーメニュー</a>
 				<ul class="nav">
 					<li>
-						<a class="waves-attach" data-toggle="collapse" href="#ui_menu_me">我的</a>
+						<a class="waves-attach" data-toggle="collapse" href="#ui_menu_me">マイアカウント</a>
 						<ul class="menu-collapse collapse in" id="ui_menu_me">
 							<li>
 								<a href="/user">

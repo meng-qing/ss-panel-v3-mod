@@ -122,7 +122,7 @@
 										<p>注意1：兼用版SSを使用する場合は_compatibleを選択して下さい。</p>
 										<p>注意2：SSとSSRではサポートしているObfuscation方式が異なります。simple_obfs_* がSSでのObfuscationで、その他はSSRのObfuscationになります。</p>
 										<div class="form-group form-group-label">
-											<label class="floating-label" for="obfs">Obfuscation方法</label>
+											<label class="floating-label" for="obfs">Obfuscation方式</label>
 											<select id="obfs" class="form-control">
 												{$obfs_list = $config_service->getSupportParam('obfs')}
 												{foreach $obfs_list as $obfs}

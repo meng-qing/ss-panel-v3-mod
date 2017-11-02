@@ -13,7 +13,7 @@
 	<link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	
 	<!-- favicon -->
-	<link rel="shortcut icon" href="/img/favicon.ico">
+	<link rel="shortcut icon" href="/img/logo.ico">
 	<!-- ... -->
 </head>
 
@@ -66,7 +66,7 @@
 </a>
 				<ul class="nav">
 					<li>
-						<a  href="/"><i class="icon icon-lg">bookmark_border</i>&nbsp;ホーム</a>
+						<a  href="https://undercurrentss.com/jp/"><i class="icon icon-lg">bookmark_border</i>&nbsp;ホーム</a>
 					</li>
 					<li>
 						<a  href="https://undercurrentss.com/jp/tos/"><i class="icon icon-lg">text_format</i>&nbsp;利用規約</a>

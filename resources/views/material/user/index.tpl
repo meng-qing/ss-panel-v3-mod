@@ -57,7 +57,7 @@
 													<a class="waves-attach" data-toggle="tab" href="#all_android"><i class="icon icon-lg">android</i>&nbsp;Android</a>
 												</li>
 												<li>
-													<a class="waves-attach" data-toggle="tab" href="#all_router"><i class="icon icon-lg">router</i>&nbsp;路由器</a>
+													<a class="waves-attach" data-toggle="tab" href="#all_router"><i class="icon icon-lg">router</i>&nbsp;Router</a>
 												</li>
 											</ul>
 										</nav>

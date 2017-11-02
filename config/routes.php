@@ -80,24 +80,6 @@ $app->get('/tos', 'App\Controllers\HomeController:tos');
 $app->get('/staff', 'App\Controllers\HomeController:staff');
 $app->get('/gfwlistjs', 'App\Controllers\LinkController:GetGfwlistJs');
 $app->post('/telegram_callback', 'App\Controllers\HomeController:telegram');
-//fast-ssr
-$app->get('/about', 'App\Controllers\HomeController:about');
-$app->get('/sla', 'App\Controllers\HomeController:sla');
-$app->get('/contact', 'App\Controllers\HomeController:contact');
-$app->get('/features', 'App\Controllers\HomeController:features');
-$app->get('/datacenter', 'App\Controllers\HomeController:datacenter');
-$app->get('/panel', 'App\Controllers\HomeController:panel');
-$app->get('/client', 'App\Controllers\HomeController:client');
-$app->get('/faq', 'App\Controllers\HomeController:faq');
-$app->get('/aff', 'App\Controllers\HomeController:aff');
-$app->get('/help', 'App\Controllers\HomeController:help');
-$app->get('/help/android_shadowsocksr_tutorial', 'App\Controllers\HomeController:android_shadowsocksr_tutorial');
-$app->get('/help/win_shadowsocksr_tutorial', 'App\Controllers\HomeController:win_shadowsocksr_tutorial');
-$app->get('/help/macos_shadowsocksr_tutorial', 'App\Controllers\HomeController:macos_shadowsocksr_tutorial');
-$app->get('/help/wingy_shadowsocksr_tutorial', 'App\Controllers\HomeController:wingy_shadowsocksr_tutorial');
-$app->get('/help/rocket_shadowsocksr_tutorial', 'App\Controllers\HomeController:rocket_shadowsocksr_tutorial');
-$app->get('/privacy', 'App\Controllers\HomeController:privacy');
-$app->get('/use_policy', 'App\Controllers\HomeController:use_policy');
 
 // User Center
 $app->group('/user', function () {
