@@ -180,7 +180,7 @@
                 },
                 error: function (jqXHR) {
                     $("#result").modal();
-					$("#msg").html(data.msg+"     出现了一些错误。");
+					$("#msg").html(data.msg+"     error");
                 }
             })
         })
@@ -209,7 +209,7 @@
                 },
                 error: function (jqXHR) {
                     $("#result").modal();
-					$("#msg").html(data.msg+"     出现了一些错误。");
+					$("#msg").html(data.msg+"     error");
                 }
             })
         })
@@ -239,7 +239,7 @@
                 },
                 error: function (jqXHR) {
                     $("#result").modal();
-					$("#msg").html(data.msg+"     出现了一些错误。");
+					$("#msg").html(data.msg+"     error");
                 }
             })
         })
@@ -284,7 +284,7 @@
                 },
                 error: function (jqXHR) {
                     $("#result").modal();
-					$("#msg").html(data.msg+"     出现了一些错误。");
+					$("#msg").html(data.msg+"     error");
                 }
             })
         })
@@ -313,7 +313,7 @@
                 },
                 error: function (jqXHR) {
                     $("#result").modal();
-					$("#msg").html(data.msg+"     出现了一些错误。");
+					$("#msg").html(data.msg+"     error");
                 }
             })
         })
@@ -343,7 +343,7 @@
                 },
                 error: function (jqXHR) {
                     $("#result").modal();
-					$("#msg").html(data.msg+"     出现了一些错误。");
+					$("#msg").html(data.msg+"     error");
                 }
             })
         })
@@ -370,7 +370,7 @@
                 },
                 error: function (jqXHR) {
                     $("#result").modal();
-					$("#msg").html(data.msg+"     出现了一些错误。");
+					$("#msg").html(data.msg+"     error");
                 }
             })
         })
@@ -399,7 +399,7 @@
                 },
                 error: function (jqXHR) {
                     $("#result").modal();
-					$("#msg").html(data.msg+"     出现了一些错误。");
+					$("#msg").html(data.msg+"     error");
                 }
             })
         })
@@ -428,7 +428,7 @@
                 },
                 error: function (jqXHR) {
                     $("#result").modal();
-					$("#msg").html(data.msg+"     出现了一些错误。");
+					$("#msg").html(data.msg+"     error");
                 }
             })
         })
@@ -448,15 +448,15 @@
                  success: function (data) {
                     if (data.ret) {
                         $("#result").modal();
-						$("#msg").html("成功了");
+						$("#msg").html("Succeeded");
                     } else {
                         $("#result").modal();
-						$("#msg").html("失败了");
+						$("#msg").html("Failed");
                     }
                 },
                 error: function (jqXHR) {
                     $("#result").modal();
-					$("#msg").html(data.msg+"     出现了一些错误。");
+					$("#msg").html(data.msg+"     error");
                 }
             })
         })
@@ -485,7 +485,7 @@
                 },
                 error: function (jqXHR) {
                     $("#result").modal();
-					$("#msg").html(data.msg+"     出现了一些错误。");
+					$("#msg").html(data.msg+"     error");
                 }
             })
         })
@@ -513,7 +513,7 @@
                 },
                 error: function (jqXHR) {
                     $("#result").modal();
-					$("#msg").html(data.msg+"     出现了一些错误。");
+					$("#msg").html(data.msg+"     error");
                 }
             })
         })
@@ -535,7 +535,7 @@
                 success: function (data) {
                     if (data.ret) {
                         $("#result").modal();
-						$("#msg").html("成功了");
+						$("#msg").html("Succeeded");
                     } else {
                         $("#result").modal();
 						$("#msg").html(data.msg);
@@ -543,7 +543,7 @@
                 },
                 error: function (jqXHR) {
                     $("#result").modal();
-					$("#msg").html(data.msg+"     出现了一些错误。");
+					$("#msg").html(data.msg+"     error");
                 }
             })
         })

@@ -31,34 +31,34 @@
 						{$shops->render()}
 						<table class="table ">
                             <tr>
-								<th>操作</th>
+								<th>Operation</th>
                                 <th>ID</th>
                                 <th>Product/Service</th>
-								<th>content</th>
+								<th>Content</th>
 								<th>Price</th>
                                 <th>Subscription due date</th>
-								<th>续费时重置流量</th>
+								<th>Reset traffic and renew</th>
                                 
                             </tr>
                             {foreach $shops as $shop}
                             <tr>
 								<td>
-                                    <a class="btn btn-brand" {if $shop->renew==0}disabled{else} href="javascript:void(0);" onClick="delete_modal_show('{$shop->id}')"{/if}>退订</a>
+                                    <a class="btn btn-brand" {if $shop->renew==0}disabled{else} href="javascript:void(0);" onClick="delete_modal_show('{$shop->id}')"{/if}>Unsubscribe</a>
                                 </td>
                                 <td>#{$shop->id}</td>
                                 <td>{$shop->shop()->name}</td>
 								<td>{$shop->shop()->content()}</td>
 								<td>{$shop->price} USD</td>
 								{if $shop->renew==0}
-                                <td>不自动续费</td>
+                                <td>Do not automatically renew</td>
 								{else}
-								<td>在 {$shop->renew_date()} 续费</td>
+								<td>renew in {$shop->renew_date()}</td>
 								{/if}
 								
 								{if $shop->shop()->auto_reset_bandwidth==0}
-                                <td>不自动重置</td>
+                                <td>Not automatically reset</td>
 								{else}
-								<td>自动重置</td>
+								<td>auto reset</td>
 								{/if}
                                 
                             </tr>
@@ -73,13 +73,13 @@
 							<div class="modal-content">
 								<div class="modal-heading">
 									<a class="modal-close" data-dismiss="modal">×</a>
-									<h2 class="modal-title">确认要退订？</h2>
+									<h2 class="modal-title">Do you want to unsubscribe?</h2>
 								</div>
 								<div class="modal-inner">
-									<p>请您确认。</p>
+									<p>Please confirm</p>
 								</div>
 								<div class="modal-footer">
-									<p class="text-right"><button class="btn btn-flat btn-brand-accent waves-attach waves-effect" data-dismiss="modal" type="button">取消</button><button class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal" id="delete_input" type="button">确定</button></p>
+									<p class="text-right"><button class="btn btn-flat btn-brand-accent waves-attach waves-effect" data-dismiss="modal" type="button">No</button><button class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal" id="delete_input" type="button">Yes</button></p>
 								</div>
 							</div>
 						</div>
@@ -132,7 +132,7 @@ $(document).ready(function(){
 			},
 			error:function(jqXHR){
 				$("#result").modal();
-				$("#msg").html(data.msg+"  发生错误了。");
+				$("#msg").html(data.msg+"  error");
 			}
 		});
 	}

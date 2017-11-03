@@ -40,15 +40,15 @@
                             {foreach $tickets as $ticket}
                                 <tr>
 									<td>
-										<a class="btn btn-brand" href="/user/ticket/{$ticket->id}/view">表示</a>
+										<a class="btn btn-brand" href="/user/ticket/{$ticket->id}/view">Display</a>
 									</td>
                                     <td>#{$ticket->id}</td>
                                     <td>{$ticket->datetime()}</td>
                                     <td>{$ticket->title}</td>
 									{if $ticket->status==1}
-									<td>オープ</td>
+									<td>Opening</td>
 									{else}
-									<td>クローズ</td>
+									<td>Close</td>
 									{/if}
                                 </tr>
                             {/foreach}

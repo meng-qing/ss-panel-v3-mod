@@ -239,7 +239,7 @@
 							<div class="card">
 								<div class="card-main">
 									<div class="card-inner margin-bottom-no">
-										<p class="card-heading">配置二维码</p>
+										<p class="card-heading">QR code</p>
 
 
 										<nav class="tab-nav margin-top-no">
