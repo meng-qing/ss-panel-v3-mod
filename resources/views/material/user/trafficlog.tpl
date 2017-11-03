@@ -15,7 +15,7 @@
 	<main class="content">
 		<div class="content-header ui-content-header">
 			<div class="container">
-				<h1 class="content-heading">使用状況</h1>
+				<h1 class="content-heading">Data Usage</h1>
 			</div>
 		</div>
 		<div class="container">
@@ -26,9 +26,9 @@
 							<div class="card">
 								<div class="card-main">
 									<div class="card-inner margin-bottom-no">
-										<p class="card-heading">注意！</p>
-										<p>特定のサーバーは使用状況を記録出来ません。</p>
-										<p>直近72時間の使用状況を表示しています。</p>
+										<p class="card-heading">Notification!</p>
+										<p>Specific servers can not record usage status.</p>
+										<p>Usage status of the most recent 72 hours is displayed.</p>
 									</div>
 									
 								</div>
@@ -49,18 +49,18 @@
 												{
 													zoomEnabled: true,
 													title:{
-														text: "直近72時間のパケット使用量",
+														text: "Data usage of the last 72 hours",
 														fontSize: 20
 														
 													},  
 													animationEnabled: true,
 													axisX: {
-														title:"時間",
+														title:"Time",
 														labelFontSize: 14,
 														titleFontSize: 18                            
 													},
 													axisY:{
-														title: "パケット/KB",
+														title: "Data/KB",
 														lineThickness: 2,
 														labelFontSize: 14,
 														titleFontSize: 18

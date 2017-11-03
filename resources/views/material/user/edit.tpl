@@ -12,7 +12,7 @@
 	<main class="content">
 		<div class="content-header ui-content-header">
 			<div class="container">
-				<h1 class="content-heading">アカウント情報の編集</h1>
+				<h1 class="content-heading">Edit Account Details</h1>
 			</div>
 		</div>
 		<div class="container">
@@ -24,25 +24,25 @@
 							<div class="card-main">
 								<div class="card-inner">
 									<div class="card-inner">
-										<p class="card-heading">パスワードの変更</p>
+										<p class="card-heading">Change Login Password</p>
 										<div class="form-group form-group-label">
-											<label class="floating-label" for="oldpwd">現在のパスワード</label>
+											<label class="floating-label" for="oldpwd">Existing Password</label>
 											<input class="form-control" id="oldpwd" type="password">
 										</div>
 
 										<div class="form-group form-group-label">
-											<label class="floating-label" for="pwd">新しいパスワード</label>
+											<label class="floating-label" for="pwd">New Password</label>
 											<input class="form-control" id="pwd" type="password">
 										</div>
 
 										<div class="form-group form-group-label">
-											<label class="floating-label" for="repwd">パスワードを再入力</label>
+											<label class="floating-label" for="repwd">Confirm New Password</label>
 											<input class="form-control" id="repwd" type="password">
 										</div>
 									</div>
 									<div class="card-action">
 										<div class="card-action-btn pull-left">
-											<button class="btn btn-flat waves-attach" id="pwd-update" ><span class="icon">check</span>&nbsp;変更する</button>
+											<button class="btn btn-flat waves-attach" id="pwd-update" ><span class="icon">check</span>&nbsp;Save Changes</button>
 										</div>
 									</div>
 								</div>
@@ -53,17 +53,17 @@
 							<div class="card-main">
 								<div class="card-inner">
 									<div class="card-inner">
-										<p class="card-heading">接続パスワードの変更</p>
-										<p>現在の接続パスワード：{$user->passwd}</p>
+										<p class="card-heading">Change Connection Password</p>
+										<p>Existing Connection Password：{$user->passwd}</p>
 										<div class="form-group form-group-label">
-											<label class="floating-label" for="sspwd">新しい接続パスワード</label>
+											<label class="floating-label" for="sspwd">New Connection Password</label>
 											<input class="form-control" id="sspwd" type="text">
 										</div>
 
 									</div>
 									<div class="card-action">
 										<div class="card-action-btn pull-left">
-											<button class="btn btn-flat waves-attach" id="ss-pwd-update" ><span class="icon">check</span>&nbsp;変更する</button>
+											<button class="btn btn-flat waves-attach" id="ss-pwd-update" ><span class="icon">check</span>&nbsp;Save Changes</button>
 										</div>
 									</div>
 								</div>
@@ -74,11 +74,11 @@
 							<div class="card-main">
 								<div class="card-inner">
 									<div class="card-inner">
-										<p class="card-heading">暗号化の変更</p>
-										<p>注意：SSとSSRがサポートしている暗号化方式が異なっています。一覧からサポートしている方式を選択して下さい。</p>
-										<p>現在の暗号化方式：{$user->method}</p>
+										<p class="card-heading">Change Encryption</p>
+										<p>Note: The encryption method supported by SS and SSR is different. Please select the method supported from the list.</p>
+										<p>Existing Encryption：{$user->method}</p>
 										<div class="form-group form-group-label">
-											<label class="floating-label" for="method">暗号化方式</label>
+											<label class="floating-label" for="method">Encryption</label>
 											<select id="method" class="form-control">
 												{$method_list = $config_service->getSupportParam('method')}
 												{foreach $method_list as $method}
@@ -90,7 +90,7 @@
 									</div>
 									<div class="card-action">
 										<div class="card-action-btn pull-left">
-											<button class="btn btn-flat waves-attach" id="method-update" ><span class="icon">check</span>&nbsp;変更する</button>
+											<button class="btn btn-flat waves-attach" id="method-update" ><span class="icon">check</span>&nbsp;Save Changes</button>
 										</div>
 									</div>
 								</div>
@@ -101,12 +101,12 @@
 							<div class="card-main">
 								<div class="card-inner">
 									<div class="card-inner">
-										<p class="card-heading">プロトコル&Obfuscation</p>
-										<p>現在のプロトコル：{$user->protocol}</p>
-										<p>注意1：兼用版SSを使用する場合は_compatibleを選択して下さい。</p>
-										<p>注意2：オリジナルのSSを使用する場合はoriginを選択して下さい。</p>
+										<p class="card-heading">Protocol&Obfuscation</p>
+										<p>Current Protocol：{$user->protocol}</p>
+										<p>Note 1: Please select _compatible when using dual-purpose version SS.</p>
+										<p>Note 2: Please select origin to use the original SS.</p>
 										<div class="form-group form-group-label">
-											<label class="floating-label" for="protocol">プロトコル</label>
+											<label class="floating-label" for="protocol">Protocol</label>
 											<select id="protocol" class="form-control">
 												{$protocol_list = $config_service->getSupportParam('protocol')}
 												{foreach $protocol_list as $protocol}
@@ -118,11 +118,11 @@
 									</div>
 
 									<div class="card-inner">
-										<p>現在のObfuscation：{$user->obfs}</p>
-										<p>注意1：兼用版SSを使用する場合は_compatibleを選択して下さい。</p>
-										<p>注意2：SSとSSRではサポートしているObfuscation方式が異なります。simple_obfs_* がSSでのObfuscationで、その他はSSRのObfuscationになります。</p>
+										<p>Current Obfuscation：{$user->obfs}</p>
+										<p>Note 1: Please select _compatible when using dual-purpose version SS.</p>
+										<p>Note 2: Obfuscation methods supported by SS and SSR are different. simple_obfs_ * is the Obfuscation in SS and the others are Obfuscation of SSR.</p>
 										<div class="form-group form-group-label">
-											<label class="floating-label" for="obfs">Obfuscation方式</label>
+											<label class="floating-label" for="obfs">Obfuscation Method</label>
 											<select id="obfs" class="form-control">
 												{$obfs_list = $config_service->getSupportParam('obfs')}
 												{foreach $obfs_list as $obfs}
@@ -134,7 +134,7 @@
 
 									<div class="card-action">
 										<div class="card-action-btn pull-left">
-											<button class="btn btn-flat waves-attach" id="ssr-update" ><span class="icon">check</span>&nbsp;変更する</button>
+											<button class="btn btn-flat waves-attach" id="ssr-update" ><span class="icon">check</span>&nbsp;Save Changes</button>
 										</div>
 									</div>
 								</div>

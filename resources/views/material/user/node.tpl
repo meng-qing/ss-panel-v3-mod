@@ -15,7 +15,7 @@
 	<main class="content">
 		<div class="content-header ui-content-header">
 			<div class="container">
-				<h1 class="content-heading">サーバー一覧</h1>
+				<h1 class="content-heading">Nodes List</h1>
 			</div>
 		</div>
 		<div class="container">
@@ -25,8 +25,8 @@
 						<div class="card margin-bottom-no">
 							<div class="card-main">
 								<div class="card-inner">
-									<h4>注意！</h4>
-									<p>SNS等あらゆる場所でサーバー情報を公開しないでください！</p>
+									<h4>Notification!</h4>
+									<p>Please do not upload server information everywhere!</p>
 								</div>
 							</div>
 						</div>
@@ -190,7 +190,7 @@
 																		{/foreach}
 																	{/if}
 																	{else}
-																		<p><code>プラン購入後にサーバー情報詳細が表示されます。</code></p>
+																		<p><code>After the purchase plan, server details are displayed.</code></p>
 																	{/if}
 																{/foreach}
 

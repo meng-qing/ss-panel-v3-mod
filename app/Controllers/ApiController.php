@@ -50,13 +50,13 @@ class ApiController extends BaseController
 
         if ($user == null) {
             $res['ret'] = 0;
-            $res['msg'] = "401 邮箱或者密码错误";
+            $res['msg'] = "401 E-mail address or password is wrong";
             return $this->echoJson($response, $res);
         }
 
         if (!Hash::checkPassword($user->pass, $passwd)) {
             $res['ret'] = 0;
-            $res['msg'] = "402 邮箱或者密码错误";
+            $res['msg'] = "402 E-mail address or password is wrong";
             return $this->echoJson($response, $res);
         }
         $tokenStr = Tools::genToken();

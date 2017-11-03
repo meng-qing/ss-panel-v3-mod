@@ -136,7 +136,7 @@ class UserController extends BaseController
     {
         $time = $request->getQueryParams()["time"];
         $codes = Code::where('userid', '=', $this->user->id)->where('usedatetime', '>', date('Y-m-d H:i:s', $time))->first();
-        if ($codes!=null && strpos($codes->code, "チャージ") !== false) {
+        if ($codes!=null && strpos($codes->code, "charge") !== false) {
             $res['ret'] = 1;
             return $response->getBody()->write(json_encode($res));
         } else {
@@ -210,14 +210,14 @@ class UserController extends BaseController
 
         if ($code == "") {
             $res['ret'] = 0;
-            $res['msg'] = "请填好充值码";
+            $res['msg'] = "Please fill in the recharge code";
             return $response->getBody()->write(json_encode($res));
         }
 
         $codeq=Code::where("code", "=", $code)->where("isused", "=", 0)->first();
         if ($codeq == null) {
             $res['ret'] = 0;
-            $res['msg'] = "此充值码错误";
+            $res['msg'] = "This charge code error";
             return $response->getBody()->write(json_encode($res));
         }
 
@@ -245,7 +245,7 @@ class UserController extends BaseController
             }
 
             $res['ret'] = 1;
-            $res['msg'] = "充值成功，充值的金额为".$codeq->number."元。";
+            $res['msg'] = "Recharge success，The amount of money is ".$codeq->number."USD.";
 
             if (Config::get('enable_donate') == 'true') {
                 if ($this->user->is_hide == 1) {
@@ -332,7 +332,7 @@ class UserController extends BaseController
 
 
         $res['ret'] = 1;
-        $res['msg'] = "设置成功";
+        $res['msg'] = "Set up successfully";
         return $response->getBody()->write(json_encode($res));
     }
 
@@ -353,7 +353,7 @@ class UserController extends BaseController
 
 
         $res['ret'] = 1;
-        $res['msg'] = "设置成功，新端口是".$user->port;
+        $res['msg'] = "Set up successfully，the new port is ".$user->port;
         return $response->getBody()->write(json_encode($res));
     }
 
@@ -452,7 +452,7 @@ class UserController extends BaseController
                     $node_prealive[$node->id]=$node_tempalive;
                     if ($node->isNodeOnline() !== null) {
                         if ($node->isNodeOnline() === false) {
-                            $node_heartbeat[$temp[0]]="离线";
+                            $node_heartbeat[$temp[0]]="在线";
                         } else {
                             $node_heartbeat[$temp[0]]="在线";
                         }
@@ -465,7 +465,7 @@ class UserController extends BaseController
                     if ($node->node_bandwidth_limit==0) {
                         $node_bandwidth[$temp[0]]=(int)($node->node_bandwidth/1024/1024/1024)." GB / No limit";
                     } else {
-                        $node_bandwidth[$temp[0]]=(int)($node->node_bandwidth/1024/1024/1024)." GB / ".(int)($node->node_bandwidth_limit/1024/1024/1024)." GB - ".$node->bandwidthlimit_resetday." 日重置";
+                        $node_bandwidth[$temp[0]]=(int)($node->node_bandwidth/1024/1024/1024)." GB / ".(int)($node->node_bandwidth_limit/1024/1024/1024)." GB - ".$node->bandwidthlimit_resetday." days reset";
                     }
 
                     if ($node_tempalive!="暂无数据") {
@@ -748,10 +748,10 @@ class UserController extends BaseController
 
         $BIP = BlockIp::where("ip", $_SERVER["REMOTE_ADDR"])->first();
         if ($BIP == null) {
-            $Block = "IP: ".$_SERVER["REMOTE_ADDR"]." 没有被封";
+            $Block = "IP: ".$_SERVER["REMOTE_ADDR"]." Not being sealed";
             $isBlock = 0;
         } else {
-            $Block = "IP: ".$_SERVER["REMOTE_ADDR"]." 已被封";
+            $Block = "IP: ".$_SERVER["REMOTE_ADDR"]." Has been closed";
             $isBlock = 1;
         }
 
@@ -783,7 +783,7 @@ class UserController extends BaseController
         $n = $this->user->invite_num;
         if ($n < 1) {
             $res['ret'] = 0;
-            $res['msg'] = "失败";
+            $res['msg'] = "failure";
             return $response->getBody()->write(json_encode($res));
         }
         for ($i = 0; $i < $n; $i++) {
@@ -796,7 +796,7 @@ class UserController extends BaseController
         $this->user->invite_num = 0;
         $this->user->save();
         $res['ret'] = 1;
-        $res['msg'] = "生成成功。";
+        $res['msg'] = "Generate success.";
         return $this->echoJson($response, $res);
     }
 
@@ -813,18 +813,18 @@ class UserController extends BaseController
         $user = $this->user;
         if (!Hash::checkPassword($user->pass, $oldpwd)) {
             $res['ret'] = 0;
-            $res['msg'] = "古いパスワードが間違っています";
+            $res['msg'] = "Old password is wrong";
             return $response->getBody()->write(json_encode($res));
         }
         if ($pwd != $repwd) {
             $res['ret'] = 0;
-            $res['msg'] = "入力を2度間違えています";
+            $res['msg'] = "Mistook the input twice";
             return $response->getBody()->write(json_encode($res));
         }
 
         if (strlen($pwd) < 8) {
             $res['ret'] = 0;
-            $res['msg'] = "パスワードが短すぎます";
+            $res['msg'] = "Password is too short";
             return $response->getBody()->write(json_encode($res));
         }
         $hashPwd = Hash::passwordHash($pwd);
@@ -834,7 +834,7 @@ class UserController extends BaseController
         $user->clean_link();
 
         $res['ret'] = 1;
-        $res['msg'] = "変更しました";
+        $res['msg'] = "It has changed";
         return $this->echoJson($response, $res);
     }
 
@@ -846,7 +846,7 @@ class UserController extends BaseController
         $user->save();
 
         $res['ret'] = 1;
-        $res['msg'] = "変更しました";
+        $res['msg'] = "It has changed";
         return $this->echoJson($response, $res);
     }
 
@@ -866,7 +866,7 @@ class UserController extends BaseController
 
 
         $res['ret'] = 1;
-        $res['msg'] = "发送解封命令解封 ".$_SERVER["REMOTE_ADDR"]." 成功";
+        $res['msg'] = "Send Unlock Command Unlock ".$_SERVER["REMOTE_ADDR"]." success";
         return $this->echoJson($response, $res);
     }
 
@@ -891,7 +891,7 @@ class UserController extends BaseController
 
         if ($shop==null) {
             $res['ret'] = 0;
-            $res['msg'] = "非法请求";
+            $res['msg'] = "Illegal request";
             return $response->getBody()->write(json_encode($res));
         }
 
@@ -899,7 +899,7 @@ class UserController extends BaseController
             $res['ret'] = 1;
             $res['name'] = $shop->name;
             $res['credit'] = "0 %";
-            $res['total'] = $shop->price."元";
+            $res['total'] = $shop->price." USD";
             return $response->getBody()->write(json_encode($res));
         }
 
@@ -907,20 +907,20 @@ class UserController extends BaseController
 
         if ($coupon==null) {
             $res['ret'] = 0;
-            $res['msg'] = "优惠码无效";
+            $res['msg'] = "Invalid coupon code";
             return $response->getBody()->write(json_encode($res));
         }
 
         if ($coupon->order($shop->id)==false) {
             $res['ret'] = 0;
-            $res['msg'] = "此优惠码不可用于此商品";
+            $res['msg'] = "This offer code is not available for this item";
             return $response->getBody()->write(json_encode($res));
         }
 
         $res['ret'] = 1;
         $res['name'] = $shop->name;
         $res['credit'] = $coupon->credit." %";
-        $res['total'] = $shop->price*((100-$coupon->credit)/100)."元";
+        $res['total'] = $shop->price*((100-$coupon->credit)/100)."USD";
 
         return $response->getBody()->write(json_encode($res));
     }
@@ -937,7 +937,7 @@ class UserController extends BaseController
 
         if ($shop==null) {
             $res['ret'] = 0;
-            $res['msg'] = "非法请求";
+            $res['msg'] = "Illegal request";
             return $response->getBody()->write(json_encode($res));
         }
 
@@ -958,13 +958,13 @@ class UserController extends BaseController
 
             if ($coupon->order($shop->id)==false) {
                 $res['ret'] = 0;
-                $res['msg'] = "此优惠码不可用于此商品";
+                $res['msg'] = "This offer code is not available for this item";
                 return $response->getBody()->write(json_encode($res));
             }
 
             if ($coupon->expire<time()) {
                 $res['ret'] = 0;
-                $res['msg'] = "此优惠码已过期";
+                $res['msg'] = "This offer code has expired";
                 return $response->getBody()->write(json_encode($res));
             }
         }
@@ -974,7 +974,7 @@ class UserController extends BaseController
 
         if ((float)$user->money<(float)$price) {
             $res['ret'] = 0;
-            $res['msg'] = "余额不足，总价为".$price."元。";
+            $res['msg'] = "Insufficient balance,total price is".$price."USD.";
             return $response->getBody()->write(json_encode($res));
         }
 
@@ -1003,7 +1003,7 @@ class UserController extends BaseController
         $shop->buy($user);
 
         $res['ret'] = 1;
-        $res['msg'] = "购买成功";
+        $res['msg'] = "Purchase success";
 
         return $response->getBody()->write(json_encode($res));
     }
@@ -1027,7 +1027,7 @@ class UserController extends BaseController
 
         if ($shop==null) {
             $rs['ret'] = 0;
-            $rs['msg'] = "キャンセルに失敗しました。注文が存在しません";
+            $rs['msg'] = "failed to cancel. Order does not exist";
             return $response->getBody()->write(json_encode($rs));
         }
 
@@ -1037,11 +1037,11 @@ class UserController extends BaseController
 
         if (!$shop->save()) {
             $rs['ret'] = 0;
-            $rs['msg'] = "キャンセルに失敗しました";
+            $rs['msg'] = "Cancel failed";
             return $response->getBody()->write(json_encode($rs));
         }
         $rs['ret'] = 1;
-        $rs['msg'] = "キャンセルされました";
+        $rs['msg'] = "was canceled";
         return $response->getBody()->write(json_encode($rs));
     }
 
@@ -1071,13 +1071,13 @@ class UserController extends BaseController
 
         if ($title==""||$content=="") {
             $res['ret'] = 0;
-            $res['msg'] = "空白に入力して下さい";
+            $res['msg'] = "Please fill in the blank";
             return $this->echoJson($response, $res);
         }
 
         if (strpos($content, "admin")!=false||strpos($content, "user")!=false) {
             $res['ret'] = 0;
-            $res['msg'] = "誤った文字が含まれています";
+            $res['msg'] = "It contains an incorrect character";
             return $this->echoJson($response, $res);
         }
 
@@ -1095,7 +1095,7 @@ class UserController extends BaseController
 
         $adminUser = User::where("is_admin", "=", "1")->get();
         foreach ($adminUser as $user) {
-            $subject = Config::get('appName')."-新工单被开启";
+            $subject = Config::get('appName')."- 新工单被开启";
             $to = $user->email;
             $text = "管理员您好，有人开启了新的工单，请您及时处理。。" ;
             try {
@@ -1109,7 +1109,7 @@ class UserController extends BaseController
         }
 
         $res['ret'] = 1;
-        $res['msg'] = "送信しました";
+        $res['msg'] = "It was sent";
         return $this->echoJson($response, $res);
     }
 
@@ -1121,13 +1121,13 @@ class UserController extends BaseController
 
         if ($content==""||$status=="") {
             $res['ret'] = 0;
-            $res['msg'] = "空白に入力して下さい";
+            $res['msg'] = "Please fill in the blank";
             return $this->echoJson($response, $res);
         }
 
         if (strpos($content, "admin")!=false||strpos($content, "user")!=false) {
             $res['ret'] = 0;
-            $res['msg'] = "誤った文字が含まれています";
+            $res['msg'] = "It contains an incorrect character";
             return $this->echoJson($response, $res);
         }
 
@@ -1187,7 +1187,7 @@ class UserController extends BaseController
 
 
         $res['ret'] = 1;
-        $res['msg'] = "送信しました";
+        $res['msg'] = "Email has been sent";
         return $this->echoJson($response, $res);
     }
 
@@ -1260,19 +1260,19 @@ class UserController extends BaseController
 
         if ($obfs == ""||$protocol == "") {
             $res['ret'] = 0;
-            $res['msg'] = "请填好";
+            $res['msg'] = "Please fill out";
             return $response->getBody()->write(json_encode($res));
         }
 
         if (!Tools::is_param_validate('obfs', $obfs)) {
             $res['ret'] = 0;
-            $res['msg'] = "悟空别闹";
+            $res['msg'] = "error";
             return $response->getBody()->write(json_encode($res));
         }
 
         if (!Tools::is_param_validate('protocol', $protocol)) {
             $res['ret'] = 0;
-            $res['msg'] = "悟空别闹";
+            $res['msg'] = "error";
             return $response->getBody()->write(json_encode($res));
         }
 
@@ -1284,13 +1284,13 @@ class UserController extends BaseController
 
         if (!Tools::checkNoneProtocol($user)) {
             $res['ret'] = 0;
-            $res['msg'] = "您好，系统检测到您目前的加密方式为 none ，但您将要设置为的协议并不在以下协议<br>".implode(',', Config::getSupportParam('allow_none_protocol')).'<br>之内，请您先修改您的加密方式，再来修改此处设置。';
+            $res['msg'] = "Hello, the system has detected that your current encryption method is none, but the protocol you are going to set is not in the following agreement<br>".implode(',', Config::getSupportParam('allow_none_protocol')).'<br>Please first modify your encryption method, and then modify the settings here';
             return $this->echoJson($response, $res);
         }
 
         if(!URL::SSCanConnect($user) && !URL::SSRCanConnect($user)) {
             $res['ret'] = 0;
-            $res['msg'] = "您这样设置之后，就没有客户端能连接上了，所以系统拒绝了您的设置，请您检查您的设置之后再进行操作。";
+            $res['msg'] = "After you set up this, there is no client can connect, so the system rejected your settings, please check your settings before proceeding.";
             return $this->echoJson($response, $res);
         }
 
@@ -1298,18 +1298,18 @@ class UserController extends BaseController
 
         if(!URL::SSCanConnect($user)) {
             $res['ret'] = 0;
-            $res['msg'] = "设置成功，但您目前的协议，混淆，加密方式设置会导致 Shadowsocks原版客户端无法连接，请您自行更换到 ShadowsocksR 客户端。";
+            $res['msg'] = "Set up success, but your current agreement, confusion, encryption settings will cause Shadowsocks original client can not connect, please yourself to replace the ShadowsocksR client.";
             return $this->echoJson($response, $res);
         }
 
         if(!URL::SSRCanConnect($user)) {
             $res['ret'] = 0;
-            $res['msg'] = "设置成功，但您目前的协议，混淆，加密方式设置会导致 ShadowsocksR 客户端无法连接，请您自行更换到 Shadowsocks 客户端。";
+            $res['msg'] = "Set up success, but your current agreement, confusion, encryption settings will cause ShadowsocksR client can not connect, please change your own to the Shadowsocks client.";
             return $this->echoJson($response, $res);
         }
 
         $res['ret'] = 0;
-        $res['msg'] = "设置成功，您可自由选用客户端来连接。";
+        $res['msg'] = "Set up successfully, you are free to use the client to connect.";
         return $this->echoJson($response, $res);
     }
 
@@ -1343,7 +1343,7 @@ class UserController extends BaseController
 
         if (!($mail == "1"||$mail == "0")) {
             $res['ret'] = 0;
-            $res['msg'] = "悟空别闹";
+            $res['msg'] = "error";
             return $response->getBody()->write(json_encode($res));
         }
 
@@ -1364,7 +1364,7 @@ class UserController extends BaseController
 
         if ($pac == "") {
             $res['ret'] = 0;
-            $res['msg'] = "悟空别闹";
+            $res['msg'] = "error";
             return $response->getBody()->write(json_encode($res));
         }
 
@@ -1385,13 +1385,13 @@ class UserController extends BaseController
 
         if ($pwd == "") {
             $res['ret'] = 0;
-            $res['msg'] = "悟空别闹";
+            $res['msg'] = "error";
             return $response->getBody()->write(json_encode($res));
         }
 
         if (!Tools::is_validate($pwd)) {
             $res['ret'] = 0;
-            $res['msg'] = "悟空别闹";
+            $res['msg'] = "error";
             return $response->getBody()->write(json_encode($res));
         }
 
@@ -1415,13 +1415,13 @@ class UserController extends BaseController
 
         if ($method == "") {
             $res['ret'] = 0;
-            $res['msg'] = "悟空别闹";
+            $res['msg'] = "error";
             return $response->getBody()->write(json_encode($res));
         }
 
         if (!Tools::is_param_validate('method', $method)) {
             $res['ret'] = 0;
-            $res['msg'] = "悟空别闹";
+            $res['msg'] = "error";
             return $response->getBody()->write(json_encode($res));
         }
 
@@ -1429,13 +1429,13 @@ class UserController extends BaseController
 
         if (!Tools::checkNoneProtocol($user)) {
             $res['ret'] = 0;
-            $res['msg'] = "您好，系统检测到您将要设置的加密方式为 none ，但您的协议并不在以下协议<br>".implode(',', Config::getSupportParam('allow_none_protocol')).'<br>之内，请您先修改您的协议，再来修改此处设置。';
+            $res['msg'] = "Hello, the system has detected that the encryption method you are going to set is none, but your agreement is not in the following agreement<br>".implode(',', Config::getSupportParam('allow_none_protocol')).'<br>Please first modify your agreement, and then modify the settings here.';
             return $this->echoJson($response, $res);
         }
 
         if(!URL::SSCanConnect($user) && !URL::SSRCanConnect($user)) {
             $res['ret'] = 0;
-            $res['msg'] = "您这样设置之后，就没有客户端能连接上了，所以系统拒绝了您的设置，请您检查您的设置之后再进行操作。";
+            $res['msg'] = "After you set up this, there is no client can connect, so the system rejected your settings, please check your settings before proceeding.";
             return $this->echoJson($response, $res);
         }
 
@@ -1443,18 +1443,18 @@ class UserController extends BaseController
 
         if(!URL::SSCanConnect($user)) {
             $res['ret'] = 0;
-            $res['msg'] = "设置成功，但您目前的协议，混淆，加密方式设置会导致 Shadowsocks原版客户端无法连接，请您自行更换到 ShadowsocksR 客户端。";
+            $res['msg'] = "Set up success, but your current agreement, confusion, encryption settings will cause Shadowsocks original client can not connect, please yourself to replace the ShadowsocksR client.";
             return $this->echoJson($response, $res);
         }
 
         if(!URL::SSRCanConnect($user)) {
             $res['ret'] = 0;
-            $res['msg'] = "设置成功，但您目前的协议，混淆，加密方式设置会导致 ShadowsocksR 客户端无法连接，请您自行更换到 Shadowsocks 客户端。";
+            $res['msg'] = "Set up success, but your current agreement, confusion, encryption settings will cause ShadowsocksR client can not connect, please change your own to the Shadowsocks client.";
             return $this->echoJson($response, $res);
         }
 
         $res['ret'] = 0;
-        $res['msg'] = "设置成功，您可自由选用两种客户端来进行连接。";
+        $res['msg'] = "Set up success, you are free to choose two kinds of client to connect.";
         return $this->echoJson($response, $res);
     }
 
@@ -1471,13 +1471,13 @@ class UserController extends BaseController
             $ret = Geetest::verify($request->getParam('geetest_challenge'), $request->getParam('geetest_validate'), $request->getParam('geetest_seccode'));
             if (!$ret) {
                 $res['ret'] = 0;
-                $res['msg'] = "系统无法接受您的验证结果，请刷新页面后重试。";
+                $res['msg'] = "The system can not accept your verification results. Please refresh the page and try again.";
                 return $response->getBody()->write(json_encode($res));
             }
         }
 
         if (!$this->user->isAbleToCheckin()) {
-            $res['msg'] = "您似乎已经续命过了...";
+            $res['msg'] = "You seem to have checked in ...";
             $res['ret'] = 1;
             return $response->getBody()->write(json_encode($res));
         }
@@ -1485,7 +1485,7 @@ class UserController extends BaseController
         $this->user->transfer_enable = $this->user->transfer_enable + Tools::toMB($traffic);
         $this->user->last_check_in_time = time();
         $this->user->save();
-        $res['msg'] = sprintf("获得了 %u MB流量.", $traffic);
+        $res['msg'] = sprintf("got %u MBtraffic.", $traffic);
         $res['ret'] = 1;
         return $this->echoJson($response, $res);
     }
@@ -1506,14 +1506,14 @@ class UserController extends BaseController
         $res = array();
         if (!Hash::checkPassword($user->pass, $passwd)) {
             $res['ret'] = 0;
-            $res['msg'] = " 密码错误";
+            $res['msg'] = " wrong password";
             return $this->echoJson($response, $res);
         }
 
         Auth::logout();
         $user->kill_user();
         $res['ret'] = 1;
-        $res['msg'] = "GG!您的帐号已经从我们的系统中删除.";
+        $res['msg'] = "Your account has been removed from our system.";
         return $this->echoJson($response, $res);
     }
 

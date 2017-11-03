@@ -170,7 +170,7 @@ class RelayController extends UserController
         )->where('type', 1)->where('sort', 10)->where("node_class", "<=", $user->class)->first();
         if ($source_node == null) {
             $rs['ret'] = 0;
-            $rs['msg'] = "美国的华莱士";
+            $rs['msg'] = "ok";
             return $response->getBody()->write(json_encode($rs));
         }
 
@@ -195,7 +195,7 @@ class RelayController extends UserController
 
         if ($dist_node == null) {
             $rs['ret'] = 0;
-            $rs['msg'] = "不知道比你们高到哪里去了";
+            $rs['msg'] = "ok";
             return $response->getBody()->write(json_encode($rs));
         }
 
@@ -207,13 +207,13 @@ class RelayController extends UserController
         )->where('type', 1)->where('sort', 9)->where("node_class", "<=", $user->class)->first();
         if ($port_raw == null && $port != $user->port) {
             $rs['ret'] = 0;
-            $rs['msg'] = "我和他谈笑风生";
+            $rs['msg'] = "ok";
             return $response->getBody()->write(json_encode($rs));
         }
 
         if (!Tools::is_protocol_relay($user)) {
             $rs['ret'] = 0;
-            $rs['msg'] = "为了中转的稳定，您需要在<a href='/user/edit'>资料编辑</a>处设置协议为 auth_aes128_md5 或 auth_aes128_sha1 后方可设置中转规则！";
+            $rs['msg'] = "In order to stabilize the transfer, you need to be in<a href='/user/edit'>Information editor</a> set the agreement for the auth_aes128_md5 or auth_aes128_sha1 set up after the transfer rules!";
             return $response->getBody()->write(json_encode($rs));
         }
 
@@ -232,21 +232,21 @@ class RelayController extends UserController
         $maybe_rule_id = Tools::has_conflict_rule($rule, $ruleset, 0, $rule->source_node_id);
         if ($maybe_rule_id != 0) {
             $rs['ret'] = 0;
-            $rs['msg'] = "您即将添加的规则与规则 ID:".$maybe_rule_id." 冲突！";
+            $rs['msg'] = "You are about to add rules and rules ID:".$maybe_rule_id." conflict!";
             if ($maybe_rule_id == -1) {
-                $rs['msg'] = "您即将添加的规则可能会造成冲突！";
+                $rs['msg'] = "The rules you are about to add may cause conflicts!";
             }
             return $response->getBody()->write(json_encode($rs));
         }
 
         if (!$rule->save()) {
             $rs['ret'] = 0;
-            $rs['msg'] = "添加失败";
+            $rs['msg'] = "add failed";
             return $response->getBody()->write(json_encode($rs));
         }
 
         $rs['ret'] = 1;
-        $rs['msg'] = "添加成功";
+        $rs['msg'] = "Added successfully";
         return $response->getBody()->write(json_encode($rs));
     }
 
@@ -324,7 +324,7 @@ class RelayController extends UserController
         )->where('type', 1)->where('sort', 10)->where("node_class", "<=", $user->class)->first();
         if ($source_node == null) {
             $rs['ret'] = 0;
-            $rs['msg'] = "我告诉你们我是身经百战了";
+            $rs['msg'] = "ok";
             return $response->getBody()->write(json_encode($rs));
         }
 
@@ -349,7 +349,7 @@ class RelayController extends UserController
 
         if ($dist_node == null) {
             $rs['ret'] = 0;
-            $rs['msg'] = "见得多了";
+            $rs['msg'] = "ok";
             return $response->getBody()->write(json_encode($rs));
         }
 
@@ -361,13 +361,13 @@ class RelayController extends UserController
         )->where('type', 1)->where('sort', 9)->where("node_class", "<=", $user->class)->first();
         if ($port_raw == null && $port != $user->port) {
             $rs['ret'] = 0;
-            $rs['msg'] = "西方的哪个国家我没去过";
+            $rs['msg'] = "ok";
             return $response->getBody()->write(json_encode($rs));
         }
 
         if (!Tools::is_protocol_relay($user)) {
             $rs['ret'] = 0;
-            $rs['msg'] = "为了中转的稳定，您需要在<a href='/user/edit'>资料编辑</a>处设置协议为 auth_aes128_md5 或 auth_aes128_sha1 后方可设置中转规则！";
+            $rs['msg'] = "In order to stabilize the transfer, you need to be in<a href='/user/edit'>Information editor</a>Set the agreement for the auth_aes128_md5 or auth_aes128_sha1 set up after the transfer rules!";
             return $response->getBody()->write(json_encode($rs));
         }
 
@@ -385,21 +385,21 @@ class RelayController extends UserController
         $maybe_rule_id = Tools::has_conflict_rule($rule, $ruleset, $rule->id, $rule->source_node_id);
         if ($maybe_rule_id != 0) {
             $rs['ret'] = 0;
-            $rs['msg'] = "您即将添加的规则与规则 ID:".$maybe_rule_id." 冲突！";
+            $rs['msg'] = "You are about to add rules and rules ID:".$maybe_rule_id." conflict！";
             if ($maybe_rule_id == -1) {
-                $rs['msg'] = "您即将添加的规则可能会造成冲突！";
+                $rs['msg'] = "The rules you are about to add may cause conflicts!";
             }
             return $response->getBody()->write(json_encode($rs));
         }
 
         if (!$rule->save()) {
             $rs['ret'] = 0;
-            $rs['msg'] = "修改失败";
+            $rs['msg'] = "fail to edit";
             return $response->getBody()->write(json_encode($rs));
         }
 
         $rs['ret'] = 1;
-        $rs['msg'] = "修改成功";
+        $rs['msg'] = "Successfully modified";
         return $response->getBody()->write(json_encode($rs));
     }
 
@@ -416,11 +416,11 @@ class RelayController extends UserController
 
         if (!$rule->delete()) {
             $rs['ret'] = 0;
-            $rs['msg'] = "删除失败";
+            $rs['msg'] = "failed to delete";
             return $response->getBody()->write(json_encode($rs));
         }
         $rs['ret'] = 1;
-        $rs['msg'] = "删除成功";
+        $rs['msg'] = "successfully deleted";
         return $response->getBody()->write(json_encode($rs));
     }
 }

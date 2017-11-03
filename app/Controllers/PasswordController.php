@@ -10,7 +10,7 @@ use App\Utils\Hash;
 /***
  * Class Password
  * @package App\Controllers
- * パスワードをリセットする
+ * reset password
  */
 
 class PasswordController extends BaseController
@@ -29,12 +29,12 @@ class PasswordController extends BaseController
         $user = User::where('email', $email)->first();
         if ($user == null) {
             $rs['ret'] = 0;
-            $rs['msg'] = 'このメールアドレスは存在しません。';
+            $rs['msg'] = 'This e-mail address does not exist.';
             return $response->getBody()->write(json_encode($rs));
         }
         Password::sendResetEmail($email);
         $rs['ret'] = 1;
-        $rs['msg'] = 'リセットのためのEメールを送信したので、ご確認下さい。';
+        $rs['msg'] = 'Sent an e-mail for resetting, please check your mailbox.';
         return $response->getBody()->write(json_encode($rs));
     }
 
@@ -52,13 +52,13 @@ class PasswordController extends BaseController
         
         if ($password != $repasswd) {
             $res['ret'] = 0;
-            $res['msg'] = "入力を2度間違えています";
+            $res['msg'] = "Mistook the input twice";
             return $response->getBody()->write(json_encode($res));
         }
 
         if (strlen($password) < 8) {
             $res['ret'] = 0;
-            $res['msg'] = "パスワードが短すぎます";
+            $res['msg'] = "Password is too short";
             return $response->getBody()->write(json_encode($res));
         }
         
@@ -66,14 +66,14 @@ class PasswordController extends BaseController
         $token = PasswordReset::where('token', $tokenStr)->first();
         if ($token == null || $token->expire_time < time()) {
             $rs['ret'] = 0;
-            $rs['msg'] = 'リンクの有効期限切れです。もう一度取得して下さい';
+            $rs['msg'] = 'The link has expired. Please get it again';
             return $response->getBody()->write(json_encode($rs));
         }
 
         $user = User::where('email', $token->email)->first();
         if ($user == null) {
             $rs['ret'] = 0;
-            $rs['msg'] = 'リンクの有効期限切れです。もう一度取得して下さい';
+            $rs['msg'] = 'The link has expired. Please get it again';
             return $response->getBody()->write(json_encode($rs));
         }
 
@@ -83,11 +83,11 @@ class PasswordController extends BaseController
         $user->ga_enable = 0;
         if (!$user->save()) {
             $rs['ret'] = 0;
-            $rs['msg'] = 'リセットに失敗しました。もう一度試して下さい';
+            $rs['msg'] = 'Reset failed. Please try again.';
             return $response->getBody()->write(json_encode($rs));
         }
         $rs['ret'] = 1;
-        $rs['msg'] = 'リセットされました';
+        $rs['msg'] = 'Reset done';
         
         $user->clean_link();
         

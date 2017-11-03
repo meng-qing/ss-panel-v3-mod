@@ -51,7 +51,7 @@ class User extends Model
     public function lastSsTime()
     {
         if ($this->attributes['t'] == 0) {
-            return "未使用";
+            return "Unused";
         }
         return Tools::toDateTime($this->attributes['t']);
     }
@@ -75,7 +75,7 @@ class User extends Model
     public function lastCheckInTime()
     {
         if ($this->attributes['last_check_in_time'] == 0) {
-            return "从未签到";
+            return "Never check in";
         }
         return Tools::toDateTime($this->attributes['last_check_in_time']);
     }
@@ -273,7 +273,7 @@ class User extends Model
     {
         $id = $this->attributes['id'];
         $today_traffic = Tools::flowToMB($this->attributes['u'] + $this->attributes['d'] - $this->attributes['last_day_t']);
-        $is_enable = $this->attributes['enable'] == 1 ? "可用" : "禁用";
+        $is_enable = $this->attributes['enable'] == 1 ? "Available" : "Disabled";
         $reg_location = $this->attributes['reg_ip'];
         $account_expire_in = $this->attributes['expire_in'];
         $class_expire_in = $this->attributes['class_expire'];

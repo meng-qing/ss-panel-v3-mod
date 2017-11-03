@@ -27,7 +27,7 @@
 										<div class="card-main">
 											<div class="card-header">
 												<div class="card-inner">
-													<h1 style="text-align:center;" class="card-heading">ユーザーログイン</h1>
+													<h1 style="text-align:center;" class="card-heading">Account login</h1>
 												</div>
 											</div>
 											<div class="card-inner">
@@ -49,7 +49,7 @@
 													<div class="form-group form-group-label">
 														<div class="row">
 															<div class="col-md-10 col-md-push-1">
-																<label class="floating-label" for="passwd">パスワード</label>
+																<label class="floating-label" for="passwd">Password</label>
 																<input class="form-control" id="passwd" type="password" name="Password">
 															</div>
 														</div>
@@ -75,7 +75,7 @@
 													<div class="form-group">
 														<div class="row">
 															<div class="col-md-10 col-md-push-1">
-																<button id="login" type="submit" class="btn btn-block btn-brand waves-attach waves-light">ログイン</button>
+																<button id="login" type="submit" class="btn btn-block btn-brand waves-attach waves-light">Login</button>
 															</div>
 														</div>
 													</div>
@@ -137,8 +137,8 @@
 
 
 						<div class="clearfix">
-							<p class="margin-no-top pull-left"><a class="btn btn-flat btn-brand waves-attach" href="/password/reset">パスワードを紛失？</a></p>
-							<p class="margin-no-top pull-right"><a class="btn btn-flat btn-brand waves-attach" href="/auth/register">初めての方</a></p>
+							<p class="margin-no-top pull-left"><a class="btn btn-flat btn-brand waves-attach" href="/password/reset">Forget your password?</a></p>
+							<p class="margin-no-top pull-right"><a class="btn btn-flat btn-brand waves-attach" href="/auth/register">New to UCSS?</a></p>
 						</div>
 
 

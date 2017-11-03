@@ -17,16 +17,16 @@ class Shop extends Model
         foreach ($content as $key=>$value) {
             switch ($key) {
                 case "bandwidth":
-                    $content_text .= "添加流量 ".$value." G ";
+                    $content_text .= "Add traffic ".$value." G ";
                     break;
                 case "expire":
-                    $content_text .= "为账号的有效期添加 ".$value." 天 ";
+                    $content_text .= "Add ".$value." days to your account's validity";
                     break;
                 case "class":
-                    $content_text .= "为账号升级为等级 ".$value." ,有效期 ".$content["class_expire"]." 天";
+                    $content_text .= "Upgrade account to level ".$value." ,Valid period ".$content["class_expire"]." days";
                     break;
                 case "reset":
-                    $content_text .= " 在 ".$content["reset_exp"]." 天内，每 ".$value." 天重置流量为 ".$content["reset_value"]." G ";
+		    $content_text .= "Reset the traffic to ".$content["reset_value"]." G every ".$value." days in ".$content["reset_exp"]." days";
                     break;
                 default:
             }

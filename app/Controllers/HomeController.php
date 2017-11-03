@@ -58,7 +58,7 @@ class HomeController extends BaseController
         if ($token == Config::get('telegram_request_token')) {
             TelegramProcess::process();
         } else {
-            echo("不正确请求！");
+            echo("Incorrect request!");
         }
     }
     

@@ -26,7 +26,7 @@ class Password
         if (!$pwdRst->save()) {
             return false;
         }
-        $subject = Config::get('appName') . "パスワードをリセットする";
+        $subject = Config::get('appName') . " - reset password";
         $resetUrl = Config::get('baseUrl') . "/password/token/" . $pwdRst->token;
         try {
             Mail::send($email, $subject, 'password/reset.tpl', [

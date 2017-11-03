@@ -20,7 +20,7 @@
 										<div class="form-group form-group-label">
 											<div class="row">
 												<div class="col-md-10 col-md-push-1">
-													<label class="floating-label" for="name">ユーザーネーム</label>
+													<label class="floating-label" for="name">Username</label>
 													<input class="form-control" id="name" type="text">
 												</div>
 											</div>
@@ -39,10 +39,10 @@
 										<div class="form-group form-group-label">
 											<div class="row">
 												<div class="col-md-10 col-md-push-1">
-													<label class="floating-label" for="email_code">認証番号（Emailを確認して下さい）</label>
+													<label class="floating-label" for="email_code">Verification Code (Please check your email)</label>
 													<input class="form-control" id="email_code" type="text">
 													<br/>
-													<button id="email_verify" class="btn btn-block btn-brand-accent waves-attach waves-light">認証番号を取得</button>
+													<button id="email_verify" class="btn btn-block btn-brand-accent waves-attach waves-light">Get Verification Code</button>
 												</div>
 											</div>
 										</div>
@@ -51,7 +51,7 @@
 										<div class="form-group form-group-label">
 											<div class="row">
 												<div class="col-md-10 col-md-push-1">
-													<label class="floating-label" for="passwd">パスワード</label>
+													<label class="floating-label" for="passwd">Password</label>
 													<input class="form-control" id="passwd" type="password">
 												</div>
 											</div>
@@ -60,7 +60,7 @@
 										<div class="form-group form-group-label">
 											<div class="row">
 												<div class="col-md-10 col-md-push-1">
-													<label class="floating-label" for="repasswd">パスワードを再入力</label>
+													<label class="floating-label" for="repasswd">Confirm Your Password</label>
 													<input class="form-control" id="repasswd" type="password">
 												</div>
 											</div>
@@ -119,7 +119,7 @@
 										<div class="form-group">
 											<div class="row">
 												<div class="col-md-10 col-md-push-1">
-													<button id="reg" type="submit" class="btn btn-block btn-brand waves-attach waves-light">新規登録する</button>
+													<button id="reg" type="submit" class="btn btn-block btn-brand waves-attach waves-light">Sign Up</button>
 												</div>
 											</div>
 										</div>
@@ -127,7 +127,7 @@
 										<div class="form-group">
 											<div class="row">
 												<div class="col-md-10 col-md-push-1">
-													<p>「登録」ボタンを押した場合は、<a href="https://undercurrentss.com/jp/tos/">利用規約</a>をご確認のうえ同意したものとみなします。</p>
+												If you click "Sign Up" button, we will assume that you have agreed the <a href="https://undercurrentss.com/tos/">terms of use.</a>
 												</div>
 											</div>
 										</div>
@@ -136,7 +136,7 @@
 							</div>
 						</div>
 						<div class="clearfix">
-							<p class="margin-no-top pull-left"><a class="btn btn-flat btn-brand waves-attach" href="/auth/login">既にユーザーの方はこちらからログイン</a></p>
+							<p class="margin-no-top pull-left"><a class="btn btn-flat btn-brand waves-attach" href="/auth/login">Already have an account? here</a></p>
 						</div>
 						
 						
@@ -155,7 +155,7 @@
 										{include file='reg_tos.tpl'}
 									</div>
 									<div class="modal-footer">
-										<p class="text-right"><button class="btn btn-flat btn-brand-accent waves-attach waves-effect" data-dismiss="modal" type="button" id="cancel">同意しない</button><button class="btn btn-flat btn-brand-accent waves-attach waves-effect" data-dismiss="modal" id="tos" type="button">同意する</button></p>
+										<p class="text-right"><button class="btn btn-flat btn-brand-accent waves-attach waves-effect" data-dismiss="modal" type="button" id="cancel">no</button><button class="btn btn-flat btn-brand-accent waves-attach waves-effect" data-dismiss="modal" id="tos" type="button">yes</button></p>
 										
 									</div>
 								</div>

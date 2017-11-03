@@ -164,16 +164,16 @@ class Job
             if($shop->reset() != 0 && $shop->reset_value() != 0 && $shop->reset_exp() != 0) {
               if(time() - $shop->reset_exp() * 86400 < $bought->datetime) {
                 if(intval((time() - $bought->datetime) / 86400) % $shop->reset() == 0 && intval((time() - $bought->datetime) / 86400) != 0) {
-                  echo("流量重置-".$user->id."\n");
+                  echo("Traffic reset-".$user->id."\n");
                   $user->transfer_enable = Tools::toGB($shop->reset_value());
                   $user->u = 0;
                   $user->d = 0;
                   $user->last_day_t = 0;
                   $user->save();
 
-                  $subject = Config::get('appName')."-您的流量被重置了";
+                  $subject = Config::get('appName')."-Your traffic is reset";
                   $to = $user->email;
-                  $text = "您好，根据您所订购的订单 ID:".$bought->id."，流量已经被重置为".$shop->reset_value().'GB' ;
+                  $text = "Hello, according to the order you ordered ID:".$bought->id.",the traffic has been reset to".$shop->reset_value().'GB' ;
                   try {
                       Mail::send($to, $subject, 'news/warn.tpl', [
                           "user" => $user,"text" => $text
@@ -202,9 +202,9 @@ class Job
                 $user->transfer_enable = $user->auto_reset_bandwidth*1024*1024*1024;
                 $user->save();
 
-                $subject = Config::get('appName')."-您的流量被重置了";
+                $subject = Config::get('appName')."-Your traffic is reset";
                 $to = $user->email;
-                $text = "您好，根据管理员的设置，流量已经被重置为".$user->auto_reset_bandwidth.'GB' ;
+                $text = "Hello, according to the administrator's settings, traffic has been reset to ".$user->auto_reset_bandwidth.'GB' ;
                 try {
                     Mail::send($to, $subject, 'news/warn.tpl', [
                         "user" => $user,"text" => $text
@@ -394,9 +394,9 @@ class Job
                 $bought_new->coupon="";
                 $bought_new->save();
 
-                $subject = Config::get('appName')."-续费成功";
+                $subject = Config::get('appName')."-Renewal success";
                 $to = $user->email;
-                $text = "您好，系统已经为您自动续费，商品名：".$shop->name.",金额:".$bought->price." 元。" ;
+                $text = "Hello, the system has been automatically renewed for your product name is ".$shop->name.",Amount of money:".$bought->price." USD." ;
                 try {
                     Mail::send($to, $subject, 'news/warn.tpl', [
                         "user" => $user,"text" => $text
@@ -411,9 +411,9 @@ class Job
                 }
             } else {
                 if (!file_exists(BASE_PATH."/storage/".$bought->id.".renew")) {
-                    $subject = Config::get('appName')."-续费失败";
+                    $subject = Config::get('appName')."-Renewal failed";
                     $to = $user->email;
-                    $text = "您好，系统为您自动续费商品名：".$shop->name.",金额:".$bought->price." 元 时，发现您余额不足，请及时充值，当您充值之后，稍等一会系统就会自动扣费为您续费了。" ;
+                    $text = "Hello, the system for your automatic renewal of the trade name is ".$shop->name.",Amount of money:".$bought->price." USD, Found that your balance is insufficient, please recharge, when you recharge, wait for a while the system will automatically deduct the fee for your renewal." ;
                     try {
                         Mail::send($to, $subject, 'news/warn.tpl', [
                             "user" => $user,"text" => $text
@@ -623,9 +623,9 @@ class Job
                             if ($Userlocation!=$location['country']&&$nodes==null&&$nodes2==null) {
                                 $user=User::where("id", "=", $userlog->userid)->first();
                                 echo "Send warn mail to user: ".$user->id."-".iconv('gbk', 'utf-8//IGNORE', $Userlocation)."-".iconv('gbk', 'utf-8//IGNORE', $location['country']);
-                                $subject = Config::get('appName')."-系统警告";
+                                $subject = Config::get('appName')."-System warning";
                                 $to = $user->email;
-                                $text = "您好，系统发现您的账号在 ".iconv('gbk', 'utf-8//IGNORE', $Userlocation)." 有异常登录，请您自己自行核实登录行为。有异常请及时修改密码。" ;
+                                $text = "Hello, the system found your account in ".iconv('gbk', 'utf-8//IGNORE', $Userlocation)." There are abnormal login, please verify your own login behavior. There are exceptions please change the password in time." ;
                                 try {
                                     Mail::send($to, $subject, 'news/warn.tpl', [
                                         "user" => $user,"text" => $text
@@ -662,9 +662,9 @@ class Job
                     $user->d = 0;
                     $user->last_day_t = 0;
 
-                    $subject = Config::get('appName')."-您的用户账户已经过期了";
+                    $subject = Config::get('appName')."-Your user account has expired";
                     $to = $user->email;
-                    $text = "您好，系统发现您的账号已经过期了。流量已经被重置为".Config::get('enable_account_expire_reset_traffic').'GB' ;
+                    $text = "Hello, the system has found that your account has expired. The traffic has been reset to ".Config::get('enable_account_expire_reset_traffic').'GB' ;
                     try {
                         Mail::send($to, $subject, 'news/warn.tpl', [
                             "user" => $user,"text" => $text
@@ -678,9 +678,10 @@ class Job
 
             if (strtotime($user->expire_in)+((int)Config::get('enable_account_expire_delete_days')*86400)<time()) {
                 if (Config::get('enable_account_expire_delete')=='true') {
-                    $subject = Config::get('appName')."-您的用户账户已经被删除了";
+                    $subject = Config::get('appName')."-Your user account has been deleted
+";
                     $to = $user->email;
-                    $text = "您好，系统发现您的账号已经过期 ".Config::get('enable_account_expire_delete_days')." 天了，帐号已经被删除。" ;
+                    $text = "Hello, the system has found that your account has expired ".Config::get('enable_account_expire_delete_days')." days,The account has been deleted." ;
                     try {
                         Mail::send($to, $subject, 'news/warn.tpl', [
                             "user" => $user,"text" => $text
@@ -701,9 +702,9 @@ class Job
 
             if ((int)Config::get('enable_auto_clean_uncheck_days')!=0 && max($user->last_check_in_time, strtotime($user->reg_date)) + ((int)Config::get('enable_auto_clean_uncheck_days')*86400) < time() && $user->class == 0) {
                 if (Config::get('enable_auto_clean_uncheck')=='true') {
-                    $subject = Config::get('appName')."-您的用户账户已经被删除了";
+                    $subject = Config::get('appName')."-Your user account has been deleted";
                     $to = $user->email;
-                    $text = "您好，系统发现您的账号已经 ".Config::get('enable_auto_clean_uncheck_days')." 天没签到了，帐号已经被删除。" ;
+                    $text = "Hello, the system has found your account already ".Config::get('enable_auto_clean_uncheck_days')." Days have not signed, the account has been deleted." ;
                     try {
                         Mail::send($to, $subject, 'news/warn.tpl', [
                             "user" => $user,"text" => $text
@@ -729,9 +730,9 @@ class Job
 
             if ((int)Config::get('enable_auto_clean_unused_days')!=0 && max($user->t, strtotime($user->reg_date)) + ((int)Config::get('enable_auto_clean_unused_days')*86400) < time() && $user->class == 0) {
                 if (Config::get('enable_auto_clean_unused')=='true') {
-                    $subject = Config::get('appName')."-您的用户账户已经被删除了";
+                    $subject = Config::get('appName')."-Your user account has been deleted";
                     $to = $user->email;
-                    $text = "您好，系统发现您的账号已经 ".Config::get('enable_auto_clean_unused_days')." 天没使用了，帐号已经被删除。" ;
+                    $text = "Hello, the system has found your account already ".Config::get('enable_auto_clean_unused_days')." Days have not been used, the account has been deleted." ;
                     try {
                         Mail::send($to, $subject, 'news/warn.tpl', [
                             "user" => $user,"text" => $text
@@ -761,9 +762,9 @@ class Job
                     $user->d = 0;
                     $user->last_day_t = 0;
 
-                    $subject = Config::get('appName')."-您的用户等级已经过期了";
+                    $subject = Config::get('appName')."-Your user level has expired";
                     $to = $user->email;
-                    $text = "您好，系统发现您的账号等级已经过期了。流量已经被重置为".Config::get('enable_class_expire_reset_traffic').'GB' ;
+                    $text = "Hello, the system has found that your account level has expired. The traffic has been reset to ".Config::get('enable_class_expire_reset_traffic').'GB' ;
                     try {
                         Mail::send($to, $subject, 'news/warn.tpl', [
                             "user" => $user,"text" => $text

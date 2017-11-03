@@ -404,9 +404,9 @@ class Pay
 
               if (Config::get('enable_donate') == 'true') {
                   if ($user->is_hide == 1) {
-                      Telegram::Send("姐姐姐姐，一位不愿透露姓名的大老爷给我们捐了 ".$codeq->number." 元呢~");
+                      Telegram::Send("姐姐姐姐，一位不愿透露姓名的大老爷给我们捐了 ".$codeq->number." USD呢~");
                   } else {
-                      Telegram::Send("姐姐姐姐，".$user->user_name." 大老爷给我们捐了 ".$codeq->number." 元呢~");
+                      Telegram::Send("姐姐姐姐，".$user->user_name." 大老爷给我们捐了 ".$codeq->number." USD呢~");
                   }
               }
 
@@ -477,9 +477,9 @@ class Pay
 
                 if (Config::get('enable_donate') == 'true') {
                     if ($user->is_hide == 1) {
-                        Telegram::Send("姐姐姐姐，一位不愿透露姓名的大老爷给我们捐了 ".$codeq->number." 元呢~");
+                        Telegram::Send("姐姐姐姐，一位不愿透露姓名的大老爷给我们捐了 ".$codeq->number." USD呢~");
                     } else {
-                        Telegram::Send("姐姐姐姐，".$user->user_name." 大老爷给我们捐了 ".$codeq->number." 元呢~");
+                        Telegram::Send("姐姐姐姐，".$user->user_name." 大老爷给我们捐了 ".$codeq->number." USD呢~");
                     }
                 }
             } else {
@@ -556,9 +556,9 @@ class Pay
 
                 if (Config::get('enable_donate') == 'true') {
                     if ($user->is_hide == 1) {
-                        Telegram::Send("姐姐姐姐，一位不愿透露姓名的大老爷给我们捐了 ".$codeq->number." 元呢~");
+                        Telegram::Send("姐姐姐姐，一位不愿透露姓名的大老爷给我们捐了 ".$codeq->number." USD呢~");
                     } else {
-                        Telegram::Send("姐姐姐姐，".$user->user_name." 大老爷给我们捐了 ".$codeq->number." 元呢~");
+                        Telegram::Send("姐姐姐姐，".$user->user_name." 大老爷给我们捐了 ".$codeq->number." USD呢~");
                     }
                 }
 
@@ -642,9 +642,9 @@ class Pay
                 
                 if (Config::get('enable_donate') == 'true') {
                     if ($user->is_hide == 1) {
-                        Telegram::Send("一位不愿透露姓名的大老爷给我们捐了 ".$codeq->number." 元!");
+                        Telegram::Send("一位不愿透露姓名的大老爷给我们捐了 ".$codeq->number." USD!");
                     } else {
-                        Telegram::Send($user->user_name." 大老爷给我们捐了 ".$codeq->number." 元！");
+                        Telegram::Send($user->user_name." 大老爷给我们捐了 ".$codeq->number." USD！");
                     }
                 }
                 

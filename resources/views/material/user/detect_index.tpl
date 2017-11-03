@@ -12,7 +12,7 @@
 	<main class="content">
 		<div class="content-header ui-content-header">
 			<div class="container">
-				<h1 class="content-heading">公開接続ルール</h1>
+				<h1 class="content-heading">Connection Regulations</h1>
 			</div>
 		</div>
 		<div class="container">
@@ -22,8 +22,8 @@
 					<div class="card">
 						<div class="card-main">
 							<div class="card-inner">
-								<p>安全に運営する為に、IPを無断入手したり、トラッキング行為をする特定のサイトへのアクセスを規制しています。下記一覧のサイトへのアクセスへアクセスした場合は自動的に接続が切断されます。</p>
-								<p>プライバシーについて：サーバー内部にフィルターを設置しているだけで、お客様のトラフィックやIP等のアクセス情報は一切記録・モニタリングしておりません。安心してご利用下さい。</p>
+								<p>In order to operate safely, we regulate access to specific sites that obtain IP without permission and do tracking acts. If you access to the site listed below, the connection will be automatically disconnected.</p>
+								<p>About privacy: Just by installing a filter inside the server, access information such as customer's traffic and IP is not recorded and monitored at all. Please use with confidence.</p>
 							</div>
 						</div>
 					</div>
@@ -33,10 +33,10 @@
 						<table class="table">
 						    <tr>
 						        <th>ID</th>
-						        <th>名称</th>
-						        <th>説明</th>
-							<th>表記</th>
-							<th>タイプ</th>
+						        <th>Name</th>
+						        <th>Description</th>
+							<th>Notation</th>
+							<th>Type</th>
 								
 						    </tr>
 						    {foreach $rules as $rule}
@@ -46,10 +46,10 @@
 								<td>{$rule->text}</td>
 								<td>{$rule->regex}</td>
 								{if $rule->type == 1}
-									<td>数据包明文匹配</td>
+									<td>Data packet plaintext matching</td>
 								{/if}		
 								{if $rule->type == 2}
-									<td>数据包 hex 匹配</td>
+									<td>Data packet hex matching</td>
 								{/if}								
 						        </tr>
 						    {/foreach}

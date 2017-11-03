@@ -211,10 +211,10 @@
 					</a>
 					<ul class="dropdown-menu dropdown-menu-right">
 						<li>
-							<a class="padding-right-lg waves-attach" href="/user/"><span class="icon icon-lg margin-right">account_box</span>ユーザーページ</a>
+							<a class="padding-right-lg waves-attach" href="/user/"><span class="icon icon-lg margin-right">account_box</span>Account Page</a>
 						</li>
 						<li>
-							<a class="padding-right-lg waves-attach" href="/user/logout"><span class="icon icon-lg margin-right">exit_to_app</span>ログアウト</a>
+							<a class="padding-right-lg waves-attach" href="/user/logout"><span class="icon icon-lg margin-right">exit_to_app</span>Sign Out</a>
 						</li>
 					</ul>
 				{else}
@@ -223,10 +223,10 @@
 					</a>
 					<ul class="dropdown-menu dropdown-menu-right">
 						<li>
-							<a class="padding-right-lg waves-attach" href="/auth/login"><span class="icon icon-lg margin-right">account_box</span>ログイン</a>
+							<a class="padding-right-lg waves-attach" href="/auth/login"><span class="icon icon-lg margin-right">account_box</span>Login</a>
 						</li>
 						<li>
-							<a class="padding-right-lg waves-attach" href="/auth/register"><span class="icon icon-lg margin-right">pregnant_woman</span>新規登録</a>
+							<a class="padding-right-lg waves-attach" href="/auth/register"><span class="icon icon-lg margin-right">pregnant_woman</span>Sign up</a>
 						</li>
 					</ul>
 				{/if}
@@ -237,27 +237,27 @@
 	<nav aria-hidden="true" class="menu menu-left nav-drawer nav-drawer-md" id="ui_menu" tabindex="-1">
 		<div class="menu-scroll">
 			<div class="menu-content">
-				<a class="menu-logo" href="/" style="font-size:16px;" ><i class="icon icon-lg">person_pin_circle</i>&nbsp;ユーザーメニュー</a>
+				<a class="menu-logo" href="/" style="font-size:16px;" ><i class="icon icon-lg">person_pin_circle</i>&nbsp;Account Menu</a>
 				<ul class="nav">
 					<li>
-						<a class="waves-attach" data-toggle="collapse" href="#ui_menu_me">マイアカウント</a>
+						<a class="waves-attach" data-toggle="collapse" href="#ui_menu_me">My Account</a>
 						<ul class="menu-collapse collapse in" id="ui_menu_me">
 							<li>
 								<a href="/user">
-									<i class="icon icon-lg">recent_actors</i>&nbsp;ホーム
+									<i class="icon icon-lg">recent_actors</i>&nbsp;Home
 								</a>
 							</li>
 							
 							
 							<li>
 								<a href="/user/edit">
-									<i class="icon icon-lg">sync_problem</i>&nbsp;アカウント情報の編集
+									<i class="icon icon-lg">sync_problem</i>&nbsp;Edit Account Details
 								</a>
 							</li>
 							
 							<li>
 								<a href="/user/announcement">
-									<i class="icon icon-lg">announcement</i>&nbsp;お知らせ
+									<i class="icon icon-lg">announcement</i>&nbsp;Announcements
 								</a>
 							</li>
 							
@@ -274,24 +274,24 @@
 						</ul>
 						
 						
-						<a class="waves-attach" data-toggle="collapse" href="#ui_menu_use">SSサービス</a>
+						<a class="waves-attach" data-toggle="collapse" href="#ui_menu_use">Services</a>
 						<ul class="menu-collapse collapse in" id="ui_menu_use">
 							<li>
 								<a href="/user/node">
-									<i class="icon icon-lg">router</i>&nbsp;サーバー一覧
+									<i class="icon icon-lg">router</i>&nbsp;Nodes List
 								</a>
 							</li>
 							
 							<li>
 								<a href="/user/trafficlog">
-									<i class="icon icon-lg">traffic</i>&nbsp;使用状況
+									<i class="icon icon-lg">traffic</i>&nbsp;Usage Report
 								</a>
 							</li>
 
-							<li><a href="/user/detect"><i class="icon icon-lg">account_balance</i>&nbsp;接続ルール</a></li>
+							<li><a href="/user/detect"><i class="icon icon-lg">account_balance</i>&nbsp;Connection Regulations</a></li>
 						</ul>
 						
-						<a class="waves-attach" data-toggle="collapse" href="#ui_menu_trade">サポート</a>
+						<a class="waves-attach" data-toggle="collapse" href="#ui_menu_trade">Support</a>
 						<ul class="menu-collapse collapse in" id="ui_menu_trade">
 							{if $config['enable_wecenter']=='true'}
 							<li>
@@ -303,30 +303,30 @@
 							
 							<li>
 								<a href="/user/ticket">
-									<i class="icon icon-lg">question_answer</i>&nbsp;チケットを発行
+									<i class="icon icon-lg">question_answer</i>&nbsp;Open Ticket
 								</a>
 							</li>
 						</ul>
 
 						
-						<a class="waves-attach" data-toggle="collapse" href="#ui_menu_help">支払い</a>
+						<a class="waves-attach" data-toggle="collapse" href="#ui_menu_help">Billing</a>
 						<ul class="menu-collapse collapse in" id="ui_menu_help">
 						
 						
 							<li>
 								<a href="/user/shop">
-									<i class="icon icon-lg">shop</i>&nbsp;購入する
+									<i class="icon icon-lg">shop</i>&nbsp;Order new service
 								</a>
 							</li>
 							
-							<li><a href="/user/bought"><i class="icon icon-lg">shopping_cart</i>&nbsp;購入履歴</a></li>
+							<li><a href="/user/bought"><i class="icon icon-lg">shopping_cart</i>&nbsp;My Invoices</a></li>
 							
 							
 
 
 							<li>
 								<a href="/user/code">
-									<i class="icon icon-lg">code</i>&nbsp;追加購入
+									<i class="icon icon-lg">code</i>&nbsp;Recharge
 								</a>
 							</li>
 						</ul>

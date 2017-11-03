@@ -18,33 +18,33 @@
 	<main class="content">
 		<div class="content-header ui-content-header">
 			<div class="container">
-				<h1 class="content-heading">请选择一种方式进行充值</h1>
+				<h1 class="content-heading">Recharge</h1>
 			</div>
 		</div>
 		<div class="container">
 			<section class="content-inner margin-top-no">
 				<div class="row">
-					<div class="col-lg-12 col-md-12">
+					 <div class="col-lg-12 col-md-12">
 						<div class="card margin-bottom-no">
 							<div class="card-main">
 								<div class="card-inner">
 									<div class="card-inner">
-										<p class="card-heading">充值码</p>
-										<p>当前余额：{$user->money} 元</p>
+										<p class="card-heading">Recharge code</p>
+										<p>Account Balance：{$user->money} USD</p>
 										<div class="form-group form-group-label">
-											<label class="floating-label" for="code">充值码</label>
+											<label class="floating-label" for="code">Recharge code</label>
 											<input class="form-control" id="code" type="text">
 										</div>
 									</div>
 									<div class="card-action">
 										<div class="card-action-btn pull-left">
-											<button class="btn btn-flat waves-attach" id="code-update" ><span class="icon">check</span>&nbsp;充值</button>
+											<button class="btn btn-flat waves-attach" id="code-update" ><span class="icon">check</span>&nbsp;Recharge</button>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-					</div>
+					</div> 
 					
 					{if $pmw!=''}
 					<div class="col-lg-12 col-md-12">
@@ -61,7 +61,7 @@
 					</div>
 					{/if}
 					
-					<div class="col-lg-12 col-md-12">
+					<!-- <div class="col-lg-12 col-md-12">
 						<div class="card margin-bottom-no">
 							<div class="card-main">
 								<div class="card-inner">
@@ -121,9 +121,9 @@
 								</div>
 							</div>
 						</div>
-					</div>
+					</div> -->
 					
-					<div aria-hidden="true" class="modal modal-va-middle fade" id="readytopay" role="dialog" tabindex="-1">
+					<!-- <div aria-hidden="true" class="modal modal-va-middle fade" id="readytopay" role="dialog" tabindex="-1">
 						<div class="modal-dialog modal-xs">
 							<div class="modal-content">
 								<div class="modal-heading">
@@ -135,9 +135,9 @@
 								</div>
 							</div>
 						</div>
-					</div>
+					</div> -->
 					
-					<div aria-hidden="true" class="modal modal-va-middle fade" id="alipay" role="dialog" tabindex="-1">
+					<!-- <div aria-hidden="true" class="modal modal-va-middle fade" id="alipay" role="dialog" tabindex="-1">
 						<div class="modal-dialog modal-xs">
 							<div class="modal-content">
 								<div class="modal-heading">
@@ -157,7 +157,7 @@
 								</div>
 							</div>
 						</div>
-					</div>
+					</div> -->
 					
 					{include file='dialog.tpl'}
 				</div>
@@ -197,7 +197,7 @@
 				},
 				error: function (jqXHR) {
 					$("#result").modal();
-					$("#msg").html("发生错误：" + jqXHR.status);
+					$("#msg").html("error：" + jqXHR.status);
 				}
 			})
 		})
@@ -266,7 +266,7 @@
 					clearTimeout(tid);
 					$("#alipay").modal('hide');
 					$("#result").modal();
-					$("#msg").html("充值成功！");
+					$("#msg").html("Recharge success！");
 					window.setTimeout("location.href=window.location.href", {$config['jump_delay']});
 				}
 			}

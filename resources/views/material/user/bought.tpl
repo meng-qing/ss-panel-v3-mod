@@ -12,7 +12,7 @@
 	<main class="content">
 		<div class="content-header ui-content-header">
 			<div class="container">
-				<h1 class="content-heading">購入履歴</h1>
+				<h1 class="content-heading">My Invoices</h1>
 			</div>
 		</div>
 		<div class="container">
@@ -22,7 +22,7 @@
 					<div class="card">
 						<div class="card-main">
 							<div class="card-inner">
-								<p>過去にお申込み頂いたプランの履歴です。</p>
+								<p>Invoice Records</p>
 							</div>
 						</div>
 					</div>
@@ -33,10 +33,10 @@
                             <tr>
 								<th>操作</th>
                                 <th>ID</th>
-                                <th>プラン名</th>
-								<th>内容</th>
-								<th>価格</th>
-                                <th>継続支払い期間</th>
+                                <th>Product/Service</th>
+								<th>content</th>
+								<th>Price</th>
+                                <th>Subscription due date</th>
 								<th>续费时重置流量</th>
                                 
                             </tr>
@@ -48,7 +48,7 @@
                                 <td>#{$shop->id}</td>
                                 <td>{$shop->shop()->name}</td>
 								<td>{$shop->shop()->content()}</td>
-								<td>{$shop->price} 元</td>
+								<td>{$shop->price} USD</td>
 								{if $shop->renew==0}
                                 <td>不自动续费</td>
 								{else}

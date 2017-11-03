@@ -15,7 +15,7 @@
 	<main class="content">
 		<div class="content-header ui-content-header">
 			<div class="container">
-				<h1 class="content-heading">ユーザーページ</h1>
+				<h1 class="content-heading">Account Page</h1>
 			</div>
 		</div>
 		<div class="container">
@@ -27,8 +27,8 @@
 							<div class="card">
 								<div class="card-main">
 									<div class="card-inner margin-bottom-no">
-										<p class="card-heading">最新のお知らせ</p>
-										<p>その他お知らせは<a href="/user/announcement"/>こちら</a></p>
+										<p class="card-heading">Recent News</p>
+										<p>All the latest news are <a href="/user/announcement"/>here</a></p>
 										{if $ann != null}
 										<p>{$ann->content}</p>
 										{/if}
@@ -41,7 +41,7 @@
 								<div class="card-main">
 									<div class="card-inner margin-bottom-no">
 										<p class="card-heading">All-in-One</p>
-										<p>端末別に全てのサーバー情報を自動的にアップデートするファイルを公開しています。</p>
+										<p>UCSS provide auto configuration link or file for following platforms.</p>
 										<nav class="tab-nav margin-top-no">
 											<ul class="nav nav-list">
 												<li class="active">
@@ -63,25 +63,27 @@
 										</nav>
 										<div class="card-inner">
 											<div class="tab-content">
-												<div class="tab-pane fade active in" id="all_windows">
-													<p>Shadowsocksクライアントは<a href="/ssr-download/ssr-win.7z">こちら。</a>インストール後に2つの方法で全てのサーバー情報を読み込みます。<br>
-														(1)下記購読<a href="/user/getpcconf?without_mu=0">URL</a>をコピー。SSアプリのメニュー欄の "Import SSR links from clipboard..."をクリック<br>
+												<div class="tab-pane fade active in" id="all_windows">							 
+													<p>Shadowsocks client is <a href="/ssr-download/ssr-win.7z">here.</a>After install client, there are two way to read all server information.<br>
+														(1) Copy the following subscription <a href="/user/getpcconf?without_mu=0">URL.</a> Click "Import SSR links from clipboard ..." in the menu field of the application<br>
 
-														(2)下記メニュー欄にあるSSアプリのアイコンを右クリック。"Servers Subscribe"→"Subscribe setting..." を選択。下記購読URLを入力して"Add"をクリック。"Mode"は "Global Mode", "Proxy rule"は "Bypass Lan&China" の設定でご利用下さい。</p>
+														(2) Right-click the application icon in the menu below. Select "Servers Subscribe" → "Subscribe setting ...". Enter the following subscription URL and click "Add". Please use "Mode" as "Global Mode" and "Proxy rule" as "Bypass Lan & China" setting.</p>
 
 
 														
 
 
-													<p>SSR サブスクリプションアドレス：<br>
+													<p>SSR Subscription Address:<br>
 														<code>{$baseUrl}/link/{$ssr_sub_token}?mu=0</code>
 													</p>
 												</div>
 												<div class="tab-pane fade" id="all_mac">
-													<p>Shadowsocksクライアントは<a href="/ssr-download/ssr-mac.dmg">こちら。</a>インストール後に2つの方法で全てのサーバー情報を読み込みます。</p>
-													<p>(1) <a href="/user/getpcconf?without_mu=0">こちら</a>からファイルをダウンロード。SSアプリのメニュー欄の "Import Bunch Json File...."をクリックして、ダウンロードしたファイルをアップロード。これで全てのサーバーが読み込まれます。</p>
-													<p>(2) メニューバーにあるSSアプリのアイコンをクリック。"Edit Subscribe Feed" をクリック。下記購読URLを入力、グループ名は任意、その他空欄で"Ok"をクリック。"Global Mode" の設定でご利用下さい。</p>
-													<p>SSR サブスクリプションアドレス：<br>
+													<p>Shadowsocks client is <a href="/ssr-download/ssr-mac.dmg">here.</a> After install client, there are two way to read all server information.</p>
+													<p>(1) Download files from <a href="/user/getpcconf?without_mu=0">here.</a> Click the "Import Bunch Json File ...." in the menu field of the SS application and upload the downloaded file. This loads all servers.</p>
+													
+													<p>(2) Click the SS application icon in the menu bar. Click "Edit Subscribe Feed". Enter the following subscription URL, group name is optional, please click "Ok" in other blanks. Please use "Global Mode" setting.</p>
+
+													<p>SSR Subscription Address:<br>
 														<code>{$baseUrl}/link/{$ssr_sub_token}?mu=0</code>
 													</p>
 												</div>
@@ -89,17 +91,16 @@
 
 
 												<div class="tab-pane fade" id="all_ios">
-													<p>アップルストアから<a href="https://itunes.apple.com/jp/app/shadowrocket/id932747118?mt=8">Shadowrocket（有料）</a>をダウンロード。Safariから<a id="android_add" href="{$android_add}">ここ</a>をクリック。Shadowrocketで開くとサーバーが読み込まれます。</p>
-													<p>サーバーを個別に読み込みたい場合はサーバー一覧からサーバーを選択してQRコードをスキャンして下さい。</p>
+													<p>Download <a href="https://itunes.apple.com/us/app/shadowrocket/id932747118?mt=8">Shadowrocket (Sorry that's not free)</a> from the Apple store. Click <a id="android_add" href="{$android_add}">here</a> from Safari. When opened with Shadowrocket, the server is loaded.</p>				
+													<p>If you want to load the server separately, select the server from the nodes list and scan the QR code.</p>
 												</div>
 
 
 
 												<div class="tab-pane fade" id="all_android">
-													<p>Shadowsocksクライアントは<a href="/ssr-download/ssr-android.apk">こちら。</a>ブラウザからこのページを立ち上げて<a id="android_add" href="{$android_add}">ここ</a>をクリック。全てのサーバー情報が読み込まれます。プロキシ方式は「LAN及び中国本土のアドレスを迂回する」を選択してご利用下さい。</p>
+													<p>Shadowsocks client is <a href="/ssr-download/ssr-android.apk">here.</a> Please launch this page from the browser and click <a id="android_add" href="{$android_add}">here.</a> All server information is read. For the proxy method, please select "Bypass LAN and mainland address on the mainland".</p>
 
-
-													<p>SSR サブスクリプションアドレス（サーバー一覧から自動更新サーバーを講読出来ます）：<br>
+													<p>SSR Subscription Address (You can subscribe to the automatic update server from the nodes list):<br>
 														<code>{$baseUrl}/link/{$ssr_sub_token}?mu=0</code>
 													</p>
 												</div>
@@ -108,15 +109,16 @@
 
 
 												<div class="tab-pane fade" id="all_router">
-<p>ルーターに<a href="http://www.right.com.cn/forum/thread-161324-1-1.html">ファームウェア</a>をインストール。SSHでルーターにアクセスして、下記のコマンドを入力して下さい。<br>
+													<p>Install <a href="http://www.right.com.cn/forum/thread-161324-1-1.html">firmware</a> on router. Please access the router with SSH and enter the following command.<br>
+
 													<code>wget -O- {$baseUrl}/link/{$router_token_without_mu} | bash && echo -e "\n0 */3 * * * wget -O- {$baseUrl}/link/{$router_token_without_mu} | bash\n">> /etc/storage/cron/crontabs/admin && killall crond && crond </code><br>
-													コマンド終了後に、ルーターの操作画面からお好みのShadowsocksサーバーを選択して接続出来ます。</p>
+													After the command is completed, you can select your preferred Shadowsocks server from the operation screen of the router and connect.</p>
 												</div>
 											</div>
 										</div>
 										<div class="card-action">
 											<div class="card-action-btn pull-left">
-												<p><a class="btn btn-brand btn-flat waves-attach" href="/user/url_reset"><span class="icon">close</span>&nbsp;全てのリンクをリセットする</a></p>
+												<p><a class="btn btn-brand btn-flat waves-attach" href="/user/url_reset"><span class="icon">close</span>&nbsp;Reset all subscription link</a></p>
 											</div>
 										</div>
 									</div>
@@ -127,12 +129,12 @@
 							<div class="card">
 								<div class="card-main">
 									<div class="card-inner margin-bottom-no">
-										<p class="card-heading">アカウント状況</p>
+										<p class="card-heading">Account Status</p>
 										<dl class="dl-horizontal">
-											<p><dt>プラン名</dt>
+											<p><dt>Product/Service</dt>
 											<dd>{$user->class}</dd></p>
 
-											<p><dt>プラン有効期限</dt>
+											<p><dt>Next Due Date</dt>
 											<dd>{$user->class_expire}</dd></p>
 
 										</dl>
@@ -161,7 +163,7 @@
 											var chart = new CanvasJS.Chart("traffic_chart",
 											{
 												title:{
-													text: "データ使用状況",
+													text: "Data Usage",
 													fontFamily: "Impact",
 													fontWeight: "normal"
 												},
@@ -183,13 +185,13 @@
 													dataPoints: [
 														{if $user->transfer_enable != 0}
 														{
-															y: {$user->last_day_t/$user->transfer_enable*100}, legendText:"使用済み {number_format($user->last_day_t/$user->transfer_enable*100,2)}% {$user->LastusedTraffic()}", indexLabel: "使用済み {number_format($user->last_day_t/$user->transfer_enable*100,2)}% {$user->LastusedTraffic()}"
+															y: {$user->last_day_t/$user->transfer_enable*100}, legendText:"Used {number_format($user->last_day_t/$user->transfer_enable*100,2)}% {$user->LastusedTraffic()}", indexLabel: "Used {number_format($user->last_day_t/$user->transfer_enable*100,2)}% {$user->LastusedTraffic()}"
 														},
 														{
-															y: {($user->u+$user->d-$user->last_day_t)/$user->transfer_enable*100}, legendText:"今日 {number_format(($user->u+$user->d-$user->last_day_t)/$user->transfer_enable*100,2)}% {$user->TodayusedTraffic()}", indexLabel: "今日 {number_format(($user->u+$user->d-$user->last_day_t)/$user->transfer_enable*100,2)}% {$user->TodayusedTraffic()}"
+															y: {($user->u+$user->d-$user->last_day_t)/$user->transfer_enable*100}, legendText:"Today {number_format(($user->u+$user->d-$user->last_day_t)/$user->transfer_enable*100,2)}% {$user->TodayusedTraffic()}", indexLabel: "Today {number_format(($user->u+$user->d-$user->last_day_t)/$user->transfer_enable*100,2)}% {$user->TodayusedTraffic()}"
 														},
 														{
-															y: {($user->transfer_enable-($user->u+$user->d))/$user->transfer_enable*100}, legendText:"残り {number_format(($user->transfer_enable-($user->u+$user->d))/$user->transfer_enable*100,2)}% {$user->unusedTraffic()}", indexLabel: "残り {number_format(($user->transfer_enable-($user->u+$user->d))/$user->transfer_enable*100,2)}% {$user->unusedTraffic()}"
+															y: {($user->transfer_enable-($user->u+$user->d))/$user->transfer_enable*100}, legendText:"Available {number_format(($user->transfer_enable-($user->u+$user->d))/$user->transfer_enable*100,2)}% {$user->unusedTraffic()}", indexLabel: "Available {number_format(($user->transfer_enable-($user->u+$user->d))/$user->transfer_enable*100,2)}% {$user->unusedTraffic()}"
 														}
 														{/if}
 													]
@@ -208,24 +210,24 @@
 							<div class="card">
 								<div class="card-main">
 									<div class="card-inner margin-bottom-no">
-										<p class="card-heading">接続情報</p>
+										<p class="card-heading">My Connection</p>
 											<dl class="dl-horizontal">
-												<p><dt>ポート</dt>
+												<p><dt>Port</dt>
 												<dd>{$user->port}</dd></p>
 
-												<p><dt>パスワード</dt>
+												<p><dt>Connection Password</dt>
 												<dd>{$user->passwd}</dd></p>
 
-												<p><dt>暗号化</dt>
+												<p><dt>Encryption</dt>
 												<dd>{$user->method}</dd></p>
 
-												<p><dt>プロトコル</dt>
+												<p><dt>Protocol</dt>
 												<dd>{$user->protocol}</dd></p>
 
 												<p><dt>Obfuscation</dt>
 												<dd>{$user->obfs}</dd></p>
 
-												<p><dt>前回使用</dt>
+												<p><dt>Previous use</dt>
 												<dd>{$user->lastSsTime()}</dd></p>
 											</dl>
 									</div>

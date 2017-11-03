@@ -65,7 +65,7 @@ class AuthController extends BaseController
             $ret = Geetest::verify($request->getParam('geetest_challenge'), $request->getParam('geetest_validate'), $request->getParam('geetest_seccode'));
             if (!$ret) {
                 $res['ret'] = 0;
-                $res['msg'] = "システムエラーで認証出来ませんでした。ページを更新してもう一度お試しください。";
+                $res['msg'] = "We could not verified with a system error. Please refresh the page and try again.";
                 return $response->getBody()->write(json_encode($res));
             }
         }
@@ -75,13 +75,13 @@ class AuthController extends BaseController
 
         if ($user == null) {
             $rs['ret'] = 0;
-            $rs['msg'] = "401 メールアドレス、もしくはパスワードが違います";
+            $rs['msg'] = "401 E-mail address or password is wrong";
             return $response->getBody()->write(json_encode($rs));
         }
 
         if (!Hash::checkPassword($user->pass, $passwd)) {
             $rs['ret'] = 0;
-            $rs['msg'] = "402 メールアドレス、もしくはパスワードが違います";
+            $rs['msg'] = "402 E-mail address or password is wrong";
 
 
             $loginip=new LoginIp();
@@ -105,14 +105,14 @@ class AuthController extends BaseController
 
             if (!$rcode) {
                 $res['ret'] = 0;
-                $res['msg'] = "403 两步验证码错误，如果您是丢失了生成器或者错误地设置了这个选项，您可以尝试重置密码，即可取消这个选项。";
+                $res['msg'] = "403 Two-step verification code error, if you are missing the generator or set this option incorrectly, you can try resetting the password to cancel this option.";
                 return $response->getBody()->write(json_encode($res));
             }
         }
 
         Auth::login($user->id, $time);
         $rs['ret'] = 1;
-        $rs['msg'] = "お帰りなさいませ";
+        $rs['msg'] = "Welcome back.";
 
         $loginip=new LoginIp();
         $loginip->ip=$_SERVER["REMOTE_ADDR"];
@@ -136,7 +136,7 @@ class AuthController extends BaseController
         $ret = TelegramSessionManager::step2_verify_login_session($token, $number);
         if (!$ret) {
             $res['ret'] = 0;
-            $res['msg'] = "此令牌无法被使用。";
+            $res['msg'] = "This token can not be used.";
             return $response->getBody()->write(json_encode($res));
         }
 
@@ -148,7 +148,7 @@ class AuthController extends BaseController
 
         Auth::login($user->id, $time);
         $rs['ret'] = 1;
-        $rs['msg'] = "お帰りなさいませ";
+        $rs['msg'] = "Welcome back.";
 
         $loginip=new LoginIp();
         $loginip->ip=$_SERVER["REMOTE_ADDR"];
@@ -190,14 +190,14 @@ class AuthController extends BaseController
 
             if ($email=="") {
                 $res['ret'] = 0;
-                $res['msg'] = "メールアドレスを入手しましたか？";
+                $res['msg'] = "Did you get your email address?";
                 return $response->getBody()->write(json_encode($res));
             }
 
             // check email format
             if (!Check::isEmailLegal($email)) {
                 $res['ret'] = 0;
-                $res['msg'] = "無効のメールアドレスです";
+                $res['msg'] = "Invalid email address";
                 return $response->getBody()->write(json_encode($res));
             }
 
@@ -205,14 +205,14 @@ class AuthController extends BaseController
             $user = User::where('email', '=', $email)->first();
             if ($user!=null) {
                 $res['ret'] = 0;
-                $res['msg'] = "このメールアドレスは既に登録されています";
+                $res['msg'] = "This e-mail address has already been registered";
                 return $response->getBody()->write(json_encode($res));
             }
 
             $ipcount = EmailVerify::where('ip', '=', $_SERVER["REMOTE_ADDR"])->where('expire_in', '>', time())->count();
             if ($ipcount>=(int)Config::get('email_verify_iplimit')) {
                 $res['ret'] = 0;
-                $res['msg'] = "このIPからのリクエストが多すぎます";
+                $res['msg'] = "Too many requests from this IP";
                 return $response->getBody()->write(json_encode($res));
             }
 
@@ -220,7 +220,7 @@ class AuthController extends BaseController
             $mailcount = EmailVerify::where('email', '=', $email)->where('expire_in', '>', time())->count();
             if ($mailcount>=3) {
                 $res['ret'] = 0;
-                $res['msg'] = "このメールアドレスからのリクエストが多すぎます";
+                $res['msg'] = "Too many requests from this email address";
                 return $response->getBody()->write(json_encode($res));
             }
 
@@ -233,7 +233,7 @@ class AuthController extends BaseController
             $ev->code = $code;
             $ev->save();
 
-            $subject = Config::get('appName')."- 認証メールアドレス";
+            $subject = Config::get('appName')." - Verification email address";
 
             try {
                 Mail::send($email, $subject, 'auth/verify.tpl', [
@@ -246,7 +246,7 @@ class AuthController extends BaseController
             }
 
             $res['ret'] = 1;
-            $res['msg'] = "認証番号を送信しました。メールボックスをご確認下さい。";
+            $res['msg'] = "We sent an verification code. Please check your mailbox.";
             return $response->getBody()->write(json_encode($res));
         }
     }
@@ -268,7 +268,7 @@ class AuthController extends BaseController
             $ret = Geetest::verify($request->getParam('geetest_challenge'), $request->getParam('geetest_validate'), $request->getParam('geetest_seccode'));
             if (!$ret) {
                 $res['ret'] = 0;
-                $res['msg'] = "系统无法接受您的验证结果，请刷新页面后重试。";
+                $res['msg'] = "The system can not accept your verification results. Please refresh the page and try again.";
                 return $response->getBody()->write(json_encode($res));
             }
         }
@@ -277,7 +277,7 @@ class AuthController extends BaseController
             $c = InviteCode::where('code', $code)->first();
             if ($c == null) {
                 $res['ret'] = 0;
-                $res['msg'] = "邀请码无效";
+                $res['msg'] = "Invitation code is invalid";
                 return $response->getBody()->write(json_encode($res));
             }
         }
@@ -285,7 +285,7 @@ class AuthController extends BaseController
         // check email format
         if (!Check::isEmailLegal($email)) {
             $res['ret'] = 0;
-            $res['msg'] = "無効のメールアドレスです";
+            $res['msg'] = "Invalid email address";
             return $response->getBody()->write(json_encode($res));
         }
 
@@ -293,7 +293,7 @@ class AuthController extends BaseController
             $mailcount = EmailVerify::where('email', '=', $email)->where('code', '=', $emailcode)->where('expire_in', '>', time())->first();
             if ($mailcount == null) {
                 $res['ret'] = 0;
-                $res['msg'] = "認証番号が違います";
+                $res['msg'] = "The verification code is different.";
                 return $response->getBody()->write(json_encode($res));
             }
             EmailVerify::where('email', '=', $email)->delete();
@@ -302,14 +302,14 @@ class AuthController extends BaseController
         // check pwd length
         if (strlen($passwd)<8) {
             $res['ret'] = 0;
-            $res['msg'] = "パスワードが短すぎます";
+            $res['msg'] = "Password is too short";
             return $response->getBody()->write(json_encode($res));
         }
 
         // check pwd re
         if ($passwd != $repasswd) {
             $res['ret'] = 0;
-            $res['msg'] = "パスワードを2度間違えています";
+            $res['msg'] = "Mistook the input twice";
             return $response->getBody()->write(json_encode($res));
         }
 
@@ -317,7 +317,7 @@ class AuthController extends BaseController
         $user = User::where('email', $email)->first();
         if ($user != null) {
             $res['ret'] = 0;
-            $res['msg'] = "このメールアドレスは既に登録されています";
+            $res['msg'] = "This e-mail address has already been registered";
             return $response->getBody()->write(json_encode($res));
         }
 
@@ -389,7 +389,7 @@ class AuthController extends BaseController
 
         if ($user->save()) {
             $res['ret'] = 1;
-            $res['msg'] = "登録に成功しました";
+            $res['msg'] = "Sign up succeeded";
 
             Duoshuo::add($user);
 
@@ -403,7 +403,7 @@ class AuthController extends BaseController
             return $response->getBody()->write(json_encode($res));
         }
         $res['ret'] = 0;
-        $res['msg'] = "未知错误";
+        $res['msg'] = "unknown mistake";
         return $response->getBody()->write(json_encode($res));
     }
 
