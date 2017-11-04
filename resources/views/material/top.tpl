@@ -66,10 +66,10 @@
 </a>
 				<ul class="nav">
 					<li>
-						<a  href="https://undercurrentss.com/jp/"><i class="icon icon-lg">bookmark_border</i>&nbsp;Home</a>
+						<a  href="https://undercurrentss.com/"><i class="icon icon-lg">bookmark_border</i>&nbsp;Home</a>
 					</li>
 					<li>
-						<a  href="https://undercurrentss.com/jp/tos/"><i class="icon icon-lg">text_format</i>&nbsp;Terms of Service</a>
+						<a  href="https://undercurrentss.com/tos/"><i class="icon icon-lg">text_format</i>&nbsp;Terms of Service</a>
 					</li>
 					{if $user->isLogin}
 					<li>
