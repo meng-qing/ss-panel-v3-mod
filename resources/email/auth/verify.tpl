@@ -140,7 +140,7 @@
 											<tr style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;">
                                                 <td style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; vertical-align: top; margin: 0; padding: 5px 0;"
                                                     valign="top">
-													  <p>ご登録メールの認証コードは: <b>{$code}</b>，になります。登録画面の認証番号欄へ記入して下さい。<br>(この認証コードは {$expire} まで有効です。)</p><br>
+													  <p>ご登録メールの認証コードは: <b>{$code}</b> になります。登録画面の認証番号欄へ記入して下さい。<br>(この認証コードは {$expire} まで有効です。)</p><br>
                                                 </td>
                                             </tr>
 											
