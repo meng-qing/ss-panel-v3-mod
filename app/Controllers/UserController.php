@@ -201,6 +201,7 @@ class UserController extends BaseController
     }
 
 
+    //充值码充值
     public function codepost($request, $response, $args)
     {
         $code = $request->getParam('code');
@@ -879,7 +880,8 @@ class UserController extends BaseController
         $shops = Shop::where("status", 1)->paginate(15, ['*'], 'page', $pageNum);
         $shops->setPath('/user/shop');
 
-        return $this->view()->assign('shops', $shops)->display('user/shop.tpl');
+        //return $this->view()->assign('shops', $shops)->display('user/shop.tpl');
+        return $this->view()->assign('shops', $shops)->assign('pmw', Pay::getHTML($this->user))->display('user/shop.tpl');
     }
 
     public function CouponCheck($request, $response, $args)
@@ -974,7 +976,7 @@ class UserController extends BaseController
 
         if ((float)$user->money<(float)$price) {
             $res['ret'] = 0;
-            $res['msg'] = "Insufficient balance,total price is".$price."USD.";
+            $res['msg'] = "Insufficient balance,total price is ".$price."USD.";
             return $response->getBody()->write(json_encode($res));
         }
 

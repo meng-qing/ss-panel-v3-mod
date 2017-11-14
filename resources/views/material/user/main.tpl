@@ -324,11 +324,11 @@
 							
 
 
-							<li>
+							<!-- <li>
 								<a href="/user/code">
 									<i class="icon icon-lg">code</i>&nbsp;Recharge
 								</a>
-							</li>
+							</li> -->
 						</ul>
 						
 						{if $user->isAdmin()}

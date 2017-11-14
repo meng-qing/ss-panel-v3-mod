@@ -136,7 +136,7 @@
 							</div>
 						</div>
 						<div class="clearfix">
-							<p class="margin-no-top pull-left"><a class="btn btn-flat btn-brand waves-attach" href="/auth/login">Already have an account? here</a></p>
+							<p class="margin-no-top pull-left"><a class="btn btn-flat btn-brand waves-attach" href="/auth/login">Already have an account? Click here</a></p>
 						</div>
 						
 						
@@ -273,11 +273,11 @@ var wait=60;
 function time(o) {
 		if (wait == 0) {
 			o.removeAttr("disabled");			
-			o.text("認証コードを送信する");
+			o.text("Send Verification Code");
 			wait = 60;
 		} else {
 			o.attr("disabled","disabled");
-			o.text("もう一度送信する(" + wait + ")");
+			o.text("Send verification code again(" + wait + ")");
 			wait--;
 			setTimeout(function() {
 				time(o)

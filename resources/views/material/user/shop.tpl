@@ -48,6 +48,7 @@
                             <tr>
 								<td>
                                     <a class="btn btn-brand-accent" href="javascript:void(0);" onClick="buy('{$shop->id}',{$shop->auto_renew},{$shop->auto_reset_bandwidth})">Purchase</a>
+                                    <!-- <a class="btn btn-brand-accent" href="/user/code">Purchase</a> -->
                                 </td>
                                 <td>#{$shop->id}</td>
                                 <td>{$shop->name}</td>
@@ -71,28 +72,58 @@
 						{$shops->render()}
 					</div>
 					
-					
+					<!-- 优惠码弹窗 -->
 					<div aria-hidden="true" class="modal modal-va-middle fade" id="coupon_modal" role="dialog" tabindex="-1">
-						<div class="modal-dialog modal-xs">
+					
+
+
+
+						<div class="modal-dialog modal-md">
 							<div class="modal-content">
+
+								{if $pmw!=''}
+					<div class="col-lg-12 col-md-12">
+						<div class="card margin-bottom-no">
+							<div class="card-main">
+								<div class="card-inner">
+									<div class="card-inner">
+										{$pmw}
+									</div>
+									
+								</div>
+							</div>
+						</div>
+					</div>
+					{/if}
+
+
+								<div style="display:none;">
 								<div class="modal-heading">
 									<a class="modal-close" data-dismiss="modal">×</a>
 									<h2 class="modal-title">Do you have a discount code?</h2>
 								</div>
+
 								<div class="modal-inner">
 									<div class="form-group form-group-label">
 										<label class="floating-label" for="coupon">If so, please enter it here. If not, directly determine it</label>
 										<input class="form-control" id="coupon" type="text">
 									</div>
 								</div>
+								</div>
+
+
 								<div class="modal-footer">
-									<p class="text-right"><button class="btn btn-flat btn-brand waves-attach" data-dismiss="modal" id="coupon_input" type="button">OK</button></p>
+									<!-- <p class="text-right">
+										<button class="btn btn-default btn-lg" data-dismiss="modal" id="coupon_input" type="button">click</button>
+										<button class="btn btn-default btn-lg" data-dismiss="modal" id="coupon_input" type="button">NO</button>
+									</p> -->
+									<p class="text-right"><button class="btn btn-flat btn-brand waves-attach" data-dismiss="modal" id="order_input" type="button">OK</button></p>
 								</div>
 							</div>
 						</div>
 					</div>
 					
-					
+					<!-- 订单确认弹窗 -->
 					<div aria-hidden="true" class="modal modal-va-middle fade" id="order_modal" role="dialog" tabindex="-1">
 						<div class="modal-dialog modal-xs">
 							<div class="modal-content">
