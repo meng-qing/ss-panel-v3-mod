@@ -42,26 +42,26 @@ class HomeController extends BaseController
     {
         return $this->view()->display('tos.tpl');
     }
-    
+
     public function staff()
     {
         return $this->view()->display('staff.tpl');
     }
-    
+
     public function telegram($request, $response, $args)
     {
         $token = "";
         if (isset($request->getQueryParams()["token"])) {
             $token = $request->getQueryParams()["token"];
         }
-        
+
         if ($token == Config::get('telegram_request_token')) {
             TelegramProcess::process();
         } else {
             echo("Incorrect request!");
         }
     }
-    
+
     //fast-ssr
     public function about()
     {
@@ -122,12 +122,12 @@ class HomeController extends BaseController
     {
         return $this->view()->display('help/win_shadowsocksr_tutorial.tpl');
     }
-    
+
     public function macos_shadowsocksr_tutorial()
     {
         return $this->view()->display('help/macos_shadowsocksr_tutorial.tpl');
     }
-    
+
     public function wingy_shadowsocksr_tutorial()
     {
         return $this->view()->display('help/wingy_shadowsocksr_tutorial.tpl');
@@ -142,7 +142,7 @@ class HomeController extends BaseController
     {
         return $this->view()->display('privacy.tpl');
     }
-    
+
     public function use_policy()
     {
         return $this->view()->display('use_policy.tpl');
@@ -153,18 +153,18 @@ class HomeController extends BaseController
     public function page404($request, $response, $args)
     {
         $pics=scandir(BASE_PATH."/public/theme/".(Auth::getUser()->isLogin==false?Config::get("theme"):Auth::getUser()->theme)."/images/error/404/");
-        
+
         if (count($pics)>2) {
             $pic=$pics[rand(2, count($pics)-1)];
         } else {
             $pic="4041.png";
         }
-        
+
         $newResponse = $response->withStatus(404);
         $newResponse->getBody()->write($this->view()->assign("pic", "/theme/".(Auth::getUser()->isLogin==false?Config::get("theme"):Auth::getUser()->theme)."/images/error/404/".$pic)->display('404.tpl'));
         return $newResponse;
     }
-    
+
     public function page405($request, $response, $args)
     {
         $pics=scandir(BASE_PATH."/public/theme/".(Auth::getUser()->isLogin==false?Config::get("theme"):Auth::getUser()->theme)."/images/error/405/");
@@ -173,12 +173,12 @@ class HomeController extends BaseController
         } else {
             $pic="4051.png";
         }
-        
+
         $newResponse = $response->withStatus(405);
         $newResponse->getBody()->write($this->view()->assign("pic", "/theme/".(Auth::getUser()->isLogin==false?Config::get("theme"):Auth::getUser()->theme)."/images/error/405/".$pic)->display('405.tpl'));
         return $newResponse;
     }
-    
+
     public function page500($request, $response, $args)
     {
         $pics=scandir(BASE_PATH."/public/theme/".(Auth::getUser()->isLogin==false?Config::get("theme"):Auth::getUser()->theme)."/images/error/500/");
@@ -187,14 +187,32 @@ class HomeController extends BaseController
         } else {
             $pic="5001.png";
         }
-        
+
         $newResponse = $response->withStatus(500);
         $newResponse->getBody()->write($this->view()->assign("pic", "/theme/".(Auth::getUser()->isLogin==false?Config::get("theme"):Auth::getUser()->theme)."/images/error/500/".$pic)->display('500.tpl'));
         return $newResponse;
     }
-    
+
     public function pay_callback($request, $response, $args)
     {
-        Pay::callback($request);
+      Paymentwall_Base::setApiType(Paymentwall_Base::API_GOODS);
+      Paymentwall_Base::setAppKey(Config::get('pmw_publickey')); // available in your Paymentwall merchant area
+      Paymentwall_Base::setSecretKey(Config::get('pmw_privatekey')); // available in your Paymentwall merchant area
+
+      $pingback = new Paymentwall_Pingback($_GET, $_SERVER['REMOTE_ADDR']);
+      if ($pingback->validate()) {
+        $productId = $pingback->getProduct()->getId();
+        if ($pingback->isDeliverable()) {
+            // deliver the product
+        } else if ($pingback->isCancelable()) {
+            // withdraw the product
+        } else if ($pingback->isUnderReview()) {
+            // set "pending" as order status
+        }
+        echo 'OK'; // Paymentwall expects response to be OK, otherwise the pingback will be resent
+      } else {
+        echo $pingback->getErrorSummary();
+      }
+        // Pay::callback($request);
     }
 }
