@@ -473,7 +473,7 @@ class Pay
 
 
 
-                // echo 'OK'; // Paymentwall expects response to be OK, otherwise the pingback will be resent
+                echo 'OK'; // Paymentwall expects response to be OK, otherwise the pingback will be resent
 
 
                 if (Config::get('enable_donate') == 'true') {
