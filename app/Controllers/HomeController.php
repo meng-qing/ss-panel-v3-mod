@@ -193,7 +193,8 @@ class HomeController extends BaseController
         return $newResponse;
     }
 
-    public function pay_callback($request, $response, $args)
+    // public function pay_callback($request, $response, $args)
+public function pay_callback()
     {
       echo "ok";
     //   Paymentwall_Base::setApiType(Paymentwall_Base::API_GOODS);
