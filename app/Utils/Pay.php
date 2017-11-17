@@ -64,7 +64,7 @@ class Pay
     private static function pmw_html($user)
     {
         \Paymentwall_Config::getInstance()->set(array(
-            'api_type' => \Paymentwall_Config::API_VC,
+            'api_type' => \Paymentwall_Config::API_GOODS,
             'public_key' => Config::get('pmw_publickey'),
             'private_key' => Config::get('pmw_privatekey')
         ));
@@ -424,7 +424,7 @@ class Pay
     {
         if (Config::get('pmw_publickey')!="") {
             \Paymentwall_Config::getInstance()->set(array(
-                'api_type' => \Paymentwall_Config::API_VC,
+                'api_type' => \Paymentwall_Config::API_GOODS,
                 'public_key' => Config::get('pmw_publickey'),
                 'private_key' => Config::get('pmw_privatekey')
             ));
