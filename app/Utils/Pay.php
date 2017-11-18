@@ -63,7 +63,7 @@ class Pay
 
     private static function pmw_html($user)
     {
-        $debugFile = fopen("debugInfo.text", "w") or die ("Unable to open file!");
+        $debugFile = fopen("debugInfo.text", "a+") or die ("Unable to open file!");
         $info = "Call pmw_html" . date("d h:i:sa") . "\n";
         fwrite($debugFile, $info);
         fclose($debugFile);
