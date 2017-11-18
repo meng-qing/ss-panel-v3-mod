@@ -61,12 +61,16 @@ class Pay
 ';
     }
 
+    public static function add_debugInfo($info) {
+      $debugFile = fopen("debugInfo.text", "a+") or die ("Unable to open file!");
+      $info = "Call " . $info . " " . date("d h:i:sa") . "\n";
+      fwrite($debugFile, $info);
+      fclose($debugFile);
+    }
+
     private static function pmw_html($user)
     {
-        $debugFile = fopen("debugInfo.text", "a+") or die ("Unable to open file!");
-        $info = "Call pmw_html" . date("d h:i:sa") . "\n";
-        fwrite($debugFile, $info);
-        fclose($debugFile);
+        Pay::add_debugInfo("pmw_html");
 
         \Paymentwall_Config::getInstance()->set(array(
             'api_type' => \Paymentwall_Config::API_GOODS,
@@ -427,6 +431,9 @@ class Pay
 
     private static function pmw_callback()
     {
+
+        Pay::add_debugInfo("pmw_callback");
+
         if (Config::get('pmw_publickey')!="") {
             // \Paymentwall_Config::getInstance()->set(array(
             //     'api_type' => \Paymentwall_Config::API_GOODS,

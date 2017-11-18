@@ -195,10 +195,8 @@ class HomeController extends BaseController
 
     public function pay_callback($request, $response, $args)
     {
-        $debugFile = fopen("debugInfo.text", "a+") or die ("Unable to open file!");
-        $info = "Call pmw_html" . date("d h:i:sa") . "\n";
-        fwrite($debugFile, $info);
-        fclose($debugFile);
+        Pay::add_debugInfo("pay_callback");
+
         Pay::callback($request);
     }
 }
