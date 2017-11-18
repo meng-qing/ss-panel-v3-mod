@@ -444,8 +444,8 @@ class Pay
             Pay::add_debugInfo("pmw_callback_setup1");
 
             Paymentwall_Base::setApiType(Paymentwall_Base::API_GOODS);
-            Paymentwall_Base::setAppKey('YOUR_PROJECT_KEY'); // available in your Paymentwall merchant area
-            Paymentwall_Base::setSecretKey('YOUR_SECRET_KEY'); // available in your Paymentwall merchant area
+            Paymentwall_Base::setAppKey(Config::get('pmw_publickey')); // available in your Paymentwall merchant area
+            Paymentwall_Base::setSecretKey(Config::get('pmw_privatekey')); // available in your Paymentwall merchant area
 
             Pay::add_debugInfo("pmw_callback_setup1_1");
 
