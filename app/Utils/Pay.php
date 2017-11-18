@@ -457,6 +457,9 @@ class Pay
             $pingback = new \Paymentwall_Pingback($_GET, $_SERVER['REMOTE_ADDR']);
 
             Pay::add_debugInfo("pmw_callback userid " . $pingback->getUserId());
+            Pay::add_debugInfo("pmw_callback Goods " . $pingback->getGoodsDetail());
+            Pay::add_debugInfo("pmw_callback ProductPeriodLength " . $pingback->getProductPeriodLength());
+            Pay::add_debugInfo("pmw_callback ProductId " . $pingback->getProductId());
 
             if ($pingback->validate()) {
 
