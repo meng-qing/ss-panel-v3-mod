@@ -443,9 +443,14 @@ class Pay
 
             Pay::add_debugInfo("pmw_callback_setup1");
 
-            Paymentwall_Base::setApiType(Paymentwall_Base::API_GOODS);
-            Paymentwall_Base::setAppKey(Config::get('pmw_publickey')); // available in your Paymentwall merchant area
-            Paymentwall_Base::setSecretKey(Config::get('pmw_privatekey')); // available in your Paymentwall merchant area
+            // Paymentwall_Base::setApiType(Paymentwall_Base::API_GOODS);
+            // Paymentwall_Base::setAppKey(Config::get('pmw_publickey')); // available in your Paymentwall merchant area
+            // Paymentwall_Base::setSecretKey(Config::get('pmw_privatekey')); // available in your Paymentwall merchant area
+            \Paymentwall_Config::getInstance()->set(array(
+                'api_type' => \Paymentwall_Config::API_GOODS,
+                'public_key' => Config::get('pmw_publickey'),
+                'private_key' => Config::get('pmw_privatekey')
+            ));
 
             Pay::add_debugInfo("pmw_callback_setup1_1");
 
