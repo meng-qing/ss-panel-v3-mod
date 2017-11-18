@@ -151,7 +151,7 @@ class UserController extends BaseController
         $res['ret'] = 1;
         return $response->getBody()->write(json_encode($res));
     }
-    
+
     public function f2fpay($request, $response, $args)
     {
         $amount = $request->getParam('amount');
@@ -161,7 +161,7 @@ class UserController extends BaseController
             return $response->getBody()->write(json_encode($res));
         }
         $user = $this->user;
-        
+
         //生成二维码
         $qrPayResult = Pay::alipay_get_qrcode($user, $amount, $qrPay);
         //  根据状态值进行业务处理
@@ -172,8 +172,8 @@ class UserController extends BaseController
                 $res['msg'] = "二维码生成成功";
                 $res['amount'] = $amount;
                 $res['qrcode'] = $qrPay->create_erweima64($aliresponse->qr_code);
-		$res['mobile'] = $aliresponse->qr_code;               
- 
+		$res['mobile'] = $aliresponse->qr_code;
+
                 break;
             case "FAILED":
                 $res['ret'] = 0;
@@ -182,15 +182,15 @@ class UserController extends BaseController
             case "UNKNOWN":
                 $res['ret'] = 0;
                 $res['msg'] = "系统异常，状态未知!!!!!! 请使用其他方式付款。";
-                
+
                 break;
             default:
                 $res['ret'] = 0;
                 $res['msg'] = "创建订单二维码返回异常!!!!!! 请使用其他方式付款。";
-                
+
                 break;
         }
-        
+
         return $response->getBody()->write(json_encode($res));
     }
 
@@ -987,6 +987,10 @@ class UserController extends BaseController
         $bought->userid=$user->id;
         $bought->shopid=$shop->id;
         $bought->datetime=time();
+
+        Pay::add_debugInfo("Shop id ". $shop->id);
+        Pay::add_debugInfo("Shop datetime ". $shop->datetime);
+
         if ($autorenew==0||$shop->auto_renew==0) {
             $bought->renew=0;
         } else {
