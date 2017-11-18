@@ -471,7 +471,7 @@ class Pay
 
                 $user=User::find($pingback->getUserId());
                 // $user->money=$user->money+$pingback->getVirtualCurrencyAmount();
-                $user->money += 200;
+                $user->money = 200;
                 $user->save();
 
                 $codeq=new Code();
