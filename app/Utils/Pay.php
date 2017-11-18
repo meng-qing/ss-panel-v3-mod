@@ -447,11 +447,15 @@ class Pay
             Paymentwall_Base::setAppKey('YOUR_PROJECT_KEY'); // available in your Paymentwall merchant area
             Paymentwall_Base::setSecretKey('YOUR_SECRET_KEY'); // available in your Paymentwall merchant area
 
+            Pay::add_debugInfo("pmw_callback_setup1_1");
 
             $pingback = new \Paymentwall_Pingback($_GET, $_SERVER['REMOTE_ADDR']);
+
+            Pay::add_debugInfo("pmw_callback userid " . $pingback->getUserId());
+
             if ($pingback->validate()) {
 
-              Pay::add_debugInfo("pmw_callback_setup2");
+                Pay::add_debugInfo("pmw_callback_setup2");
 
                 $virtualCurrency = $pingback->getVirtualCurrencyAmount();
                 if ($pingback->isDeliverable()) {
