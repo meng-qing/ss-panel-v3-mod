@@ -441,6 +441,8 @@ class Pay
             //     'private_key' => Config::get('pmw_privatekey')
             // ));
 
+            Pay::add_debugInfo("pmw_callback_setup1");
+
             Paymentwall_Base::setApiType(Paymentwall_Base::API_GOODS);
             Paymentwall_Base::setAppKey('YOUR_PROJECT_KEY'); // available in your Paymentwall merchant area
             Paymentwall_Base::setSecretKey('YOUR_SECRET_KEY'); // available in your Paymentwall merchant area
@@ -448,6 +450,9 @@ class Pay
 
             $pingback = new \Paymentwall_Pingback($_GET, $_SERVER['REMOTE_ADDR']);
             if ($pingback->validate()) {
+
+              Pay::add_debugInfo("pmw_callback_setup2");
+
                 $virtualCurrency = $pingback->getVirtualCurrencyAmount();
                 if ($pingback->isDeliverable()) {
                     // deliver the virtual currency
@@ -473,6 +478,9 @@ class Pay
 
 
                 if ($user->ref_by!=""&&$user->ref_by!=0&&$user->ref_by!=null) {
+
+                  Pay::add_debugInfo("pmw_callback_setup3");
+
                     $gift_user=User::where("id", "=", $user->ref_by)->first();
                     $gift_user->money=($gift_user->money+($codeq->number*(Config::get('code_payback')/100)));
                     $gift_user->save();
@@ -499,9 +507,15 @@ class Pay
                     }
                 }
             } else {
+
+                Pay::add_debugInfo("pmw_callback_pingback_error");
+
                 echo $pingback->getErrorSummary();
             }
         } else {
+
+            Pay::add_debugInfo("pmw_callback_no_public_key");
+
             echo 'error';
         }
     }
